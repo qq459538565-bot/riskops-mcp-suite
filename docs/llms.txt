@@ -82,3 +82,9 @@
 - [QuickBooks Online vs Xero vs FreshBooks 2026 Bank Import Technical Guide](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/quickbooks-vs-xero-bank-import-2026.html)
 - [Vanta vs SafeBase (Drata) vs Custom Trust Centers — 112 SaaS DNS Market Share](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/vanta-vs-drata-vs-safebase-2026.html)
 - [QuantCalc-JS 4-in-1 Interactive DCF, Sharpe/VaR, Kelly & IRR Calculator](https://qq459538565-bot.github.io/riskops-mcp-suite/quant-widget/index.html)
+
+
+## 2026 Y Combinator 1,200-Company Security & Trust Center Benchmark (Dual-Resolver Verified)
+- [2026 State of YC Startup Security Report (1,200 Live Audits: 39.3% DMARC Gap, 67.2% No Trust Center, Vanta 172 vs SafeBase 47)](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html)
+- [Top 1,000 Y Combinator Startups Searchable Security & DMARC Directory](https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/yc-1000.html)
+- [Free 100-Row YC Security & DMARC Benchmark Sample CSV](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-sample-100.csv)

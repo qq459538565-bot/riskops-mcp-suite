@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2026 State of Y Combinator Startup Security: 1,200 Live DNS, DMARC &amp; Trust Center Audits — RiskOps MCP Lab</title>
+  <meta name="description" content="Original 2026 empirical security study of 1,200 active Y Combinator companies: 39.3% have missing or unenforced DMARC, 67.2% lack a public Trust Center, and Vanta leads detected GRC adoption (172 vs 47 SafeBase). Download the free 100-row CSV sample." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dataset","name":"2026 Y Combinator Active Startups Security Posture, DMARC & Trust Center Dataset (1,200 Companies)","description":"Dual-resolver RFC 8484 DNS benchmark of 1,200 active Y Combinator venture-backed companies covering DMARC, SPF, CAA, email stacks, and GRC Trust Center adoption.","datePublished":"2026-11-24","creator":{"@type":"Organization","name":"RiskOps MCP Lab"},"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-sample-100.csv"}]}</script>
+  <style>:root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 52%);color:var(--text);line-height:1.6;}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 64px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+.brand{font-weight:700;font-size:17px;color:#fff;text-decoration:none;}
+.nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;}
+.nav-links a:hover{color:#fff;}
+.cta{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13px;font-weight:600;border:none;cursor:pointer;}
+.cta-sec{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13px;font-weight:600;border:1px solid var(--border);cursor:pointer;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+.metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:14px;}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.metric .val{font-size:17px;font-weight:700;word-break:break-word;}
+.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:700;}
+.pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+.pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+.pill.RED{background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+a.link{color:var(--accent);text-decoration:none;}
+a.link:hover{text-decoration:underline;}
+code{background:#09101f;border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-size:12px;color:#93c5fd;word-break:break-all;}
+.peer-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.peer-chip{background:#09101f;border:1px solid var(--border);color:var(--text);padding:6px 11px;border-radius:8px;font-size:12.5px;text-decoration:none;}
+.peer-chip:hover{border-color:var(--accent);}
+.bar-track{background:#09101f;border:1px solid var(--border);border-radius:999px;height:12px;overflow:hidden;margin-top:6px;}
+.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#0284c7,#38bdf8);}
+footer{margin-top:32px;border-top:1px solid var(--border);padding-top:16px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../index.html">RiskOps MCP Lab</a>
+      <nav class="nav-links">
+        <a href="../vendors/yc-1000.html">1,000 YC Directory</a>
+        <a href="../vendors/index.html">Top 112 SaaS</a>
+        <a href="./state-of-saas-security-2026.html">Top 112 Report</a>
+        <a class="cta" data-partner="apify" href="https://apify.com/durative_hairstreak" target="_blank" rel="noopener">Run Bulk API / MCP &rarr;</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <span class="pill GREEN">Original 2026 Empirical Benchmark &middot; Dual-Resolver Verified (2026-11-24)</span>
+      <h1 style="margin:10px 0 10px;font-size:clamp(24px,3.6vw,34px);">We Audited 1,200 Active Y Combinator Startups: 39.3% Still Leave DMARC Unenforced &amp; 67.2% Lack a Public Trust Center</h1>
+      <p style="color:var(--muted);font-size:15px;">Using passive, zero-PII RFC 8484 DNS-over-HTTPS queries with dual-resolver consensus (eliminating timeout false negatives), we benchmarked the top <strong>1,200 active venture-backed Y Combinator companies</strong> across email authentication (DMARC/SPF), certificate authority locks (CAA), email infrastructure, and GRC Trust Center CNAMEs (Vanta, Drata/SafeBase, Secureframe, Conveyor).</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+        <a class="cta" href="./yc-2026-sample-100.csv" download>Download Free 100-Row CSV Sample &darr;</a>
+        <a class="cta-sec" href="../vendors/yc-1000.html">Search All 1,000 Company Dossiers &rarr;</a>
+        <a class="cta-sec" href="mailto:qq459538565@gmail.com?subject=Purchase%202026%20YC%201200%20Security%20Dataset%20(%2479%20Hot%20Slice%20%2F%20%24199%20Full%20License)">Buy Full 1,200-Row Commercial CSV ($79 / $199)</a>
+      </div>
+
+      <div class="grid">
+        <div class="metric"><div class="label">Verified Active YC Firms</div><div class="val">1,200</div></div>
+        <div class="metric"><div class="label">DMARC Gaps (missing / p=none)</div><div class="val" style="color:#f87171;">472 (39.3%)</div></div>
+        <div class="metric"><div class="label">No Trust Center CNAME</div><div class="val" style="color:#fbbf24;">806 (67.2%)</div></div>
+        <div class="metric"><div class="label">Google Workspace Share</div><div class="val" style="color:#34d399;">1,090 (90.8%)</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">1. DMARC Enforcement Across 1,200 Venture-Backed Startups</h2>
+      <p style="color:var(--muted);font-size:14px;">Despite strict Google &amp; Yahoo bulk sender enforcement and rising business email compromise (BEC), nearly 2 in 5 funded YC startups still leave their primary corporate domain unblocked against spoofing:</p>
+      <table>
+        <thead><tr><th>DMARC Policy</th><th>Companies</th><th>Share</th><th>Security Implication</th></tr></thead>
+        <tbody>
+          <tr><td><code>p=reject</code></td><td><strong>311</strong></td><td>25.9%</td><td><span class="pill GREEN">Enforced</span> Unauthorized spoofed mail rejected</td></tr>
+          <tr><td><code>p=quarantine</code></td><td><strong>417</strong></td><td>34.8%</td><td><span class="pill AMBER">Partial</span> Routed to spam; upgradeable to reject</td></tr>
+          <tr><td><code>p=none</code></td><td><strong>389</strong></td><td>32.4%</td><td><span class="pill RED">Monitor Only</span> Spoofed emails still reach inboxes</td></tr>
+          <tr><td><code>missing</code></td><td><strong>83</strong></td><td>6.9%</td><td><span class="pill RED">Unprotected</span> Zero _dmarc TXT record published</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">2. Trust Center &amp; GRC Platform Market Share (DNS CNAME Fingerprints)</h2>
+      <p style="color:var(--muted);font-size:14px;">Among the 394 YC companies hosting a dedicated <code>trust.</code>, <code>security.</code>, or <code>compliance.</code> subdomain, <a class="link" data-partner="vanta" href="https://www.vanta.com/" target="_blank" rel="noopener">Vanta</a> leads third-party GRC adoption by a wide margin over <a class="link" data-partner="drata" href="https://drata.com/" target="_blank" rel="noopener">SafeBase / Drata</a>:</p>
+      <table>
+        <thead><tr><th>Platform Detected</th><th>YC Companies</th><th>Share of 1,200</th></tr></thead>
+        <tbody>
+          <tr><td><strong>No Public Trust Subdomain</strong></td><td>806</td><td>67.2%</td></tr>
+          <tr><td><strong>Vanta</strong></td><td>172</td><td>14.3%</td></tr>
+          <tr><td><strong>Custom / Self-Hosted Trust Subdomain</strong></td><td>160</td><td>13.3%</td></tr>
+          <tr><td><strong>SafeBase (Drata)</strong></td><td>47</td><td>3.9%</td></tr>
+          <tr><td><strong>Secureframe / Conveyor / Drata / Whistic / HyperComply</strong></td><td>15</td><td>1.3%</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">3. Live Preview — Sample Enterprise Mail + Security Gap Findings (15 of 678 Hot Leads)</h2>
+      <p style="color:var(--muted);font-size:14px;">Zero PII: strictly company-level public DNS records + YC firmographics (batch, headcount, hiring status) ready for Clay, Apollo, HubSpot, and cybersecurity MSP remediation outreach.</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>Company</th><th>YC Batch</th><th>Staff</th><th>Email Stack</th><th>DMARC</th><th>Trust Center</th><th>Lead Score</th></tr></thead>
+          <tbody>
+            <tr><td><a class="link" href="../vendor/anthrogen-com.html"><strong>Anthrogen</strong></a><br><span style="color:var(--muted);font-size:12px;">anthrogen.com</span></td><td>Summer 2024</td><td>15</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">96/100</span></td></tr><tr><td><a class="link" href="../vendor/beyondreachlabs-com.html"><strong>Beyond Reach Labs</strong></a><br><span style="color:var(--muted);font-size:12px;">beyondreachlabs.com</span></td><td>Winter 2026</td><td>15</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">96/100</span></td></tr><tr><td><a class="link" href="../vendor/joinfleek-com.html"><strong>Fleek</strong></a><br><span style="color:var(--muted);font-size:12px;">joinfleek.com</span></td><td>Winter 2022</td><td>100</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">93/100</span></td></tr><tr><td><a class="link" href="../vendor/gimo-vn.html"><strong>GIMO</strong></a><br><span style="color:var(--muted);font-size:12px;">gimo.vn</span></td><td>Winter 2022</td><td>70</td><td>Microsoft 365</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">93/100</span></td></tr><tr><td><a class="link" href="../vendor/astromecha-co.html"><strong>Astro Mechanica</strong></a><br><span style="color:var(--muted);font-size:12px;">astromecha.co</span></td><td>Winter 2024</td><td>52</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">93/100</span></td></tr><tr><td><a class="link" href="../vendor/getagency-com.html"><strong>Agency</strong></a><br><span style="color:var(--muted);font-size:12px;">getagency.com</span></td><td>Winter 2022</td><td>50</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">93/100</span></td></tr><tr><td><a class="link" href="../vendor/voltalabs-com.html"><strong>Volta Labs, Inc.</strong></a><br><span style="color:var(--muted);font-size:12px;">voltalabs.com</span></td><td>Winter 2019</td><td>50</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">93/100</span></td></tr><tr><td><a class="link" href="../vendor/hogaru-com.html"><strong>Hogaru</strong></a><br><span style="color:var(--muted);font-size:12px;">hogaru.com</span></td><td>Winter 2017</td><td>746</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/humanarchive-ai.html"><strong>Human Archive</strong></a><br><span style="color:var(--muted);font-size:12px;">humanarchive.ai</span></td><td>Winter 2026</td><td>100</td><td>Google Workspace</td><td><code>none</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/bego-ai.html"><strong>BeGo</strong></a><br><span style="color:var(--muted);font-size:12px;">bego.ai</span></td><td>Winter 2020</td><td>65</td><td>Google Workspace</td><td><code>none</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/fluxauto-ai.html"><strong>Flux Auto</strong></a><br><span style="color:var(--muted);font-size:12px;">fluxauto.ai</span></td><td>Winter 2021</td><td>56</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/tajir-app.html"><strong>Tajir</strong></a><br><span style="color:var(--muted);font-size:12px;">tajir.app</span></td><td>Winter 2020</td><td>50</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/trella-app.html"><strong>Trella</strong></a><br><span style="color:var(--muted);font-size:12px;">trella.app</span></td><td>Summer 2019</td><td>50</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">92/100</span></td></tr><tr><td><a class="link" href="../vendor/tandemspace-com.html"><strong>Tandem</strong></a><br><span style="color:var(--muted);font-size:12px;">tandemspace.com</span></td><td>Summer 2024</td><td>22</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">90/100</span></td></tr><tr><td><a class="link" href="../vendor/getbiostack-com.html"><strong>BioStack Platforms</strong></a><br><span style="color:var(--muted);font-size:12px;">getbiostack.com</span></td><td>Spring 2026</td><td>13</td><td>Google Workspace</td><td><code>missing</code></td><td>None Detected</td><td><span class="pill RED">90/100</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" style="border-color:#0284c7;">
+      <h2 style="margin-top:0;font-size:20px;">Commercial Dataset Licensing (Clay / MSP / vCISO / GRC Partners)</h2>
+      <div class="grid">
+        <div class="metric">
+          <div class="label">Free Lead Magnet</div>
+          <div class="val">$0</div>
+          <p style="color:var(--muted);font-size:13px;">100 verified rows CSV + full schema dictionary.</p>
+          <a class="cta-sec" href="./yc-2026-sample-100.csv" download>Download CSV</a>
+        </div>
+        <div class="metric">
+          <div class="label">Hot Gaps Slice (678 Firms)</div>
+          <div class="val">$79 <span style="font-size:12px;color:var(--muted);">one-time</span></div>
+          <p style="color:var(--muted);font-size:13px;">All 678 Google Workspace / M365 YC companies with verified DMARC or Trust gaps + pre-written Clay pitch hooks.</p>
+          <a class="cta" href="mailto:qq459538565@gmail.com?subject=Buy%20YC%202026%20Hot%20Gaps%20Slice%20(678%20Firms%20-%20%2479)">Request Instant Delivery</a>
+        </div>
+        <div class="metric">
+          <div class="label">Full Commercial License (1,200 Firms)</div>
+          <div class="val">$199 <span style="font-size:12px;color:var(--muted);">one-time</span></div>
+          <p style="color:var(--muted);font-size:13px;">All 1,200 dual-verified YC records (CSV + JSONL) + 678 Hot Slice + Apify bulk audit template.</p>
+          <a class="cta" href="mailto:qq459538565@gmail.com?subject=Buy%20YC%202026%20Full%20Commercial%20Dataset%20(1200%20Firms%20-%20%24199)">Request Instant Delivery</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>RiskOps MCP Lab &middot; 100% Public RFC 8484 DNS &amp; YC Open Directory Research (Zero PII)</span>
+      <span><a class="link" href="../vendors/yc-1000.html">Browse 1,000 YC Directory</a> &middot; <a class="link" href="../index.html">Live Tools</a></span>
+    </footer>
+  </div>
+  <script src="../assets/monetization-config.js"></script>
+</body>
+</html>
