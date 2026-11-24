@@ -6,11 +6,11 @@
 
 | Filing Date | Company | Risk Score | SEC Items | Forensic Red Flags | Source |
 | :--- | :--- | :---: | :---: | :--- | :---: |
-| 2026-11-23 | **RVRC** (Revium Rx.) | `RED 100/100` | `4.02` | Non-Reliance / Financial Restatement; Material Weakness in Internal Controls | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1839140/000121390026123072/ea0313231-8k_revium.htm) |
-| 2026-11-23 | **SPKLF** (Spark I Acquisition Corp) | `RED 100/100` | `4.02` | Non-Reliance / Financial Restatement | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1884046/000110465926130772/tm2630448d1_8k.htm) |
-| 2026-11-23 | **EXYN** (Exyn Technologies, Inc.) | `RED 100/100` | `4.02` | Non-Reliance / Financial Restatement; Material Weakness in Internal Controls | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1960355/000110465926130752/tm2630408d1_8k.htm) |
-| 2026-11-23 | **BGSF** (BGSF, INC.) | `RED 82/100` | `3.01` | — | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1474903/000147490326000104/bgsf-20261117.htm) |
-| 2026-11-23 | **GDRX** (GoodRx Holdings, Inc.) | `RED 100/100` | `3.01` | Non-Reliance / Financial Restatement; Material Weakness in Internal Controls | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1809519/000180951926000212/gdrx-20261117.htm) |
+| 2026-11-24 | **SSGC** (SafeSpace Global Corp) | `RED 100/100` | `4.02` | Non-Reliance / Financial Restatement; Material Weakness in Internal Controls | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1584693/000149315226054001/form8-k.htm) |
+| 2026-11-24 | **AREC** (American Resources Corp) | `RED 100/100` | `4.02` | Non-Reliance / Financial Restatement | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1590715/000147793226007287/arec_8k.htm) |
+| 2026-11-24 | **CRMT** (AMERICAS CARMART INC) | `RED 100/100` | `1.03` | Chapter 11 / Insolvency Filing; Event of Default / Debt Acceleration | [SEC Filing](https://www.sec.gov/Archives/edgar/data/799850/000117184326007671/f8k_112426.htm) |
+| 2026-11-24 | **SOBR** (SOBR Safe, Inc.) | `RED 82/100` | `3.01` | — | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1425627/000147793226007280/sobr_8k.htm) |
+| 2026-11-24 | **DRVN** (Driven Brands Holdings Inc.) | `RED 82/100` | `3.01` | — | [SEC Filing](https://www.sec.gov/Archives/edgar/data/1804745/000162828026075574/drvn-20261120.htm) |
 
 ---
 
