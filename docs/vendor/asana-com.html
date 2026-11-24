@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asana (asana.com) Security Audit: Trust Center, Vanta/SafeBase &amp; DMARC Score (2026)</title>
+  <meta name="description" content="Live DNS-over-HTTPS security audit of Asana (asana.com): Grade C (62/100), Trust Center GRC (None Detected via DNS), DMARC (QUARANTINE), SPF, CAA &amp; Google Workspace MX stack." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/asana-com.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Asana (asana.com) have a public Trust Center (Vanta, SafeBase, or Drata)?","acceptedAnswer":{"@type":"Answer","text":"No dedicated trust.*, security.*, or compliance.* DNS CNAME portal was detected for asana.com on 2026-11-24."}},{"@type":"Question","name":"What is Asana's DMARC email spoofing policy and email provider?","acceptedAnswer":{"@type":"Answer","text":"asana.com enforces DMARC policy \"quarantine\" with SPF hardfail (-all) and routes email through Google Workspace."}}]}</script>
+  <style>
+:root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 52%);color:var(--text);line-height:1.6;}
+.wrap{max-width:1080px;margin:0 auto;padding:24px 20px 64px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;color:#fff;text-decoration:none;}
+.nav-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;}
+.nav-links a:hover{color:#fff;}
+.cta{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13px;font-weight:600;border:none;cursor:pointer;}
+.cta-sec{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13px;font-weight:600;border:1px solid var(--border);cursor:pointer;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+.metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:14px;}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.metric .val{font-size:17px;font-weight:700;word-break:break-word;}
+.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:700;}
+.pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+.pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+.pill.RED{background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:10px;}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:top;}
+th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;}
+a.link{color:var(--accent);text-decoration:none;}
+a.link:hover{text-decoration:underline;}
+code{background:#09101f;border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-size:12px;color:#93c5fd;word-break:break-all;}
+.peer-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.peer-chip{background:#09101f;border:1px solid var(--border);color:var(--text);padding:6px 11px;border-radius:8px;font-size:12.5px;text-decoration:none;}
+.peer-chip:hover{border-color:var(--accent);}
+.whitelabel-bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;padding:12px;border-radius:10px;background:#09101f;border:1px dashed var(--accent);}
+.whitelabel-bar input{flex:1;min-width:200px;background:var(--panel);border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;}
+.print-banner{display:none;border-bottom:2px solid #0f172a;padding-bottom:12px;margin-bottom:16px;}
+footer{margin-top:32px;border-top:1px solid var(--border);padding-top:16px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+@media print{
+  body{background:#fff!important;color:#0f172a!important;}
+  .no-print,header,.nav-links,.whitelabel-bar,.peer-card{display:none!important;}
+  .print-banner{display:block!important;}
+  .card,.metric{background:#fff!important;border:1px solid #cbd5e1!important;color:#0f172a!important;}
+  .metric .label,th,footer{color:#475569!important;}
+  code{background:#f1f5f9!important;color:#0f172a!important;border-color:#cbd5e1!important;}
+  .pill{border:1px solid #334155!important;color:#0f172a!important;background:#f8fafc!important;}
+}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+    <a class="brand" href="../index.html">RiskOps MCP Lab</a>
+    <nav class="nav-links">
+      <a href="../index.html">4-in-1 Live Tools</a>
+      <a href="../vendors/index.html">100+ SaaS Security Directory</a>
+      <a href="../alternatives/securityscorecard-upguard-alternative.html">SecurityScorecard Alt</a>
+      <a href="../alternatives/uptimerobot-statuspage-alternative.html">UptimeRobot Alt</a>
+      <a class="cta" href="https://apify.com/durative_hairstreak" target="_blank" rel="noopener">Apify MCP Suite &rarr;</a>
+    </nav>
+  </header>
+
+    <div class="print-banner">
+      <div id="printAgencyName" style="font-size:20px;font-weight:800;">External Vendor Security Posture Audit Report</div>
+      <div style="font-size:12px;color:#475569;">Prepared for TPRM / QBR Review · Audited 2026-11-24 via Public DNS-over-HTTPS</div>
+    </div>
+
+    <div class="no-print" style="font-size:12.5px;color:var(--muted);margin-bottom:10px;">
+      <a class="link" href="../vendors/index.html">&larr; Back to 100+ SaaS Security Benchmark Directory</a> · Category: <strong>Productivity SaaS</strong>
+    </div>
+
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;flex-wrap:wrap;">
+        <div>
+          <h1 style="margin:0 0 6px;font-size:clamp(22px,3.2vw,32px);">Asana (<code>asana.com</code>) Security Posture Audit</h1>
+          <p style="margin:0;color:var(--muted);font-size:14px;">Deterministic public DNS-over-HTTPS audit of Trust Center GRC platform, DMARC/SPF anti-spoofing, CAA certificate controls &amp; MX email infrastructure. Last audited: <strong>2026-11-24</strong>.</p>
+        </div>
+        <span class="pill AMBER" style="font-size:15px;padding:6px 14px;">AMBER · Grade C (62/100)</span>
+      </div>
+
+      <div class="grid">
+        <div class="metric"><div class="label">Trust Center / GRC Platform</div><div class="val">None Detected via DNS</div><div style="font-size:11.5px;color:var(--muted);margin-top:4px;">No trust.*/security.* CNAME detected</div></div>
+        <div class="metric"><div class="label">DMARC Anti-Spoofing</div><div class="val">QUARANTINE</div><div style="font-size:11.5px;color:var(--muted);margin-top:4px;">SPF: Hardfail (-all)</div></div>
+        <div class="metric"><div class="label">Enterprise Email Stack</div><div class="val">Google Workspace</div><div style="font-size:11.5px;color:var(--muted);margin-top:4px;">5 public MX record(s)</div></div>
+        <div class="metric"><div class="label">Certificate Authority Lock (CAA)</div><div class="val">Not Set</div><div style="font-size:11.5px;color:var(--muted);margin-top:4px;">DNS CAA Policy Check</div></div>
+      </div>
+
+      <div class="whitelabel-bar no-print">
+        <strong style="font-size:13px;">MSP / TPRM White-Label PDF Export:</strong>
+        <input id="agencyInput" type="text" placeholder="Enter your Agency / MSP Name (optional)" oninput="document.getElementById('printAgencyName').textContent = (this.value.trim() ? this.value.trim() + ' — ' : '') + 'Asana Security Posture Audit Report'" />
+        <button class="cta" onclick="window.print()">Print / Save White-Label PDF</button>
+        <a class="cta-sec" href="../index.html">Live Re-Audit Any Domain &rarr;</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:18px;">Raw Verified DNS &amp; Trust Signals</h2>
+      <table>
+        <thead><tr><th>Security Control</th><th>Observed Public Record</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Trust Portal CNAME</strong></td><td><code>Not detected on trust./security./compliance.</code></td><td><span class="pill AMBER">NONE</span></td></tr>
+          <tr><td><strong>DMARC Record</strong></td><td><code>v=DMARC1; p=quarantine; rua=mailto:7ddf7bedf2@rua.easydmarc.us,mailto:dmarc_agg@dmarc.everest.email; ruf=mailto:7ddf7bedf2@ruf.easydmarc.us,mailto:dmarc-ruf@asana.com; fo=1; sp=quarantine;</code></td><td><span class="pill AMBER">QUARANTINE</span></td></tr>
+          <tr><td><strong>SPF Record</strong></td><td><code>v=spf1 include:_spf.google.com include:amazonses.com exists:%{i}._spf.sparkpostmail.com include:mktomail.com include:mg-spf.greenhouse.io include:mail.zendesk.com -all</code></td><td><span class="pill GREEN">HARDFAIL</span></td></tr>
+          <tr><td><strong>CAA DNS Policy</strong></td><td><code>No CAA records found</code></td><td><span class="pill AMBER">MISSING</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:18px;font-size:15px;">Actionable Remediation &amp; Sales/TPRM Notes</h3>
+      <ul style="margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:14px;">
+        <li>Upgrade DMARC policy from p=quarantine to p=reject to fully block unauthorized domain spoofing.</li><li>Add DNS CAA records to restrict which Certificate Authorities can issue TLS certificates for this domain.</li><li>Host a dedicated public Trust Center subdomain (e.g., trust.asana.com) to speed up enterprise security reviews.</li>
+      </ul>
+    </section>
+
+    <section class="card no-print" style="background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(37,99,235,.12));border-color:rgba(56,189,248,.35);">
+      <h2 style="margin-top:0;font-size:18px;">Audit 500+ Vendors in Bulk (With TLS Expiry, HSTS/CSP &amp; SOC 2 Page Signals)</h2>
+      <p style="color:var(--muted);font-size:14px;margin:4px 0 14px;">Stop paying $200+/mo enterprise minimums to SecurityScorecard or UpGuard for simple TPRM &amp; Clay prospecting checks. Run our zero-WAF Apify Actor &amp; hosted MCP server in seconds.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="cta" href="https://apify.com/durative_hairstreak" target="_blank" rel="noopener">Run Bulk Security Auditor on Apify &rarr;</a>
+        <a class="cta-sec" href="../alternatives/securityscorecard-upguard-alternative.html">Compare vs SecurityScorecard &amp; UpGuard</a>
+      </div>
+    </section>
+
+    <section class="card peer-card no-print">
+      <h3 style="margin-top:0;font-size:15px;">Compare Other Productivity SaaS Vendors</h3>
+      <div class="peer-list">
+        <a class="peer-chip" href="./notion-so.html">Notion · <strong>C</strong> (57)</a><a class="peer-chip" href="./linear-app.html">Linear · <strong>C</strong> (65)</a><a class="peer-chip" href="./figma-com.html">Figma · <strong>A+</strong> (92)</a><a class="peer-chip" href="./slack-com.html">Slack · <strong>B</strong> (80)</a><a class="peer-chip" href="./zoom-us.html">Zoom · <strong>B</strong> (75)</a><a class="peer-chip" href="./atlassian-com.html">Atlassian · <strong>B</strong> (75)</a><a class="peer-chip" href="./airtable-com.html">Airtable · <strong>C</strong> (65)</a><a class="peer-chip" href="./miro-com.html">Miro · <strong>A</strong> (87)</a><a class="peer-chip" href="./canva-com.html">Canva · <strong>A</strong> (90)</a><a class="peer-chip" href="./loom-com.html">Loom · <strong>B</strong> (70)</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>RiskOps MCP Lab · Public DNS-over-HTTPS Benchmark (2026-11-24)</span>
+      <span>Informational public DNS posture check only — not an official SOC 2 attestation or security guarantee.</span>
+    </footer>
+  </div>
+</body>
+</html>
