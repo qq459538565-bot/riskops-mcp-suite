@@ -1,0 +1,52 @@
+{
+  "name": "AI & Cloud Outage + 99.9% SLA Breach Alert (Apify -> Slack)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "minutes", "minutesInterval": 30 }]
+        }
+      },
+      "id": "cron-sla",
+      "name": "Every 30 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~saas-status-sla-monitor/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"presetPack\": \"ai_infra\",\n  \"lookbackDays\": 30,\n  \"targetSlaPercent\": 99.9,\n  \"onlyAlertingVendors\": true,\n  \"includeIncidentHistory\": true\n}"
+      },
+      "id": "apify-sla",
+      "name": "Run SaaS Status SLA Monitor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300]
+    },
+    {
+      "parameters": {
+        "text": "=:warning: *Cloud/AI Vendor Alert* [{{ $json.operationalTrafficLight }}]\n*Vendor:* {{ $json.vendorName }} ({{ $json.statusDescription }})\n*Active Outages:* {{ $json.activeIncidentsCount }} | *Degraded Comps:* {{ $json.degradedComponentsCount }}\n*30d Est. SLA:* {{ $json.estimatedSlaPercent }}% ({{ $json.estimatedDowntimeMinutes }}m downtime) | *Breach:* {{ $json.slaBreached }}\n*Status Page:* {{ $json.statusPageUrl }}"
+      },
+      "id": "slack-sla",
+      "name": "Post to SRE Slack Channel",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.2,
+      "position": [760, 300]
+    }
+  ],
+  "connections": {
+    "Every 30 Minutes": {
+      "main": [[{ "node": "Run SaaS Status SLA Monitor", "type": "main", "index": 0 }]]
+    },
+    "Run SaaS Status SLA Monitor": {
+      "main": [[{ "node": "Post to SRE Slack Channel", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

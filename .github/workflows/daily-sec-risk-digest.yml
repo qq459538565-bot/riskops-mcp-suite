@@ -1,0 +1,32 @@
+name: Daily SEC 8-K Risk Signals Digest (Auto Lead-Gen Flywheel)
+
+on:
+  schedule:
+    # Runs Monday-Friday at 13:30 UTC (after US morning SEC filings)
+    - cron: '30 13 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch top 5 live US SEC 8-K Risk Signals from Apify Actor
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: node scripts/generate-daily-digest.mjs
+
+      - name: Commit updated live digest to README for Google & AI (GEO) indexing
+        run: |
+          git config user.name "sec-risk-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add DAILY_SEC_RISK_DIGEST.md
+          git diff --staged --quiet || git commit -m "chore: update daily SEC 8-K risk signals digest"
+          git push

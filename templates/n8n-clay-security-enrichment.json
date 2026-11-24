@@ -1,0 +1,60 @@
+{
+  "name": "B2B Security & GRC Prospect Qualification (Webhook -> Apify Security Auditor -> CRM)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vendor-security-audit",
+        "responseMode": "lastNode"
+      },
+      "id": "webhook-in",
+      "name": "Receive Prospect Domains (Clay/CRM)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"domains\": {{ JSON.stringify($json.body.domains || ['linear.app', 'vercel.com']) }},\n  \"checkCompliancePages\": true,\n  \"checkSecurityTxt\": true,\n  \"maxPostureScore\": 100\n}"
+      },
+      "id": "apify-sec",
+      "name": "Audit Vendor Security & Trust Center",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.securityPostureScore }}",
+              "operation": "smallerEqual",
+              "value2": 75
+            }
+          ]
+        }
+      },
+      "id": "filter-gap",
+      "name": "Filter Security/GRC Gap Prospects (<=75)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Receive Prospect Domains (Clay/CRM)": {
+      "main": [[{ "node": "Audit Vendor Security & Trust Center", "type": "main", "index": 0 }]]
+    },
+    "Audit Vendor Security & Trust Center": {
+      "main": [[{ "node": "Filter Security/GRC Gap Prospects (<=75)", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

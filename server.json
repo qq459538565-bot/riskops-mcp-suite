@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.qq459538565-bot/sec-8k-risk-signals",
+  "title": "SEC 8-K Risk Signals & Corporate Distress Monitor",
+  "description": "Real-time US SEC Form 8-K forensic risk monitor (cyber breaches Item 1.05, financial restatements Item 4.02, auditor exits Item 4.01, C-suite departures Item 5.02, bankruptcies Item 1.03, delistings Item 3.01) and SEC comment letters via official EDGAR APIs.",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/durative_hairstreak/sec-8k-risk-signals",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer YOUR_APIFY_API_TOKEN",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
