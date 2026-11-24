@@ -35,8 +35,10 @@ window.RISKOPS_MONETIZATION = {
     localLedgerExtUrl: 'https://addons.mozilla.org/en-US/firefox/addon/localledger-offline/',
   },
 
-  // 4) Direct Digital Checkout (Creem.io / Dodo Payments)
+  // 4) Live Instant USD Checkout (Codester Live + Dodo Payments Pending Persona)
   checkout: {
+    localLedgerSdkCodesterUrl: 'https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk',
+    quantCalcWidgetCodesterUrl: 'https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget',
     localLedgerProUrl: 'mailto:qq459538565@gmail.com?subject=LocalLedger%20Pro%20License%20(%2419)',
     vendorSecProUrl: 'mailto:qq459538565@gmail.com?subject=VendorSec%20Pro%20License%20(%2429)',
   },
