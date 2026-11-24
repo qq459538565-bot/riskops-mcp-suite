@@ -1,0 +1,30 @@
+name: Weekly 112-SaaS Live Security Benchmark Refresh (Auto pSEO Freshness)
+
+on:
+  schedule:
+    # Runs every Sunday at 04:00 UTC — keeps all 112 SaaS DoH security audits & sitemap.xml fresh forever
+    - cron: '0 4 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-vendors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Re-audit all 112 SaaS & AI domains live via Cloudflare DoH
+        run: node scripts/weekly-refresh-vendors.mjs
+
+      - name: Commit updated live security benchmark & sitemap
+        run: |
+          git config user.name "riskops-benchmark-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add docs/
+          git diff --staged --quiet || git commit -m "chore: weekly live Cloudflare DoH refresh of 112 SaaS security profiles"
+          git push
