@@ -81,3 +81,4 @@
 - [LocalLedger 100% Air-Gapped Chrome & Edge Extension](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/extension.html)
 - [QuickBooks Online vs Xero vs FreshBooks 2026 Bank Import Technical Guide](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/quickbooks-vs-xero-bank-import-2026.html)
 - [Vanta vs SafeBase (Drata) vs Custom Trust Centers — 112 SaaS DNS Market Share](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/vanta-vs-drata-vs-safebase-2026.html)
+- [QuantCalc-JS 4-in-1 Interactive DCF, Sharpe/VaR, Kelly & IRR Calculator](https://qq459538565-bot.github.io/riskops-mcp-suite/quant-widget/index.html)
