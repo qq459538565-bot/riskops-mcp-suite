@@ -1,0 +1,62 @@
+{
+  "name": "RiskOps MCP Lab",
+  "description": "Zero-proxy, deterministic official-API intelligence suite for AI Agents, RevOps, Security/TPRM teams, and accountants: SEC Form 8-K distress signals, Cloud/AI Statuspage SLA uptime math, DNS-over-HTTPS B2B Vendor Security & Vanta/SafeBase Trust Center auditing, OSS CVE/KEV pre-install gating, and deterministic quantitative portfolio/DCF math.",
+  "url": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
+  "provider": {
+    "organization": "RiskOps Studio / LocalLedger",
+    "url": "https://apify.com/durative_hairstreak"
+  },
+  "version": "1.2.0",
+  "documentationUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false,
+    "mcp": true
+  },
+  "defaultInputModes": ["application/json"],
+  "defaultOutputModes": ["application/json", "text/csv", "text/markdown"],
+  "skills": [
+    {
+      "id": "sec-8k-risk-signals",
+      "name": "US SEC Form 8-K Risk & Distress Signals",
+      "description": "Monitors official SEC EDGAR Form 8-K filings (Item 1.05 cyber breaches, 4.02 accounting restatements, 4.01 auditor changes, 5.02 C-suite departures) with deterministic 0-100 risk scores.",
+      "tags": ["sec", "edgar", "8-k", "cyber-breach", "finance", "risk", "mcp"],
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals"
+    },
+    {
+      "id": "b2b-vendor-security-auditor",
+      "name": "B2B Vendor Security, Trust Center & Buying-Signal Auditor",
+      "description": "Audits any company domain via zero-WAF Cloudflare DoH for Vanta/SafeBase/Drata Trust Centers, DMARC/SPF/CAA/MX posture, TLS, HTTP headers, CDN, tech stack, and ATS hiring signals.",
+      "tags": ["security", "dmarc", "vanta", "safebase", "drata", "tprm", "revops", "mcp"],
+      "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html"
+    },
+    {
+      "id": "saas-status-sla-monitor",
+      "name": "AI & Cloud Dependency SLA Uptime Calculator",
+      "description": "Queries 22+ official Statuspage v2 APIs (OpenAI, Anthropic, Stripe, GitHub, Cloudflare, Supabase, Vercel) and calculates exact merged-interval 30-day and 90-day contractual SLA percentages.",
+      "tags": ["sla", "uptime", "sre", "statuspage", "cloud", "mcp"]
+    },
+    {
+      "id": "oss-dependency-risk-auditor",
+      "name": "Open-Source Supply-Chain & CISA KEV Gatekeeper",
+      "description": "Pre-install security verification for AI coding agents querying official OSV.dev, CISA Known Exploited Vulnerabilities (KEV), and deps.dev OpenSSF Scorecard metrics.",
+      "tags": ["cve", "osv", "cisa-kev", "supply-chain", "npm", "pypi", "mcp"]
+    },
+    {
+      "id": "quant-portfolio-dcf-math-engine",
+      "name": "Zero-Hallucination Quant Finance, Kelly & DCF Math Engine",
+      "description": "Pure deterministic financial mathematics for AI agents: Sharpe/Sortino/Calmar/VaR/CVaR, Half-Kelly sizing, 5x5 DCF sensitivity matrices, XIRR/NPV amortization, and Black-Scholes Greeks + IV solver.",
+      "tags": ["quant", "dcf", "kelly", "var", "options", "finance-math", "mcp"]
+    }
+  ],
+  "openDatasets": [
+    {
+      "name": "2026 State of SaaS & AI Vendor DNS Security Benchmark (112 Companies)",
+      "jsonUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/snapshot.json",
+      "csvUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv",
+      "reportUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html",
+      "refreshCadence": "weekly"
+    }
+  ]
+}

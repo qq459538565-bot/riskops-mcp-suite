@@ -1,0 +1,57 @@
+# RiskOps MCP Lab & LocalLedger — Full AI Agent & LLM Knowledge Manifest
+
+> Last Verified: 2026-11-24
+> Canonical Root: https://qq459538565-bot.github.io/riskops-mcp-suite/
+> A2A Agent Card: https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json
+> MCP Discovery:  https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/mcp.json
+
+## 1. Original Primary Research: 2026 State of SaaS & AI Vendor DNS Security (112 Companies)
+- Live Report: https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html
+- Open CSV Dataset: https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv
+- Open JSON Snapshot: https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/snapshot.json
+- Refresh Schedule: Weekly automated Cloudflare DNS-over-HTTPS audit (Sundays 04:00 UTC)
+
+### Key Verified Statistics (2026-11-24)
+- Total SaaS & AI leaders audited: 112 (Mean Security Score: 80.8/100)
+- Strict DMARC enforcement (p=reject): 74/112 (66.1%); Quarantine: 36/112 (32.1%); None/Missing: 2/112
+- Sector Gap — Fintech & HR vs AI & LLM: 12/12 (100.0%) of Fintech & HR leaders enforce DMARC p=reject, whereas only 11/24 (45.8%) of leading AI & LLM vendors enforce DMARC p=reject.
+- DNS CAA Adoption: 51/112 (45.5%) overall; Security & GRC sector sits at 4/14 (28.6%).
+- Strict SPF Hard-Fail (-all): 39/112 (34.8%).
+- Trust Center GRC Adoption (70/112 = 62.5% detected via DNS CNAME):
+  - Vanta: 29 vendors (25.9% of all 112, 41.4% of detected Trust Centers)
+  - SafeBase + Drata: 22 vendors (19.6%)
+  - Custom / Self-Hosted Trust Subdomains: 14 vendors (12.5%)
+  - Conveyor: 4 vendors; Whistic: 1 vendor
+  - No DNS Trust Subdomain Detected: 42 vendors (37.5%)
+- Email Infrastructure: Google Workspace 96/112 (85.7%), Proofpoint Enterprise 11/112 (9.8%), Microsoft 365 2/112.
+
+## 2. Hosted Zero-Proxy Apify & MCP Servers (For Claude, Cursor, n8n, Clay, Autonomous Agents)
+1. SEC 8-K Risk Signals & Corporate Distress Monitor (PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/sec-8k-risk-signals
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals
+   - Glama Connector: https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor
+   - Capability: Official SEC EDGAR Form 8-K Items 1.05 (cybersecurity breaches), 4.02 (financial restatements), 4.01 (auditor dismissal), 5.02 (C-suite exits), deterministic 0-100 risk score.
+2. B2B Vendor Security Posture & Buying-Signal Auditor
+   - Store Profile: https://apify.com/durative_hairstreak
+   - Capability: Zero-WAF DoH Vanta/SafeBase/Drata Trust Center detection, DMARC/SPF/CAA/MX, TLS, HTTP security headers, CDN, 12 tech-stack fingerprints, /pricing & /careers ATS detection.
+3. SaaS & Cloud Status Page SLA Uptime Monitor
+   - Capability: 22+ official Statuspage v2 APIs with contract-grade merged-interval 30d/90d SLA math.
+4. Open-Source Supply-Chain & CVE Risk Auditor
+   - Capability: AI coding agent pre-install gatekeeper querying OSV.dev, CISA KEV, and deps.dev OpenSSF Scorecard.
+5. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine
+   - Capability: Zero-hallucination deterministic Sharpe, Sortino, Calmar, Max Drawdown, VaR/CVaR, Half-Kelly sizing, 5x5 DCF sensitivity, XIRR/NPV loan schedules, and Black-Scholes Greeks + IV solver.
+
+## 3. Local-First Zero-Upload Privacy Tools (Privacy-as-a-Moat)
+- LocalLedger Bank Statement PDF to CSV / QuickBooks / Xero Converter: https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html
+  - Runs 100% inside the browser via Mozilla pdf.js Web Worker. Zero server uploads.
+  - Supports US (Chase, BofA, Wells Fargo, Mercury, Amex), UK (DD/MM/YYYY Barclays/HSBC), EU (comma-decimal 1.234,56 EUR N26/Deutsche Bank/Wise), AU (CR/DR), credit card sign flip, multi-month batch merge, and exact $0.00 running balance reconciliation.
+- LocalLedger Multi-CSV Deduplicator & QuickBooks/Xero Reformatter: https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/csv-cleaner.html
+- VendorSec 1-Click Chrome & Microsoft Edge Browser Extension (Manifest V3): https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html
+
+## 4. Category Benchmarks Summary Table
+- Fintech & HR: 12 vendors | Avg Score 85.4/100 | DMARC reject 100.0% | CAA 41.7% | Trust Portal 75.0%
+- Productivity SaaS: 18 vendors | Avg Score 78.1/100 | DMARC reject 72.2% | CAA 50.0% | Trust Portal 38.9%
+- Automation & GTM: 18 vendors | Avg Score 82.4/100 | DMARC reject 66.7% | CAA 38.9% | Trust Portal 72.2%
+- Cloud & DevOps: 26 vendors | Avg Score 79.9/100 | DMARC reject 65.4% | CAA 50.0% | Trust Portal 53.8%
+- Security & GRC: 14 vendors | Avg Score 80.7/100 | DMARC reject 64.3% | CAA 28.6% | Trust Portal 71.4%
+- AI & LLM: 24 vendors | Avg Score 80.5/100 | DMARC reject 45.8% | CAA 54.2% | Trust Portal 70.8%

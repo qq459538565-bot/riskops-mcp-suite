@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "2026-01",
+  "publisher": "RiskOps MCP Lab (durative_hairstreak)",
+  "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
+  "llmsTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms.txt",
+  "llmsFullTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
+  "servers": [
+    {
+      "name": "com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor",
+      "status": "public",
+      "transport": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
+      "storeUrl": "https://apify.com/durative_hairstreak/sec-8k-risk-signals",
+      "glamaUrl": "https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor",
+      "auth": "apify-bearer-token",
+      "pricing": "pay-per-event"
+    },
+    {
+      "name": "durative_hairstreak/b2b-vendor-security-auditor",
+      "status": "scheduled-public-2026-12",
+      "transport": "streamable-http",
+      "storeUrl": "https://apify.com/durative_hairstreak",
+      "freeWebDemo": "https://qq459538565-bot.github.io/riskops-mcp-suite/index.html"
+    },
+    {
+      "name": "durative_hairstreak/saas-status-sla-monitor",
+      "status": "scheduled-public-2026-12",
+      "transport": "streamable-http",
+      "storeUrl": "https://apify.com/durative_hairstreak"
+    },
+    {
+      "name": "durative_hairstreak/oss-dependency-risk-auditor",
+      "status": "scheduled-public-2026-12",
+      "transport": "streamable-http",
+      "storeUrl": "https://apify.com/durative_hairstreak"
+    },
+    {
+      "name": "durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "status": "scheduled-public-2026-12",
+      "transport": "streamable-http",
+      "storeUrl": "https://apify.com/durative_hairstreak"
+    }
+  ]
+}

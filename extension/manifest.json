@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "VendorSec 1-Click — B2B Security, DMARC & Vanta Trust Inspector",
+  "short_name": "VendorSec 1-Click",
+  "version": "1.0.0",
+  "description": "100% browser-local B2B security & buying-signal inspector: check DMARC, SPF, CAA, MX, Vanta/SafeBase/Drata Trust Centers, and page tech stack in 2 seconds.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://cloudflare-dns.com/*",
+    "https://dns.google/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "VendorSec 1-Click Security Audit",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

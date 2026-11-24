@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 State of SaaS &amp; AI Vendor DNS Security &amp; Trust Center Benchmark (112 Vendors Live Audit)</title>
+  <meta name="description" content="Original live DNS-over-HTTPS benchmark of 112 leading AI, Cloud, Fintech &amp; Security SaaS companies (2026-11-24). 100.0% of Fintech vs only 45.8% of AI vendors enforce DMARC p=reject. Free CSV &amp; JSON dataset." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Dataset","name":"2026 State of SaaS & AI Vendor DNS Security & Trust Center Benchmark (112 Vendors)","description":"Live DNS-over-HTTPS security posture dataset auditing 112 top AI, Cloud, Fintech, Security, and Productivity SaaS vendors across DMARC enforcement, SPF strictness, CAA records, Trust Center platforms (Vanta, SafeBase, Drata, Conveyor), and enterprise email providers. Updated weekly.","url":"https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html","dateModified":"2026-11-24","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Organization","name":"RiskOps MCP Lab","url":"https://qq459538565-bot.github.io/riskops-mcp-suite"},"distribution":[{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/snapshot.json"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage of leading AI & LLM SaaS vendors enforce strict DMARC p=reject in 2026?","acceptedAnswer":{"@type":"Answer","text":"In RiskOps MCP Lab's live DNS-over-HTTPS audit of 112 leading SaaS companies (2026-11-24), only 11 of 24 (45.8%) leading AI & LLM vendors enforce strict DMARC p=reject, compared to 12 of 12 (100.0%) Fintech & HR leaders."}},{"@type":"Question","name":"Which Trust Center GRC platform has the highest DNS-verified market share among top SaaS vendors in 2026?","acceptedAnswer":{"@type":"Answer","text":"Across 112 audited SaaS leaders, 70 (62.5%) expose a public DNS trust subdomain. Vanta leads with 29 vendors (25.9% of all 112, or 41.4% of detected Trust Centers), followed by SafeBase/Drata with 22 vendors (19.6%) and Custom/Self-Hosted portals with 14 (12.5%)."}},{"@type":"Question","name":"How often is the 112-SaaS DNS security benchmark refreshed?","acceptedAnswer":{"@type":"Answer","text":"An automated GitHub Actions pipeline re-queries public Cloudflare DNS-over-HTTPS records for all 112 domains every Sunday at 04:00 UTC and publishes updated JSON and CSV datasets without paywalls."}}]}]}</script>
+  <style>
+:root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 55%);color:var(--text);line-height:1.65;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 64px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:26px;}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#fff;text-decoration:none;}
+.badge{font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(56,189,248,.15);color:#7dd3fc;border:1px solid rgba(56,189,248,.35);font-weight:700;}
+nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+nav a:hover{color:#fff;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:18px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px;}
+.stat{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:16px;}
+.stat .k{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+.stat .v{font-size:28px;font-weight:800;margin:4px 0;}
+.stat .sub{font-size:12.5px;color:var(--muted);}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;}
+.pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+.pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+.pill.CYAN{background:rgba(56,189,248,.16);color:#7dd3fc;border:1px solid rgba(56,189,248,.35);}
+.cta{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:700;}
+.cta-green{background:linear-gradient(135deg,#059669,#10b981);}
+.cta-sec{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:600;border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:12px;}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border);}
+th{color:var(--muted);font-size:11.5px;text-transform:uppercase;}
+.bar-wrap{width:100%;height:8px;background:#09101f;border-radius:999px;overflow:hidden;border:1px solid var(--border);margin-top:5px;}
+.bar{height:100%;background:linear-gradient(90deg,#06b6d4,#10b981);}
+a.link{color:var(--accent);text-decoration:none;}
+a.link:hover{text-decoration:underline;}
+.disclosure{font-size:12px;color:var(--muted);border-left:3px solid var(--border);padding-left:10px;margin-top:14px;}
+footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../index.html">RiskOps MCP Lab <span class="badge">Live Open Research · 2026-11-24</span></a>
+      <nav>
+        <a href="../vendors/index.html">112 SaaS Directory</a>
+        <a href="../vendors/compare.html">Side-by-Side Compare</a>
+        <a href="../extension/index.html">Chrome/Edge Extension</a>
+        <a href="../bank-converter/index.html">LocalLedger PDF→CSV</a>
+        <a href="../templates/index.html">n8n Templates</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <span class="pill CYAN">Original Primary Benchmark · Updated Weekly via Public DoH</span>
+      <h1 style="margin:12px 0 8px;font-size:clamp(26px,3.8vw,38px);line-height:1.18;">2026 State of SaaS &amp; AI Vendor Security: 100.0% of Fintech Leaders Enforce DMARC Reject — Only 45.8% of Top AI Companies Do</h1>
+      <p style="color:var(--muted);font-size:15.5px;max-width:860px;">
+        We continuously audit public DNS-over-HTTPS records (<code>DMARC</code>, <code>SPF</code>, <code>CAA</code>, <code>MX</code>, and <code>trust.* / security.*</code> CNAMEs) across <strong>112 leading B2B SaaS &amp; AI vendors</strong>. Every metric below is reproducible, unpaywalled, and refreshed every Sunday at 04:00 UTC.
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+        <a class="cta" href="./saas-security-benchmark-2026.csv" download>Download Full CSV Dataset (112 Rows) &darr;</a>
+        <a class="cta-sec" href="../vendors/snapshot.json" target="_blank">Open Raw JSON API</a>
+        <a class="cta-green cta" href="../extension/index.html">Install 1-Click Chrome/Edge Inspector &rarr;</a>
+      </div>
+
+      <div class="grid">
+        <div class="stat">
+          <div class="k">AI &amp; LLM DMARC p=reject</div>
+          <div class="v" style="color:var(--amber);">45.8%</div>
+          <div class="sub">11 of 24 top AI vendors (vs 100.0% in Fintech)</div>
+        </div>
+        <div class="stat">
+          <div class="k">Overall Strict DMARC</div>
+          <div class="v" style="color:var(--accent);">66.1%</div>
+          <div class="sub">74/112 reject · 36 quarantine · 2 none/missing</div>
+        </div>
+        <div class="stat">
+          <div class="k">Vanta vs SafeBase/Drata</div>
+          <div class="v" style="color:var(--green);">29 vs 22</div>
+          <div class="sub">70/112 (62.5%) expose a public Trust Center subdomain</div>
+        </div>
+        <div class="stat">
+          <div class="k">DNS CAA Adoption</div>
+          <div class="v">45.5%</div>
+          <div class="sub">Only 51/112 lock down SSL certificate issuance (28.6% in Security!)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">1. Category Breakdown: The AI Security Maturity Gap</h2>
+      <p style="color:var(--muted);font-size:14px;">Fintech &amp; HR vendors lead every email anti-spoofing benchmark, while hyper-growth AI infrastructure companies trail behind on strict <code>p=reject</code> DMARC enforcement despite handling sensitive enterprise prompts.</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr><th>SaaS Sector</th><th>Vendors</th><th>Avg Score</th><th>DMARC p=reject</th><th>DNS CAA Present</th><th>Public Trust Center</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Fintech &amp; HR</strong></td>
+              <td>12</td>
+              <td><strong>85.4</strong> / 100</td>
+              <td>12/12 (<strong>100.0%</strong>)<div class="bar-wrap"><div class="bar" style="width:100.0%"></div></div></td>
+              <td>5/12 (41.7%)</td>
+              <td>9/12 (75.0%)</td>
+            </tr>
+<tr>
+              <td><strong>Productivity SaaS</strong></td>
+              <td>18</td>
+              <td><strong>78.1</strong> / 100</td>
+              <td>13/18 (<strong>72.2%</strong>)<div class="bar-wrap"><div class="bar" style="width:72.2%"></div></div></td>
+              <td>9/18 (50.0%)</td>
+              <td>7/18 (38.9%)</td>
+            </tr>
+<tr>
+              <td><strong>Automation &amp; GTM</strong></td>
+              <td>18</td>
+              <td><strong>82.4</strong> / 100</td>
+              <td>12/18 (<strong>66.7%</strong>)<div class="bar-wrap"><div class="bar" style="width:66.7%"></div></div></td>
+              <td>7/18 (38.9%)</td>
+              <td>13/18 (72.2%)</td>
+            </tr>
+<tr>
+              <td><strong>Cloud &amp; DevOps</strong></td>
+              <td>26</td>
+              <td><strong>79.9</strong> / 100</td>
+              <td>17/26 (<strong>65.4%</strong>)<div class="bar-wrap"><div class="bar" style="width:65.4%"></div></div></td>
+              <td>13/26 (50.0%)</td>
+              <td>14/26 (53.8%)</td>
+            </tr>
+<tr>
+              <td><strong>Security &amp; GRC</strong></td>
+              <td>14</td>
+              <td><strong>80.7</strong> / 100</td>
+              <td>9/14 (<strong>64.3%</strong>)<div class="bar-wrap"><div class="bar" style="width:64.3%"></div></div></td>
+              <td>4/14 (28.6%)</td>
+              <td>10/14 (71.4%)</td>
+            </tr>
+<tr>
+              <td><strong>AI &amp; LLM</strong></td>
+              <td>24</td>
+              <td><strong>80.5</strong> / 100</td>
+              <td>11/24 (<strong>45.8%</strong>)<div class="bar-wrap"><div class="bar" style="width:45.8%"></div></div></td>
+              <td>13/24 (54.2%)</td>
+              <td>17/24 (70.8%)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">2. Trust Center GRC Market Share &amp; Email Stack Concentration</h2>
+      <div class="grid">
+        <div class="stat">
+          <div class="k">Vanta (DNS CNAME Verified)</div>
+          <div class="v">25.9%</div>
+          <div class="sub">29 companies · <a class="link" href="../vendors/vanta-customers.html">View Vanta list &rarr;</a></div>
+        </div>
+        <div class="stat">
+          <div class="k">SafeBase &amp; Drata</div>
+          <div class="v">19.6%</div>
+          <div class="sub">22 companies · <a class="link" href="../vendors/safebase-drata-customers.html">View list &rarr;</a></div>
+        </div>
+        <div class="stat">
+          <div class="k">Custom / Self-Hosted Trust</div>
+          <div class="v">12.5%</div>
+          <div class="sub">14 enterprise portals (Stripe, Okta, GitHub, etc.)</div>
+        </div>
+        <div class="stat">
+          <div class="k">Google Workspace MX Dominance</div>
+          <div class="v">85.7%</div>
+          <div class="sub">96/112 Google Workspace · 11 Proofpoint · 2 M365</div>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin-top:14px;">
+        <strong>Key Takeaway for RevOps &amp; Security Teams:</strong> 42 of 112 (37.5%) leading vendors still have no detectable public DNS trust subdomain, and 38 of 112 (33.9%) have not enforced strict <code>DMARC p=reject</code> (<a class="link" href="../vendors/dmarc-security-gaps.html">view full DMARC gap directory &rarr;</a>). Only 39/112 (34.8%) enforce strict SPF hard-fail (<code>-all</code>).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">3. Audit Any Prospect Live or Automate Weekly Vendor Monitoring</h2>
+      <div class="grid">
+        <div class="stat">
+          <span class="pill GREEN">Free Local-First Tool</span>
+          <h3 style="margin:10px 0 6px;font-size:16px;">VendorSec 1-Click Browser Extension</h3>
+          <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">Inspect DMARC, SPF, CAA, Vanta/Drata Trust Center &amp; page tech stack on any company site in 2 seconds. 100% browser-local.</p>
+          <a class="cta" href="../extension/index.html">Get Chrome / Edge Extension &rarr;</a>
+        </div>
+        <div class="stat">
+          <span class="pill CYAN">Hosted AI Agent MCP</span>
+          <h3 style="margin:10px 0 6px;font-size:16px;">Automate Bulk Audits in Claude / n8n</h3>
+          <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">Run our zero-proxy Apify MCP servers inside Claude Desktop, Cursor, Clay, or Make.com for continuous vendor TPRM.</p>
+          <a class="cta-sec" data-partner="apify" href="https://apify.com/durative_hairstreak" target="_blank" rel="noopener">Open Apify MCP Suite &rarr;</a>
+        </div>
+        <div class="stat">
+          <span class="pill AMBER">Compliance Stack</span>
+          <h3 style="margin:10px 0 6px;font-size:16px;">Launching a Public Trust Center?</h3>
+          <p style="font-size:13px;color:var(--muted);margin:0 0 12px;">See how Vanta leads 41.4% of detected SaaS Trust Centers and connect automated compliance alerts via Make.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <a class="cta-sec" data-partner="vanta" href="https://www.vanta.com/" target="_blank" rel="noopener">Explore Vanta</a>
+            <a class="cta-sec" data-partner="make" href="https://www.make.com/" target="_blank" rel="noopener">Explore Make.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="disclosure">
+        <strong>Methodology &amp; Transparency:</strong> All metrics come from public DNS records resolved via Cloudflare DoH on 2026-11-24. Some outbound partner links may earn a referral commission at zero extra cost to you; rankings and scores are 100% deterministic and never influenced by sponsorships.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:19px;">4. How to Cite This Dataset (Human &amp; AI Agents)</h2>
+      <pre style="background:#09101f;border:1px solid var(--border);border-radius:10px;padding:14px;overflow-x:auto;font-size:12.5px;color:#cbd5e1;">RiskOps MCP Lab (2026). "2026 State of SaaS &amp; AI Vendor DNS Security Benchmark (112 Vendors)."
+Live Report: https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html
+Open CSV:    https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv
+Open JSON:   https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/snapshot.json
+Agent Card:  https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json</pre>
+    </section>
+
+    <footer>
+      <span>RiskOps MCP Lab · Open Security Benchmark (CC BY 4.0)</span>
+      <span><a class="link" href="../llms-full.txt">llms-full.txt</a> · <a class="link" href="../.well-known/agent-card.json">A2A Agent Card</a> · <a class="link" href="../vendors/index.html">Browse All 112 Audits</a></span>
+    </footer>
+  </div>
+  <script src="../assets/monetization-config.js" defer></script>
+</body>
+</html>

@@ -68,3 +68,11 @@
 - [LocalLedger Multi-CSV Deduplicator & QuickBooks/Xero Reformatter](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/csv-cleaner.html)
 - [Side-by-Side 112 SaaS Security Comparator](https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/compare.html)
 - [Free 1-Click n8n & Clay JSON Automation Templates](https://qq459538565-bot.github.io/riskops-mcp-suite/templates/index.html)
+
+## Original 2026 Benchmark Research, Open Datasets & Agent Discovery
+- [2026 State of SaaS & AI Vendor Security Report (112 Live Audits)](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html)
+- [Open CSV Benchmark Dataset (112 SaaS Companies)](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv)
+- [VendorSec 1-Click Chrome & Edge Browser Extension (Manifest V3)](https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html)
+- [Full Machine-Readable LLM Knowledge Manifest (llms-full.txt)](https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt)
+- [Google A2A Agent Card (/.well-known/agent-card.json)](https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json)
+- [MCP Server Discovery Manifest (/.well-known/mcp.json)](https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/mcp.json)

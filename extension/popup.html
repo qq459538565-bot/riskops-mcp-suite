@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VendorSec 1-Click Inspector</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <img src="icons/icon32.png" alt="VendorSec" class="logo" />
+        <div>
+          <div class="title">VendorSec 1-Click</div>
+          <div class="sub">Local-First DoH &amp; Trust Inspector</div>
+        </div>
+      </div>
+      <span id="tierBadge" class="tier-pill">FREE</span>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="single">Live Audit</button>
+      <button class="tab" data-tab="bulk">Bulk CSV</button>
+      <button class="tab" data-tab="pro">Pro &amp; White-Label</button>
+    </nav>
+
+    <!-- TAB 1: SINGLE LIVE AUDIT -->
+    <section id="pane-single" class="pane">
+      <div class="search-row">
+        <input id="domainInput" type="text" placeholder="domain.com (auto-fills active tab)" />
+        <button id="scanBtn" class="btn-primary">Scan</button>
+      </div>
+
+      <div id="statusMsg" class="status">Detecting active tab domain...</div>
+
+      <div id="resultBox" class="hidden">
+        <div class="score-card">
+          <div>
+            <div id="resDomain" class="res-domain">example.com</div>
+            <div id="resMeta" class="res-meta">Audited today · Public DoH</div>
+          </div>
+          <div id="resScoreBadge" class="score-badge GREEN">95 · A+</div>
+        </div>
+
+        <div class="grid">
+          <div class="cell">
+            <div class="k">Trust Center / GRC</div>
+            <div id="resGrc" class="v">—</div>
+          </div>
+          <div class="cell">
+            <div class="k">DMARC Policy</div>
+            <div id="resDmarc" class="v">—</div>
+          </div>
+          <div class="cell">
+            <div class="k">SPF / MX Stack</div>
+            <div id="resEmail" class="v">—</div>
+          </div>
+          <div class="cell">
+            <div class="k">SSL DNS CAA</div>
+            <div id="resCaa" class="v">—</div>
+          </div>
+        </div>
+
+        <div id="signalsBox" class="card-mini hidden">
+          <div class="k">Active Page GTM &amp; Hiring Signals</div>
+          <div id="resSignals" class="signals-txt">—</div>
+        </div>
+
+        <div id="flagsBox" class="card-mini">
+          <div class="k">Security Findings</div>
+          <ul id="resFlags" class="flags-list"></ul>
+        </div>
+
+        <div class="actions">
+          <button id="copyBriefBtn" class="btn-sec">Copy Markdown Brief</button>
+          <button id="printReportBtn" class="btn-sec">Export PDF Report</button>
+        </div>
+
+        <div class="partner-strip">
+          <span>Need 1,000+ domains in Claude/n8n?</span>
+          <a href="https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html" target="_blank" rel="noopener">112-SaaS Benchmark &amp; API &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: BULK CSV AUDITOR -->
+    <section id="pane-bulk" class="pane hidden">
+      <div class="label-sm">Paste prospect domains (1 per line — Free: up to 3, Pro: up to 50)</div>
+      <textarea id="bulkInput" rows="5" placeholder="openai.com&#10;anthropic.com&#10;stripe.com"></textarea>
+      <div class="actions">
+        <button id="bulkRunBtn" class="btn-primary">Run Batch DoH Audit</button>
+        <button id="bulkExportBtn" class="btn-sec hidden">Download CSV</button>
+      </div>
+      <div id="bulkStatus" class="status"></div>
+      <div id="bulkTableWrap" class="bulk-wrap"></div>
+    </section>
+
+    <!-- TAB 3: PRO & WHITE-LABEL -->
+    <section id="pane-pro" class="pane hidden">
+      <div class="card-mini">
+        <div class="k">MSP White-Label Agency Header (Pro)</div>
+        <input id="agencyInput" type="text" placeholder="e.g., Acme Cyber Advisory LLC" style="width:100%;margin-top:6px;" />
+      </div>
+      <div class="card-mini">
+        <div class="k">Pro Lifetime License Key ($29 One-Time)</div>
+        <div class="search-row" style="margin-top:6px;">
+          <input id="licenseInput" type="text" placeholder="VSEC-XXXX-XXXX-XXXX" />
+          <button id="saveProBtn" class="btn-primary">Activate</button>
+        </div>
+        <div id="proMsg" class="status" style="margin-top:6px;">Unlocks 50-domain batch CSV audits + 100% custom agency PDF headers.</div>
+      </div>
+      <div class="actions">
+        <a class="btn-primary" style="text-align:center;text-decoration:none;flex:1;" href="https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html" target="_blank" rel="noopener">Get Pro Key ($29 Lifetime)</a>
+      </div>
+    </section>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

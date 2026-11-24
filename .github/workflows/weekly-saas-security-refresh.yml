@@ -19,7 +19,9 @@ jobs:
           node-version: 22
 
       - name: Re-audit all 112 SaaS & AI domains live via Cloudflare DoH
-        run: node scripts/weekly-refresh-vendors.mjs
+        run: |
+          node scripts/weekly-refresh-vendors.mjs
+          node scripts/build-ai-native-geo-assets.mjs
 
       - name: Commit updated live security benchmark & sitemap
         run: |

@@ -1,0 +1,113 @@
+Company,Domain,Category,Score_0_100,Grade,DMARC_Policy,SPF_Present,SPF_Strict_Hardfail,CAA_Present,GRC_Trust_Platform,Trust_Subdomain,Email_Provider,Audited_Date,Live_Audit_URL
+OpenAI,openai.com,AI & LLM,100,A+,reject,true,true,true,SafeBase (Drata),trust.openai.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/openai-com.html
+Anthropic,anthropic.com,AI & LLM,95,A+,reject,true,false,true,Vanta,trust.anthropic.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/anthropic-com.html
+Perplexity AI,perplexity.ai,AI & LLM,95,A+,reject,true,false,true,Vanta,trust.perplexity.ai,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/perplexity-ai.html
+Mistral AI,mistral.ai,AI & LLM,67,C,quarantine,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/mistral-ai.html
+Cursor,cursor.com,AI & LLM,77,B,quarantine,true,false,false,Vanta,trust.cursor.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/cursor-com.html
+Hugging Face,huggingface.co,AI & LLM,43,D,none,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/huggingface-co.html
+Cohere,cohere.com,AI & LLM,77,B,quarantine,true,false,false,Vanta,trust.cohere.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/cohere-com.html
+Groq,groq.com,AI & LLM,95,A+,reject,true,false,true,Vanta,trust.groq.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/groq-com.html
+Together AI,together.ai,AI & LLM,87,A,quarantine,true,false,true,Vanta,trust.together.ai,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/together-ai.html
+Replicate,replicate.com,AI & LLM,57,C,quarantine,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/replicate-com.html
+ElevenLabs,elevenlabs.io,AI & LLM,82,A,quarantine,true,true,false,Vanta,compliance.elevenlabs.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/elevenlabs-io.html
+Pinecone,pinecone.io,AI & LLM,92,A+,quarantine,true,true,true,Vanta,trust.pinecone.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/pinecone-io.html
+Weaviate,weaviate.io,AI & LLM,67,C,quarantine,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/weaviate-io.html
+LangChain,langchain.com,AI & LLM,95,A+,reject,true,false,true,Vanta,trust.langchain.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/langchain-com.html
+Scale AI,scale.com,AI & LLM,77,B,quarantine,true,false,false,Vanta,trust.scale.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/scale-com.html
+Weights & Biases,wandb.ai,AI & LLM,75,B,reject,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/wandb-ai.html
+Modal,modal.com,AI & LLM,100,A+,reject,true,true,true,Vanta,trust.modal.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/modal-com.html
+Firecrawl,firecrawl.dev,AI & LLM,77,B,quarantine,true,false,false,Vanta,trust.firecrawl.dev,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/firecrawl-dev.html
+Tavily,tavily.com,AI & LLM,87,A,quarantine,true,false,true,Vanta,trust.tavily.com,Microsoft 365,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/tavily-com.html
+Exa,exa.ai,AI & LLM,85,A,reject,true,false,false,Vanta,trust.exa.ai,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/exa-ai.html
+Browserbase,browserbase.com,AI & LLM,85,A,reject,true,false,false,Vanta,trust.browserbase.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/browserbase-com.html
+Midjourney,midjourney.com,AI & LLM,57,C,quarantine,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/midjourney-com.html
+Vapi,vapi.ai,AI & LLM,95,A+,reject,true,false,true,SafeBase (Drata),security.vapi.ai,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/vapi-ai.html
+Replit,replit.com,AI & LLM,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/replit-com.html
+GitHub,github.com,Cloud & DevOps,67,C,quarantine,true,false,true,None Detected via DNS,,Microsoft 365,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/github-com.html
+GitLab,gitlab.com,Cloud & DevOps,95,A+,reject,true,false,true,SafeBase (Drata),trust.gitlab.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/gitlab-com.html
+Cloudflare,cloudflare.com,Cloud & DevOps,80,B,reject,true,true,true,None Detected via DNS,,Custom / Other MX,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/cloudflare-com.html
+Vercel,vercel.com,Cloud & DevOps,87,A,quarantine,true,false,true,SafeBase (Drata),security.vercel.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/vercel-com.html
+Netlify,netlify.com,Cloud & DevOps,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/netlify-com.html
+Supabase,supabase.com,Cloud & DevOps,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/supabase-com.html
+Datadog,datadoghq.com,Cloud & DevOps,85,A,reject,true,false,false,SafeBase (Drata),trust.datadoghq.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/datadoghq-com.html
+Sentry,sentry.io,Cloud & DevOps,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/sentry-io.html
+Grafana Labs,grafana.com,Cloud & DevOps,77,B,quarantine,true,false,false,SafeBase (Drata),trust.grafana.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/grafana-com.html
+PagerDuty,pagerduty.com,Cloud & DevOps,75,B,reject,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/pagerduty-com.html
+Elastic,elastic.co,Cloud & DevOps,57,C,quarantine,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/elastic-co.html
+MongoDB,mongodb.com,Cloud & DevOps,90,A,reject,true,true,false,Conveyor,trust.mongodb.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/mongodb-com.html
+Redis,redis.io,Cloud & DevOps,90,A,reject,true,true,false,SafeBase (Drata),trust.redis.io,Mimecast Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/redis-io.html
+Snowflake,snowflake.com,Cloud & DevOps,90,A,reject,true,true,false,Vanta,trust.snowflake.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/snowflake-com.html
+Databricks,databricks.com,Cloud & DevOps,95,A+,reject,true,false,true,Custom / Self-Hosted Trust Subdomain,trust.databricks.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/databricks-com.html
+Confluent,confluent.io,Cloud & DevOps,70,B,reject,true,true,false,None Detected via DNS,,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/confluent-io.html
+ClickHouse,clickhouse.com,Cloud & DevOps,87,A,quarantine,true,false,true,SafeBase (Drata),trust.clickhouse.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/clickhouse-com.html
+Neon,neon.tech,Cloud & DevOps,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/neon-tech.html
+PlanetScale,planetscale.com,Cloud & DevOps,85,A,reject,true,false,false,Vanta,trust.planetscale.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/planetscale-com.html
+Upstash,upstash.com,Cloud & DevOps,82,A,quarantine,true,true,false,Vanta,trust.upstash.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/upstash-com.html
+Fly.io,fly.io,Cloud & DevOps,57,C,quarantine,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/fly-io.html
+Render,render.com,Cloud & DevOps,95,A+,reject,true,false,true,Custom / Self-Hosted Trust Subdomain,trust.render.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/render-com.html
+Railway,railway.com,Cloud & DevOps,82,A,quarantine,true,true,false,SafeBase (Drata),trust.railway.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/railway-com.html
+Postman,postman.com,Cloud & DevOps,87,A,quarantine,true,false,true,SafeBase (Drata),security.postman.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/postman-com.html
+LaunchDarkly,launchdarkly.com,Cloud & DevOps,75,B,reject,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/launchdarkly-com.html
+Resend,resend.com,Cloud & DevOps,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/resend-com.html
+Vanta,vanta.com,Security & GRC,85,A,reject,true,false,false,Vanta,trust.vanta.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/vanta-com.html
+Drata,drata.com,Security & GRC,85,A,reject,true,false,false,SafeBase (Drata),trust.drata.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/drata-com.html
+Secureframe,secureframe.com,Security & GRC,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/secureframe-com.html
+Sprinto,sprinto.com,Security & GRC,77,B,quarantine,true,false,false,Custom / Self-Hosted Trust Subdomain,trust.sprinto.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/sprinto-com.html
+Wiz,wiz.io,Security & GRC,90,A,reject,true,true,false,SafeBase (Drata),trust.wiz.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/wiz-io.html
+Snyk,snyk.io,Security & GRC,87,A,quarantine,true,false,true,Vanta,trust.snyk.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/snyk-io.html
+CrowdStrike,crowdstrike.com,Security & GRC,85,A,reject,true,false,false,SafeBase (Drata),trust.crowdstrike.com,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/crowdstrike-com.html
+Okta,okta.com,Security & GRC,100,A+,reject,true,true,true,Custom / Self-Hosted Trust Subdomain,trust.okta.com,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/okta-com.html
+Auth0,auth0.com,Security & GRC,82,A,quarantine,true,true,false,Custom / Self-Hosted Trust Subdomain,trust.auth0.com,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/auth0-com.html
+Clerk,clerk.com,Security & GRC,85,A,reject,true,false,false,Drata,trust.clerk.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/clerk-com.html
+WorkOS,workos.com,Security & GRC,85,A,reject,true,false,false,Vanta,trust.workos.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/workos-com.html
+1Password,1password.com,Security & GRC,67,C,quarantine,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/1password-com.html
+Tailscale,tailscale.com,Security & GRC,75,B,reject,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/tailscale-com.html
+Stytch,stytch.com,Security & GRC,62,C,quarantine,true,true,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/stytch-com.html
+Stripe,stripe.com,Fintech & HR,95,A+,reject,true,false,true,Custom / Self-Hosted Trust Subdomain,trust.stripe.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/stripe-com.html
+Brex,brex.com,Fintech & HR,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/brex-com.html
+Ramp,ramp.com,Fintech & HR,100,A+,reject,true,true,true,SafeBase (Drata),trust.ramp.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/ramp-com.html
+Mercury,mercury.com,Fintech & HR,95,A+,reject,true,false,true,Vanta,trust.mercury.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/mercury-com.html
+Plaid,plaid.com,Fintech & HR,85,A,reject,true,false,false,Custom / Self-Hosted Trust Subdomain,security.plaid.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/plaid-com.html
+Wise,wise.com,Fintech & HR,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/wise-com.html
+Deel,deel.com,Fintech & HR,95,A+,reject,true,false,true,Custom / Self-Hosted Trust Subdomain,trust.deel.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/deel-com.html
+Rippling,rippling.com,Fintech & HR,85,A,reject,true,false,false,Whistic,trust.rippling.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/rippling-com.html
+Gusto,gusto.com,Fintech & HR,70,B,reject,true,true,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/gusto-com.html
+Carta,carta.com,Fintech & HR,95,A+,reject,true,false,true,Conveyor,trust.carta.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/carta-com.html
+Paddle,paddle.com,Fintech & HR,90,A,reject,true,true,false,Vanta,trust.paddle.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/paddle-com.html
+Shopify,shopify.com,Fintech & HR,85,A,reject,true,false,false,Custom / Self-Hosted Trust Subdomain,trust.shopify.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/shopify-com.html
+n8n,n8n.io,Automation & GTM,100,A+,reject,true,true,true,SafeBase (Drata),trust.n8n.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/n8n-io.html
+Make,make.com,Automation & GTM,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/make-com.html
+Zapier,zapier.com,Automation & GTM,100,A+,reject,true,true,true,Conveyor,trust.zapier.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/zapier-com.html
+Clay,clay.com,Automation & GTM,73,B,none,true,false,true,Vanta,trust.clay.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/clay-com.html
+Apify,apify.com,Automation & GTM,100,A+,reject,true,true,true,Vanta,trust.apify.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/apify-com.html
+Apollo.io,apollo.io,Automation & GTM,95,A+,reject,true,false,true,SafeBase (Drata),trust.apollo.io,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/apollo-io.html
+HubSpot,hubspot.com,Automation & GTM,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/hubspot-com.html
+Salesforce,salesforce.com,Automation & GTM,85,A,reject,true,false,false,Custom / Self-Hosted Trust Subdomain,trust.salesforce.com,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/salesforce-com.html
+Gong,gong.io,Automation & GTM,87,A,quarantine,true,false,true,SafeBase (Drata),trust.gong.io,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/gong-io.html
+Intercom,intercom.com,Automation & GTM,82,A,quarantine,true,true,false,Vanta,trust.intercom.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/intercom-com.html
+Zendesk,zendesk.com,Automation & GTM,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/zendesk-com.html
+PostHog,posthog.com,Automation & GTM,62,C,quarantine,true,true,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/posthog-com.html
+Mixpanel,mixpanel.com,Automation & GTM,90,A,reject,true,true,false,Vanta,trust.mixpanel.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/mixpanel-com.html
+Amplitude,amplitude.com,Automation & GTM,82,A,quarantine,true,true,false,Custom / Self-Hosted Trust Subdomain,trust.amplitude.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/amplitude-com.html
+Fivetran,fivetran.com,Automation & GTM,90,A,reject,true,true,false,SafeBase (Drata),trust.fivetran.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/fivetran-com.html
+Airbyte,airbyte.com,Automation & GTM,57,C,quarantine,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/airbyte-com.html
+Twilio,twilio.com,Automation & GTM,85,A,reject,true,false,false,Custom / Self-Hosted Trust Subdomain,trust.twilio.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/twilio-com.html
+Instantly,instantly.ai,Automation & GTM,85,A,reject,true,false,false,Vanta,trust.instantly.ai,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/instantly-ai.html
+Notion,notion.so,Productivity SaaS,57,C,quarantine,true,false,false,None Detected via DNS,,No Public MX,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/notion-so.html
+Linear,linear.app,Productivity SaaS,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/linear-app.html
+Figma,figma.com,Productivity SaaS,92,A+,quarantine,true,true,true,Conveyor,compliance.figma.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/figma-com.html
+Slack,slack.com,Productivity SaaS,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/slack-com.html
+Zoom,zoom.us,Productivity SaaS,75,B,reject,true,false,true,None Detected via DNS,,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/zoom-us.html
+Atlassian,atlassian.com,Productivity SaaS,75,B,reject,true,false,true,None Detected via DNS,,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/atlassian-com.html
+Airtable,airtable.com,Productivity SaaS,65,C,reject,true,false,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/airtable-com.html
+Miro,miro.com,Productivity SaaS,87,A,quarantine,true,false,true,Custom / Self-Hosted Trust Subdomain,trust.miro.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/miro-com.html
+Canva,canva.com,Productivity SaaS,90,A,reject,true,true,false,SafeBase (Drata),trust.canva.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/canva-com.html
+Loom,loom.com,Productivity SaaS,70,B,reject,true,true,false,None Detected via DNS,,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/loom-com.html
+Calendly,calendly.com,Productivity SaaS,67,C,quarantine,true,false,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/calendly-com.html
+ClickUp,clickup.com,Productivity SaaS,100,A+,reject,true,true,true,SafeBase (Drata),security.clickup.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/clickup-com.html
+Asana,asana.com,Productivity SaaS,62,C,quarantine,true,true,false,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/asana-com.html
+Monday.com,monday.com,Productivity SaaS,90,A,reject,true,true,false,SafeBase (Drata),trust.monday.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/monday-com.html
+Dropbox,dropbox.com,Productivity SaaS,75,B,reject,true,false,true,None Detected via DNS,,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/dropbox-com.html
+DocuSign,docusign.com,Productivity SaaS,90,A,reject,true,true,false,Custom / Self-Hosted Trust Subdomain,trust.docusign.com,Proofpoint Enterprise,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/docusign-com.html
+Coda,coda.io,Productivity SaaS,80,B,reject,true,true,true,None Detected via DNS,,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/coda-io.html
+Raycast,raycast.com,Productivity SaaS,85,A,reject,true,false,false,Vanta,trust.raycast.com,Google Workspace,2026-11-24,https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/raycast-com.html
