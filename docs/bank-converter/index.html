@@ -80,6 +80,9 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
             <option value="DMY">UK / EU / AU (DD/MM/YYYY)</option>
           </select>
         </label>
+        <label style="font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer;">
+          <input id="flipSignsChk" type="checkbox" style="padding:0;" /> Flip Signs (Amex/Credit Card)
+        </label>
         <input id="openBalInput" type="text" placeholder="Optional Opening Bal" style="width:155px;" />
         <input id="closeBalInput" type="text" placeholder="Optional Closing Bal" style="width:155px;" />
         <button id="reparseBtn" class="cta-sec" type="button" style="display:none;">Re-Run Reconciliation</button>
@@ -264,9 +267,10 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
 
     function runParse() {
       const dateOrder = document.getElementById('dateOrder').value;
+      const flipSigns = Boolean(document.getElementById('flipSignsChk')?.checked);
       const openVal = parseFloat(document.getElementById('openBalInput').value);
       const closeVal = parseFloat(document.getElementById('closeBalInput').value);
-      const opts = { dateOrder };
+      const opts = { dateOrder, flipSigns };
       if (Number.isFinite(openVal)) opts.openingBalance = openVal;
       if (Number.isFinite(closeVal)) opts.closingBalance = closeVal;
       renderResult(parseBankStatementLines(currentLines, opts));
@@ -333,6 +337,7 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
 
     document.getElementById('reparseBtn').addEventListener('click', runParse);
     document.getElementById('dateOrder').addEventListener('change', () => { if (currentLines.length) runParse(); });
+    document.getElementById('flipSignsChk')?.addEventListener('change', () => { if (currentLines.length) runParse(); });
 
     document.querySelectorAll('#exportBar button[data-fmt]').forEach(btn => {
       btn.addEventListener('click', () => {

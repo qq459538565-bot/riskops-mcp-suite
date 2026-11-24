@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Side-by-Side SaaS Security &amp; Trust Center Comparator (112 Vendors · 2026 Live DNS)</title>
+  <meta name="description" content="Compare any 2 of 112 leading SaaS &amp; AI vendors side-by-side on Vanta/SafeBase/Drata Trust Center adoption, DMARC p=reject, SPF, CAA, email stack &amp; security grade. Free MSP PDF export." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/compare.html" />
+  <style>
+    :root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 52%);color:var(--text);line-height:1.6;}
+    .wrap{max-width:1060px;margin:0 auto;padding:24px 20px 64px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+    .brand{font-weight:800;font-size:17px;color:#fff;text-decoration:none;}
+    nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:13px;}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+    nav a:hover{color:#fff;}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:18px;}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:14px 0;}
+    select{flex:1;min-width:220px;background:#09101f;border:1px solid var(--border);color:#fff;padding:10px 12px;border-radius:10px;font-size:14px;}
+    .cta{display:inline-flex;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13px;font-weight:700;border:none;cursor:pointer;}
+    .chip{background:#09101f;border:1px solid var(--border);color:var(--muted);padding:6px 11px;border-radius:8px;font-size:12px;cursor:pointer;}
+    .chip:hover{border-color:var(--accent);color:#fff;}
+    table{width:100%;border-collapse:collapse;font-size:14px;margin-top:14px;}
+    th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--border);}
+    th{color:var(--muted);font-size:11.5px;text-transform:uppercase;}
+    .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;}
+    .pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+    .pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+    .pill.RED{background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);}
+    code{background:#09101f;border:1px solid var(--border);padding:2px 6px;border-radius:6px;font-size:12px;color:#93c5fd;}
+    a.link{color:var(--accent);text-decoration:none;}
+    footer{margin-top:30px;border-top:1px solid var(--border);padding-top:16px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;}
+    @media print{body{background:#fff!important;color:#0f172a!important;}header,.no-print{display:none!important;}.card{border:1px solid #cbd5e1!important;background:#fff!important;}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="../index.html">RiskOps MCP Lab</a>
+      <nav>
+        <a href="./index.html">112 SaaS Directory</a>
+        <a href="./compare.html" style="color:#fff;">Side-by-Side Comparator</a>
+        <a href="../bank-converter/index.html">Bank PDF&rarr;CSV</a>
+        <a href="../templates/index.html">n8n Templates</a>
+        <a class="cta" href="https://apify.com/durative_hairstreak" target="_blank" rel="noopener">Bulk API &rarr;</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h1 style="margin:0 0 6px;font-size:clamp(22px,3.5vw,32px);">Side-by-Side SaaS Security &amp; Trust Center Comparator</h1>
+      <p style="color:var(--muted);margin:0 0 12px;font-size:14.5px;">Instantly compare any 2 of our 112 auto-refreshed SaaS &amp; AI vendors for TPRM procurement reviews, security sales battlecards, or MSP client QBRs.</p>
+      <div class="row no-print">
+        <select id="selA"></select>
+        <strong style="color:var(--muted);">VS</strong>
+        <select id="selB"></select>
+        <button class="cta" onclick="window.print()">Print / Save PDF Comparison</button>
+      </div>
+      <div class="row no-print" style="margin-top:4px;gap:8px;">
+        <span style="font-size:12px;color:var(--muted);">Popular comparisons:</span>
+        <button class="chip" onclick="pickPair('openai-com','anthropic-com')">OpenAI vs Anthropic</button>
+        <button class="chip" onclick="pickPair('vanta-com','drata-com')">Vanta vs Drata</button>
+        <button class="chip" onclick="pickPair('stripe-com','paddle-com')">Stripe vs Paddle</button>
+        <button class="chip" onclick="pickPair('vercel-com','netlify-com')">Vercel vs Netlify</button>
+        <button class="chip" onclick="pickPair('notion-so','linear-app')">Notion vs Linear</button>
+      </div>
+      <div id="cmpBox">Loading 112-vendor weekly snapshot...</div>
+    </section>
+
+    <footer>
+      <span>RiskOps MCP Lab · Auto-Updated Weekly via GitHub Actions + Cloudflare DoH</span>
+      <span><a class="link" href="./index.html">&larr; All 112 Vendors</a></span>
+    </footer>
+  </div>
+
+  <script>
+    let allVendors = [];
+    async function init() {
+      const res = await fetch('./snapshot.json');
+      const data = await res.json();
+      allVendors = (data.records || []).sort((a, b) => a.name.localeCompare(b.name));
+      const selA = document.getElementById('selA');
+      const selB = document.getElementById('selB');
+      const opts = allVendors.map(v => `<option value="${v.slug}">${v.name} (${v.domain}) — ${v.grade}</option>`).join('');
+      selA.innerHTML = opts;
+      selB.innerHTML = opts;
+
+      const qs = new URLSearchParams(location.search);
+      selA.value = qs.get('a') || 'openai-com';
+      selB.value = qs.get('b') || 'anthropic-com';
+      selA.addEventListener('change', render);
+      selB.addEventListener('change', render);
+      render();
+    }
+
+    window.pickPair = function(a, b) {
+      document.getElementById('selA').value = a;
+      document.getElementById('selB').value = b;
+      render();
+    };
+
+    function render() {
+      const a = allVendors.find(v => v.slug === document.getElementById('selA').value) || allVendors[0];
+      const b = allVendors.find(v => v.slug === document.getElementById('selB').value) || allVendors[1];
+      if (!a || !b) return;
+      document.getElementById('cmpBox').innerHTML = `
+        <table>
+          <thead><tr><th>Security Control</th><th>${a.name} (${a.domain})</th><th>${b.name} (${b.domain})</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Overall Security Grade</strong></td><td><span class="pill ${a.light}">${a.grade} (${a.score}/100)</span></td><td><span class="pill ${b.light}">${b.grade} (${b.score}/100)</span></td></tr>
+            <tr><td><strong>Category</strong></td><td>${a.category}</td><td>${b.category}</td></tr>
+            <tr><td><strong>Trust Center / GRC Platform</strong></td><td><strong>${a.grcPlatform}</strong><br/><code>${a.trustCnameTarget || 'None detected'}</code></td><td><strong>${b.grcPlatform}</strong><br/><code>${b.trustCnameTarget || 'None detected'}</code></td></tr>
+            <tr><td><strong>DMARC Anti-Spoofing Policy</strong></td><td><code>${a.dmarcPolicy.toUpperCase()}</code></td><td><code>${b.dmarcPolicy.toUpperCase()}</code></td></tr>
+            <tr><td><strong>SPF Mail Policy</strong></td><td>${a.spfPresent ? (a.spfStrict ? 'Hardfail (-all)' : 'Present (~all)') : 'Missing'}</td><td>${b.spfPresent ? (b.spfStrict ? 'Hardfail (-all)' : 'Present (~all)') : 'Missing'}</td></tr>
+            <tr><td><strong>DNS CAA Lock</strong></td><td>${a.caaPresent ? 'Enforced (' + a.caaCount + ')' : 'Not Set'}</td><td>${b.caaPresent ? 'Enforced (' + b.caaCount + ')' : 'Not Set'}</td></tr>
+            <tr><td><strong>Enterprise Email Stack</strong></td><td>${a.emailProvider}</td><td>${b.emailProvider}</td></tr>
+            <tr><td><strong>Full Audit &amp; PDF Report</strong></td><td><a class="link" href="../vendor/${a.slug}.html">Open ${a.name} Report &rarr;</a></td><td><a class="link" href="../vendor/${b.slug}.html">Open ${b.name} Report &rarr;</a></td></tr>
+          </tbody>
+        </table>`;
+    }
+    init();
+  </script>
+</body>
+</html>

@@ -22,7 +22,7 @@ const MONTH_MAP = {
   dec: '12', december: '12',
 };
 
-const AMOUNT_REGEX = /(?:^|[\s:])(\(?[+-]?(?:[$€£¥]|USD|EUR|GBP|CAD|AUD)?\s?\d{1,3}(?:,\d{3})*\.\d{2}\)?(?:\s?(?:CR|DR))?)(?=$|[\s,;])/gi;
+const AMOUNT_REGEX = /(?:^|[\s:])(\(?[+-]?(?:[$€£¥]|USD|EUR|GBP|CAD|AUD|CHF)?\s?(?:\d{1,3}(?:,\d{3})*\.\d{2}|\d{1,3}(?:\.\d{3})*,\d{2}|\d+\.\d{2}|\d+,\d{2})\)?(?:\s?(?:[$€£¥]|EUR|USD|GBP|CHF|CR|DR))?)(?=$|[\s;])/gi;
 
 const DATE_START_PATTERNS = [
   // YYYY-MM-DD
@@ -65,7 +65,13 @@ export function parseMoneyToken(raw) {
     s = s.slice(1).trim();
   }
 
-  s = s.replace(/^(USD|EUR|GBP|CAD|AUD)/i, '').replace(/[$€£¥,\s]/g, '');
+  s = s.replace(/^(USD|EUR|GBP|CAD|AUD|CHF)/i, '').replace(/(USD|EUR|GBP|CAD|AUD|CHF)$/i, '').replace(/[$€£¥\s]/g, '');
+  // Handle European comma-decimal format (e.g., 1.234,56 or 45,20) vs US/UK dot-decimal (1,234.56)
+  if (/,\d{2}$/.test(s) && !/\.\d{2}$/.test(s)) {
+    s = s.replace(/\./g, '').replace(',', '.');
+  } else {
+    s = s.replace(/,/g, '');
+  }
   const val = Number.parseFloat(s);
   if (!Number.isFinite(val)) return null;
   return {
@@ -286,7 +292,8 @@ export function parseBankStatementLines(rawLines, options = {}) {
           }
         }
 
-        const roundedAmt = Math.round(amount * 100) / 100;
+        let roundedAmt = Math.round(amount * 100) / 100;
+        if (options.flipSigns) roundedAmt = -roundedAmt;
         const roundedBal = balance !== null ? Math.round(balance * 100) / 100 : null;
         let rowCheck = 'N/A';
         if (roundedBal !== null && transactions.length > 0 && transactions[transactions.length - 1].balance !== null) {

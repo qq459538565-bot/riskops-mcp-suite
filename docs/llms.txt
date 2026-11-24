@@ -63,3 +63,8 @@
 - [Ramp (US Startup) PDF Statement to CSV](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/banks/ramp-pdf-to-csv.html)
 - [PayPal Business (Global) PDF Statement to CSV](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/banks/paypal-pdf-to-csv.html)
 - [Stripe Payouts (Global) PDF Statement to CSV](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/banks/stripe-pdf-to-csv.html)
+
+## Sister Tools & Templates
+- [LocalLedger Multi-CSV Deduplicator & QuickBooks/Xero Reformatter](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/csv-cleaner.html)
+- [Side-by-Side 112 SaaS Security Comparator](https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/compare.html)
+- [Free 1-Click n8n & Clay JSON Automation Templates](https://qq459538565-bot.github.io/riskops-mcp-suite/templates/index.html)

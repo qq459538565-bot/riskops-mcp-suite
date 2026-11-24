@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalLedger CSV Cleaner, Deduplicator &amp; QuickBooks/Xero Reformatter (0-Byte Upload · 2026)</title>
+  <meta name="description" content="Merge multiple Chase, Amex, Mercury &amp; Stripe CSV exports 100% locally in your browser. Remove duplicate transactions, flip inverted credit card signs, auto-categorize Schedule C expenses &amp; export QuickBooks/Xero CSV." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/csv-cleaner.html" />
+  <style>
+    :root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 55%);color:var(--text);line-height:1.6;}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px 20px 64px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+    .brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#fff;text-decoration:none;}
+    .badge{font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35);font-weight:700;}
+    nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+    nav a:hover{color:#fff;}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:18px;}
+    .dropzone{border:2px dashed var(--accent);border-radius:14px;padding:26px 20px;text-align:center;background:rgba(56,189,248,.05);cursor:pointer;}
+    .dropzone:hover{background:rgba(56,189,248,.12);}
+    .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0;}
+    .cta{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:700;border:none;cursor:pointer;}
+    .cta-green{background:linear-gradient(135deg,#059669,#10b981);}
+    .cta-sec{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:600;border:1px solid var(--border);cursor:pointer;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px;}
+    .metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:14px;}
+    .metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+    .metric .val{font-size:18px;font-weight:800;}
+    .pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11.5px;font-weight:700;}
+    .pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+    .pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+    table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
+    th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);}
+    th{color:var(--muted);font-size:11px;text-transform:uppercase;}
+    a.link{color:var(--accent);text-decoration:none;}
+    footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./index.html">LocalLedger <span class="badge">CSV Deduplicator &amp; QBO Reformatter</span></a>
+      <nav>
+        <a href="./index.html">Bank PDF &rarr; CSV</a>
+        <a href="./csv-cleaner.html" style="color:#fff;">CSV Cleaner &amp; Deduplicator</a>
+        <a href="../vendors/index.html">112 SaaS Security</a>
+        <a href="../templates/index.html">n8n Templates</a>
+        <a href="../index.html">RiskOps 4-in-1</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h1 style="margin:0 0 8px;font-size:clamp(24px,3.6vw,34px);">Merge, Deduplicate &amp; Flip Signs on Bank / Amex CSVs — <span style="color:#34d399;">100% Locally</span></h1>
+      <p style="color:var(--muted);font-size:14.5px;margin:0 0 16px;">Stop QuickBooks Online &amp; Xero from double-importing overlapping bank CSVs or importing Amex/Chase credit card charges with inverted signs. Drop 1 or multiple CSV files below — zero bytes leave your browser.</p>
+
+      <div id="csvDrop" class="dropzone" onclick="document.getElementById('csvInput').click()">
+        <input id="csvInput" type="file" accept=".csv,text/csv" multiple style="display:none;" />
+        <div style="font-size:17px;font-weight:700;margin-bottom:5px;">Drop 1 or Multiple Bank / Credit Card CSVs Here</div>
+        <div style="color:var(--muted);font-size:13px;">Auto-detects Date, Description, Amount or Debit/Credit columns · Removes duplicate rows · Auto-tags Schedule C tax categories</div>
+      </div>
+
+      <div class="controls">
+        <button id="demoCsvBtn" class="cta cta-green" type="button">Load Dirty Multi-CSV Demo (With Duplicates &amp; Amex Inverted Signs)</button>
+        <label style="font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer;">
+          <input id="flipChk" type="checkbox" /> Flip Debit/Credit Signs (Amex/Chase Card)
+        </label>
+        <label style="font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer;">
+          <input id="dedupChk" type="checkbox" checked /> Remove Duplicate Transactions
+        </label>
+      </div>
+
+      <div id="summaryBox"></div>
+      <div id="expBar" class="controls" style="display:none;">
+        <button class="cta" data-fmt="quickbooks_3col">Export QuickBooks 3-Col CSV</button>
+        <button class="cta" data-fmt="quickbooks_4col">Export QuickBooks 4-Col CSV</button>
+        <button class="cta" data-fmt="xero">Export Xero Bank CSV</button>
+        <button id="copyBtn" class="cta-sec" type="button">Copy Cleaned Table for Excel</button>
+      </div>
+      <div id="catSummary"></div>
+      <div id="tableBox" style="overflow-x:auto;"></div>
+    </section>
+
+    <footer>
+      <span><strong>LocalLedger Suite by RiskOps Studio</strong> · 0-Byte Local Browser Processing</span>
+      <span><a class="link" href="../legal/terms.html">Terms</a> · <a class="link" href="../legal/privacy.html">Privacy</a> · <a class="link" href="../legal/refund.html">14-Day Refund Policy</a></span>
+    </footer>
+  </div>
+
+  <script type="module">
+    import { exportTransactionsCsv, parseMoneyToken, normalizeDate } from './statementParser.mjs';
+
+    const DEMO_CSV_1 = `Date,Description,Amount
+10/01/2026,AMAZON WEB SERVICES,418.75
+10/03/2026,DELTA AIR LINES ATLANTA,642.80
+10/05/2026,GITHUB INC,49.00
+10/08/2026,OPENAI API BILLING,186.40
+10/10/2026,AUTOPAY PAYMENT THANK YOU,-1296.95`;
+
+    const DEMO_CSV_2 = `Date,Description,Amount
+10/05/2026,GITHUB INC,49.00
+10/08/2026,OPENAI API BILLING,186.40
+10/14/2026,CLOUDFLARE PRO,25.00
+10/19/2026,STARBUCKS CLIENT MEETING,18.50`;
+
+    let rawRecords = [];
+    let cleanedRecords = [];
+
+    function parseCsvText(text) {
+      const rows = [];
+      let row = [], cell = '', inQuotes = false;
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i], next = text[i + 1];
+        if (inQuotes) {
+          if (ch === '"' && next === '"') { cell += '"'; i++; }
+          else if (ch === '"') inQuotes = false;
+          else cell += ch;
+        } else {
+          if (ch === '"') inQuotes = true;
+          else if (ch === ',') { row.push(cell.trim()); cell = ''; }
+          else if (ch === '\n' || ch === '\r') {
+            if (ch === '\r' && next === '\n') i++;
+            row.push(cell.trim());
+            if (row.some(Boolean)) rows.push(row);
+            row = []; cell = '';
+          } else cell += ch;
+        }
+      }
+      if (cell || row.length) { row.push(cell.trim()); if (row.some(Boolean)) rows.push(row); }
+      if (rows.length < 2) return [];
+      const hdr = rows[0].map(h => h.toLowerCase());
+      const dateIdx = hdr.findIndex(h => /date|posted|time/.test(h));
+      const descIdx = hdr.findIndex(h => /desc|merchant|payee|memo|name|details/.test(h));
+      const amtIdx = hdr.findIndex(h => /amount|total|value/.test(h));
+      const debIdx = hdr.findIndex(h => /debit|outflow|withdrawal|charge/.test(h));
+      const credIdx = hdr.findIndex(h => /credit|inflow|deposit/.test(h));
+      const out = [];
+      for (let r = 1; r < rows.length; r++) {
+        const cols = rows[r];
+        const rawDate = cols[dateIdx >= 0 ? dateIdx : 0] || '';
+        const d = normalizeDate(rawDate)?.iso || rawDate;
+        const desc = (cols[descIdx >= 0 ? descIdx : 1] || 'Transaction').replace(/\s+/g, ' ').trim();
+        let amount = 0;
+        if (amtIdx >= 0 && cols[amtIdx]) {
+          amount = parseMoneyToken(cols[amtIdx])?.value ?? 0;
+        } else {
+          const deb = debIdx >= 0 ? Math.abs(parseMoneyToken(cols[debIdx])?.value ?? 0) : 0;
+          const cred = credIdx >= 0 ? Math.abs(parseMoneyToken(cols[credIdx])?.value ?? 0) : 0;
+          amount = cred - deb;
+        }
+        out.push({ date: d, description: desc, rawAmount: Math.round(amount * 100) / 100 });
+      }
+      return out;
+    }
+
+    function inferCat(desc, amt) {
+      const d = desc.toLowerCase();
+      if (/aws|amazon web|cloudflare|github|openai|anthropic|vercel|google cloud|slack|notion/i.test(d)) return 'Software & Cloud';
+      if (/delta|united|uber|lyft|hotel|hilton|airbnb/i.test(d)) return 'Travel';
+      if (/starbucks|coffee|restaurant|doordash|lunch|cafe/i.test(d)) return 'Meals';
+      if (/autopay|payment thank|transfer|credit/i.test(d) || amt > 0) return 'Payment / Inflow';
+      return 'Operating Expense';
+    }
+
+    function recompute() {
+      const flip = document.getElementById('flipChk').checked;
+      const dedup = document.getElementById('dedupChk').checked;
+      const seen = new Set();
+      let dupsRemoved = 0;
+      const out = [];
+      for (const rec of rawRecords) {
+        const amt = flip ? -rec.rawAmount : rec.rawAmount;
+        const key = `${rec.date}|${rec.description.toLowerCase()}|${amt.toFixed(2)}`;
+        if (dedup && seen.has(key)) { dupsRemoved++; continue; }
+        seen.add(key);
+        out.push({
+          date: rec.date,
+          description: rec.description,
+          debit: amt < 0 ? Math.abs(amt) : 0,
+          credit: amt > 0 ? amt : 0,
+          amount: amt,
+          balance: null,
+          rowCheck: 'CLEANED',
+          category: inferCat(rec.description, amt),
+        });
+      }
+      out.sort((a, b) => a.date.localeCompare(b.date));
+      cleanedRecords = out;
+
+      const inflows = out.reduce((a, r) => a + r.credit, 0);
+      const outflows = out.reduce((a, r) => a + r.debit, 0);
+      document.getElementById('summaryBox').innerHTML = `
+        <div class="grid">
+          <div class="metric"><div class="label">Clean Rows Ready</div><div class="val">${out.length}</div></div>
+          <div class="metric"><div class="label">Duplicates Stripped</div><div class="val" style="color:#fbbf24;">${dupsRemoved}</div></div>
+          <div class="metric"><div class="label">Total Inflows (+)</div><div class="val" style="color:#34d399;">+${inflows.toFixed(2)}</div></div>
+          <div class="metric"><div class="label">Total Outflows (-)</div><div class="val" style="color:#f87171;">-${outflows.toFixed(2)}</div></div>
+        </div>`;
+
+      const byCat = {};
+      for (const r of out) {
+        if (r.debit > 0) byCat[r.category] = (byCat[r.category] || 0) + r.debit;
+      }
+      const catChips = Object.entries(byCat).map(([k, v]) => `<span class="pill GREEN" style="margin:4px 6px 0 0;">${k}: $${v.toFixed(2)}</span>`).join('');
+      document.getElementById('catSummary').innerHTML = catChips ? `<div style="margin-top:10px;"><strong style="font-size:12.5px;color:var(--muted);">Schedule C Expense Breakdown:</strong><br/>${catChips}</div>` : '';
+
+      document.getElementById('expBar').style.display = out.length ? 'flex' : 'none';
+      document.getElementById('tableBox').innerHTML = out.length ? `<table><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Amount</th><th>Tax Category</th></tr></thead><tbody>${out.map(r => `<tr><td>${r.date}</td><td>${r.description.replace(/</g,'&lt;')}</td><td style="color:#f87171;">${r.debit ? r.debit.toFixed(2) : ''}</td><td style="color:#34d399;">${r.credit ? r.credit.toFixed(2) : ''}</td><td>${r.amount.toFixed(2)}</td><td><span class="pill GREEN">${r.category}</span></td></tr>`).join('')}</tbody></table>` : '';
+    }
+
+    async function handleFiles(files) {
+      const parsed = [];
+      for (const f of Array.from(files || [])) {
+        parsed.push(...parseCsvText(await f.text()));
+      }
+      rawRecords = parsed;
+      recompute();
+    }
+
+    document.getElementById('csvInput').addEventListener('change', (e) => handleFiles(e.target.files));
+    const dz = document.getElementById('csvDrop');
+    dz.addEventListener('dragover', (e) => e.preventDefault());
+    dz.addEventListener('drop', (e) => { e.preventDefault(); handleFiles(e.dataTransfer.files); });
+
+    document.getElementById('demoCsvBtn').addEventListener('click', () => {
+      document.getElementById('flipChk').checked = true;
+      document.getElementById('dedupChk').checked = true;
+      rawRecords = [...parseCsvText(DEMO_CSV_1), ...parseCsvText(DEMO_CSV_2)];
+      recompute();
+    });
+    document.getElementById('flipChk').addEventListener('change', () => { if (rawRecords.length) recompute(); });
+    document.getElementById('dedupChk').addEventListener('change', () => { if (rawRecords.length) recompute(); });
+
+    document.querySelectorAll('#expBar button[data-fmt]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const csv = exportTransactionsCsv(cleanedRecords, btn.dataset.fmt);
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8;' }));
+        a.download = `localledger-cleaned-${btn.dataset.fmt}.csv`;
+        a.click();
+      });
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      const tsv = ['Date\tDescription\tDebit\tCredit\tAmount\tCategory', ...cleanedRecords.map(r => [r.date, r.description, r.debit ? r.debit.toFixed(2) : '', r.credit ? r.credit.toFixed(2) : '', r.amount.toFixed(2), r.category].join('\t'))].join('\n');
+      await navigator.clipboard?.writeText(tsv);
+      document.getElementById('copyBtn').textContent = 'Copied! Paste in Excel';
+      setTimeout(() => { document.getElementById('copyBtn').textContent = 'Copy Cleaned Table for Excel'; }, 2000);
+    });
+  </script>
+</body>
+</html>
