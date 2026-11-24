@@ -29,10 +29,10 @@ window.RISKOPS_MONETIZATION = {
     webflow: { name: 'Webflow Visual Web Platform', url: 'https://webflow.com/', badge: 'Web Builder' },
   },
 
-  // 3) Local-First Browser Extensions (Edge $0 + Chrome Web Store)
+  // 3) Local-First Browser Extensions (Firefox AMO Submitted + Edge/Chrome Ready)
   extensions: {
-    vendorSecUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html',
-    localLedgerExtUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/extension.html',
+    vendorSecUrl: 'https://addons.mozilla.org/en-US/firefox/addon/vendorsec-1-click/',
+    localLedgerExtUrl: 'https://addons.mozilla.org/en-US/firefox/addon/localledger-offline/',
   },
 
   // 4) Direct Digital Checkout (Creem.io / Dodo Payments)
