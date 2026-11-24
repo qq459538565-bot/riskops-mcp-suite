@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LocalLedger — 100% Local Browser Bank Statement PDF to CSV, QuickBooks &amp; Xero Converter (Zero Uploads)</title>
+  <meta name="description" content="Convert Chase, Bank of America, Wells Fargo, Mercury, Wise &amp; UK/EU bank statement PDFs to clean CSV, QuickBooks &amp; Xero 100% inside your browser. Zero server uploads, automatic $0.00 balance reconciliation check." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html" />
+  <style>
+:root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 55%);color:var(--text);line-height:1.6;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 64px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#fff;text-decoration:none;}
+.badge{font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35);font-weight:700;}
+nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+nav a:hover{color:#fff;}
+.cta{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:700;border:none;cursor:pointer;}
+.cta-green{background:linear-gradient(135deg,#059669,#10b981);}
+.cta-sec{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:600;border:1px solid var(--border);cursor:pointer;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:18px;}
+.dropzone{border:2px dashed var(--accent);border-radius:14px;padding:28px 20px;text-align:center;background:rgba(56,189,248,.05);cursor:pointer;transition:.15s;}
+.dropzone:hover,.dropzone.drag{background:rgba(56,189,248,.12);border-color:#7dd3fc;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+.metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:14px;}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.metric .val{font-size:18px;font-weight:800;}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;}
+.pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+.pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+.pill.RED{background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);}
+th{color:var(--muted);font-size:11px;text-transform:uppercase;}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0;}
+input,select{background:#09101f;border:1px solid var(--border);color:#fff;padding:9px 12px;border-radius:8px;font-size:13px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px;}
+.price-card{background:#09101f;border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 0 1px rgba(56,189,248,.3);}
+.price-amt{font-size:32px;font-weight:800;margin:8px 0;}
+a.link{color:var(--accent);text-decoration:none;}
+a.link:hover{text-decoration:underline;}
+.bank-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.bank-chip{background:#09101f;border:1px solid var(--border);color:var(--text);padding:6px 11px;border-radius:8px;font-size:12.5px;text-decoration:none;}
+.bank-chip:hover{border-color:var(--accent);}
+footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+    <a class="brand" href="../bank-converter/index.html">LocalLedger <span class="badge">0-Byte Upload · 100% Browser Local</span></a>
+    <nav>
+      <a href="../bank-converter/index.html">Bank PDF &rarr; CSV</a>
+      <a href="../alternatives/docuclipper-alternative.html">vs DocuClipper</a>
+      <a href="../alternatives/docparser-alternative.html">vs Docparser</a>
+      <a href="../vendors/index.html">112 SaaS Security</a>
+      <a href="../index.html">RiskOps 4-in-1</a>
+    </nav>
+  </header>
+
+    <section class="card">
+      <h1 style="margin:0 0 8px;font-size:clamp(24px,3.8vw,36px);line-height:1.18;">Convert Bank Statement PDFs to CSV, QuickBooks &amp; Xero — <span style="color:#34d399;">Without Uploading a Single Byte</span></h1>
+      <p style="color:var(--muted);max-width:820px;margin:0 0 16px;font-size:15px;">Stop paying $39–$99/mo to DocuClipper or Docparser — and stop uploading confidential client bank statements to cloud servers or hallucinating LLMs. LocalLedger runs Mozilla <code>pdf.js</code> + deterministic opening/closing balance math <strong>100% locally inside your browser</strong>.</p>
+
+      <div id="dropzone" class="dropzone" onclick="document.getElementById('pdfInput').click()">
+        <input id="pdfInput" type="file" accept="application/pdf" style="display:none" />
+        <div style="font-size:18px;font-weight:700;margin-bottom:6px;">Drop a Digital Bank Statement PDF Here (or Click to Select)</div>
+        <div style="color:var(--muted);font-size:13px;">Works offline after page load · Supports Chase, BofA, Wells Fargo, Mercury, Wise, Amex, Barclays, HSBC &amp; 30+ banks</div>
+      </div>
+
+      <div class="controls">
+        <button id="demoBtn" class="cta cta-green" type="button">Try 1-Click Live Chase Statement Demo</button>
+        <label style="font-size:13px;color:var(--muted);">Date Order:
+          <select id="dateOrder">
+            <option value="MDY">US (MM/DD/YYYY)</option>
+            <option value="DMY">UK / EU / AU (DD/MM/YYYY)</option>
+          </select>
+        </label>
+        <input id="openBalInput" type="text" placeholder="Optional Opening Bal" style="width:155px;" />
+        <input id="closeBalInput" type="text" placeholder="Optional Closing Bal" style="width:155px;" />
+        <button id="reparseBtn" class="cta-sec" type="button" style="display:none;">Re-Run Reconciliation</button>
+        <span id="licenseBadge" class="pill AMBER" style="margin-left:auto;">Free Preview (First 25 Rows)</span>
+      </div>
+
+      <div id="statusBox" style="margin-top:8px;font-size:13.5px;color:var(--muted);"></div>
+      <div id="summaryArea"></div>
+      <div id="exportBar" class="controls" style="display:none;">
+        <button class="cta" data-fmt="standard">Download Clean CSV</button>
+        <button class="cta" data-fmt="quickbooks_3col">QuickBooks Online (3-Col CSV)</button>
+        <button class="cta" data-fmt="quickbooks_4col">QuickBooks (4-Col Credit/Debit)</button>
+        <button class="cta" data-fmt="xero">Xero Bank Import CSV</button>
+      </div>
+      <div id="tableWrap" style="overflow-x:auto;"></div>
+    </section>
+
+    <section class="card" id="pricing">
+      <h2 style="margin-top:0;font-size:22px;">Simple, Honest Pricing — Zero Monthly Subscription Traps</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:4px;">Pay only when you need bulk conversion. Processed securely via <strong>Creem</strong> (Merchant of Record — instant license key delivery by email + 14-day money-back guarantee).</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div>
+            <div style="font-weight:700;color:var(--muted);">FREE PREVIEW</div>
+            <div class="price-amt">$0</div>
+            <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
+              <li>100% browser-local PDF extraction</li>
+              <li>Exact opening/closing math check</li>
+              <li>Export up to 25 rows per statement</li>
+              <li>No account or credit card required</li>
+            </ul>
+          </div>
+          <a class="cta-sec" href="#dropzone" style="justify-content:center;margin-top:14px;">Start Converting Free</a>
+        </div>
+        <div class="price-card featured">
+          <div>
+            <span class="pill GREEN">MOST POPULAR FOR TAX SEASON</span>
+            <div style="font-weight:700;margin-top:8px;">PRO ONE-TIME PACK</div>
+            <div class="price-amt">$19 <span style="font-size:14px;font-weight:500;color:var(--muted);">one-time</span></div>
+            <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
+              <li><strong>Unlimited rows</strong> per PDF statement</li>
+              <li>All 4 formats: Clean CSV, QBO 3/4-Col, Xero</li>
+              <li>US, UK, EU, AU &amp; CA bank date formats</li>
+              <li>No recurring subscription — yours for 12 months</li>
+            </ul>
+          </div>
+          <a id="buyPackBtn" class="cta" href="#unlock-license" style="justify-content:center;margin-top:14px;">Get Pro License ($19 One-Time)</a>
+        </div>
+        <div class="price-card">
+          <div>
+            <div style="font-weight:700;color:var(--muted);">ACCOUNTANT / BOOKKEEPER</div>
+            <div class="price-amt">$12 <span style="font-size:14px;font-weight:500;color:var(--muted);">/ month</span></div>
+            <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
+              <li>Unlimited client statements &amp; unlimited rows</li>
+              <li>Priority support for custom bank PDF layouts</li>
+              <li>Includes MSP White-Label PDF Security Audits</li>
+              <li>Cancel anytime in 1 click</li>
+            </ul>
+          </div>
+          <a id="buySubBtn" class="cta-sec" href="#unlock-license" style="justify-content:center;margin-top:14px;">Start Accountant Pro ($12/mo)</a>
+        </div>
+      </div>
+
+      <div id="unlock-license" style="margin-top:18px;padding:16px;border-radius:12px;background:#09101f;border:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <strong style="font-size:13.5px;">Already have a Creem License Key?</strong>
+        <input id="licenseInput" type="text" placeholder="Paste license key (e.g., LL-PRO-XXXX-XXXX)" style="flex:1;min-width:220px;" />
+        <button id="activateBtn" class="cta cta-green" type="button">Unlock Unlimited Export</button>
+        <span id="licenseMsg" style="font-size:12.5px;color:var(--muted);"></span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:18px;">Supported Banks &amp; Dedicated Conversion Guides (30 Banks)</h2>
+      <div class="bank-chips">
+        <a class="bank-chip" href="./banks/chase-pdf-to-csv.html">Chase Bank (US)</a><a class="bank-chip" href="./banks/bank-of-america-pdf-to-csv.html">Bank of America (US)</a><a class="bank-chip" href="./banks/wells-fargo-pdf-to-csv.html">Wells Fargo (US)</a><a class="bank-chip" href="./banks/citibank-pdf-to-csv.html">Citibank (US/Global)</a><a class="bank-chip" href="./banks/capital-one-pdf-to-csv.html">Capital One (US)</a><a class="bank-chip" href="./banks/american-express-pdf-to-csv.html">American Express (Amex) (US/Global)</a><a class="bank-chip" href="./banks/mercury-pdf-to-csv.html">Mercury Bank (US Startup)</a><a class="bank-chip" href="./banks/wise-pdf-to-csv.html">Wise Business (Global)</a><a class="bank-chip" href="./banks/brex-pdf-to-csv.html">Brex (US Startup)</a><a class="bank-chip" href="./banks/ramp-pdf-to-csv.html">Ramp (US Startup)</a><a class="bank-chip" href="./banks/paypal-pdf-to-csv.html">PayPal Business (Global)</a><a class="bank-chip" href="./banks/stripe-pdf-to-csv.html">Stripe Payouts (Global)</a><a class="bank-chip" href="./banks/hsbc-pdf-to-csv.html">HSBC (UK/Global)</a><a class="bank-chip" href="./banks/barclays-pdf-to-csv.html">Barclays (UK)</a><a class="bank-chip" href="./banks/lloyds-pdf-to-csv.html">Lloyds Bank (UK)</a><a class="bank-chip" href="./banks/natwest-pdf-to-csv.html">NatWest (UK)</a><a class="bank-chip" href="./banks/monzo-pdf-to-csv.html">Monzo (UK)</a><a class="bank-chip" href="./banks/revolut-pdf-to-csv.html">Revolut Business (UK/EU)</a><a class="bank-chip" href="./banks/td-bank-pdf-to-csv.html">TD Bank (US/Canada)</a><a class="bank-chip" href="./banks/rbc-pdf-to-csv.html">RBC Royal Bank (Canada)</a><a class="bank-chip" href="./banks/scotiabank-pdf-to-csv.html">Scotiabank (Canada)</a><a class="bank-chip" href="./banks/commbank-pdf-to-csv.html">CommBank (CBA) (Australia)</a><a class="bank-chip" href="./banks/anz-pdf-to-csv.html">ANZ Bank (Australia/NZ)</a><a class="bank-chip" href="./banks/westpac-pdf-to-csv.html">Westpac (Australia)</a><a class="bank-chip" href="./banks/ing-pdf-to-csv.html">ING Bank (EU/Australia)</a><a class="bank-chip" href="./banks/n26-pdf-to-csv.html">N26 (EU)</a><a class="bank-chip" href="./banks/deutsche-bank-pdf-to-csv.html">Deutsche Bank (Germany/EU)</a><a class="bank-chip" href="./banks/ubs-pdf-to-csv.html">UBS (Switzerland/Global)</a><a class="bank-chip" href="./banks/us-bank-pdf-to-csv.html">U.S. Bank (US)</a><a class="bank-chip" href="./banks/pnc-bank-pdf-to-csv.html">PNC Bank (US)</a>
+      </div>
+    </section>
+
+    <footer>
+    <span><strong>LocalLedger by RiskOps Studio</strong> · 100% Client-Side Processing (0 bytes uploaded)</span>
+    <span>
+      <a class="link" href="../legal/terms.html">Terms of Service</a> ·
+      <a class="link" href="../legal/privacy.html">Privacy Policy</a> ·
+      <a class="link" href="../legal/refund.html">14-Day Refund Policy</a>
+    </span>
+  </footer>
+  </div>
+
+  <script type="module">
+    import { parseBankStatementLines, groupPdfItemsToLines, exportTransactionsCsv } from './statementParser.mjs';
+
+    const DEMO_LINES = [
+      'JPMorgan Chase Bank, N.A. Statement Period: October 1, 2026 - October 31, 2026',
+      'Beginning Balance $18,420.50',
+      'DATE DESCRIPTION AMOUNT BALANCE',
+      '10/01 STRIPE PAYOUT ACH CREDIT 6,480.00 24,900.50',
+      'Ref: ST-20261001-MERCHANT-SETTLEMENT',
+      '10/03 AMAZON WEB SERVICES CLOUD 418.75 24,481.75',
+      '10/05 CLOUDFLARE PRO SUBSCRIPTION 25.00 24,456.75',
+      '10/07 GUSTO PAYROLL DEBIT 4,200.00 20,256.75',
+      '10/11 GITHUB INC SAN FRANCISCO 49.00 20,207.75',
+      '10/14 OPENAI API USAGE BILLING 186.40 20,021.35',
+      '10/17 CLIENT ADVISORY WIRE IN 3,500.00 23,521.35',
+      '10/21 DELTA AIR LINES TICKET 642.80 22,878.55',
+      '10/25 WIRE FEE INTERNATIONAL 25.00 22,853.55',
+      '10/29 STRIPE PAYOUT ACH CREDIT 5,120.00 27,973.55',
+      'Ending Balance $27,973.55'
+    ];
+
+    const LICENSE_WORKER_URL = ''; // Set deployed Cloudflare Worker URL once Creem live key is active
+    let currentLines = [];
+    let currentResult = null;
+    let isPro = Boolean(localStorage.getItem('localledger_pro_key'));
+
+    function updateLicenseUi() {
+      const badge = document.getElementById('licenseBadge');
+      if (isPro) {
+        badge.className = 'pill GREEN';
+        badge.textContent = 'PRO UNLOCKED · Unlimited Rows';
+      } else {
+        badge.className = 'pill AMBER';
+        badge.textContent = 'Free Preview (Up to 25 Rows / Statement)';
+      }
+    }
+    updateLicenseUi();
+
+    function renderResult(res) {
+      currentResult = res;
+      const summary = document.getElementById('summaryArea');
+      const exportBar = document.getElementById('exportBar');
+      const tableWrap = document.getElementById('tableWrap');
+
+      if (res.isScannedLikely) {
+        exportBar.style.display = 'none';
+        summary.innerHTML = '<div style="margin-top:12px;padding:14px;border-radius:10px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.4);color:#fca5a5;"><strong>Scanned Image PDF Detected:</strong> ' + res.reconciliation.message + '</div>';
+        tableWrap.innerHTML = '';
+        return;
+      }
+
+      const r = res.reconciliation;
+      const pillCls = r.status === 'RECONCILED_EXACT' ? 'GREEN' : r.status === 'VARIANCE_DETECTED' ? 'RED' : 'AMBER';
+      summary.innerHTML = `
+        <div style="margin-top:12px;padding:12px 14px;border-radius:10px;background:#09101f;border:1px solid var(--border);">
+          <span class="pill ${pillCls}">${r.status.replace(/_/g, ' ')}</span>
+          <span style="margin-left:8px;font-size:13.5px;">${r.message}</span>
+        </div>
+        <div class="grid">
+          <div class="metric"><div class="label">Transactions Extracted</div><div class="val">${res.summary.count}</div></div>
+          <div class="metric"><div class="label">Total Credits (+)</div><div class="val" style="color:#34d399;">+${res.summary.totalCredits.toLocaleString(undefined,{minimumFractionDigits:2})}</div></div>
+          <div class="metric"><div class="label">Total Debits (-)</div><div class="val" style="color:#f87171;">-${res.summary.totalDebits.toLocaleString(undefined,{minimumFractionDigits:2})}</div></div>
+          <div class="metric"><div class="label">Net Cash Flow</div><div class="val">${res.summary.netChange >= 0 ? '+' : ''}${res.summary.netChange.toLocaleString(undefined,{minimumFractionDigits:2})}</div></div>
+        </div>`;
+
+      if (res.transactions.length > 0) {
+        exportBar.style.display = 'flex';
+        const limit = isPro ? res.transactions.length : Math.min(25, res.transactions.length);
+        const rowsHtml = res.transactions.slice(0, limit).map(t => `
+          <tr>
+            <td>${t.date}</td>
+            <td>${t.description.replace(/</g,'&lt;')}</td>
+            <td style="color:#f87171;">${t.debit ? t.debit.toFixed(2) : ''}</td>
+            <td style="color:#34d399;">${t.credit ? t.credit.toFixed(2) : ''}</td>
+            <td>${t.balance !== null ? t.balance.toFixed(2) : '—'}</td>
+            <td><span class="pill GREEN" style="font-size:11px;">${t.category}</span></td>
+          </tr>`).join('');
+        const lockNote = (!isPro && res.transactions.length > 25)
+          ? `<div style="margin-top:10px;padding:12px;border-radius:10px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);font-size:13px;">Showing first 25 of <strong>${res.transactions.length}</strong> extracted transactions. <a class="link" href="#pricing">Unlock Pro ($19 one-time)</a> to export all ${res.transactions.length} rows.</div>`
+          : '';
+        tableWrap.innerHTML = `<table><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th><th>Category</th></tr></thead><tbody>${rowsHtml}</tbody></table>${lockNote}`;
+      } else {
+        exportBar.style.display = 'none';
+        tableWrap.innerHTML = '<p style="color:var(--muted);">No transaction rows matched standard date + amount patterns. Try switching Date Order (US vs UK/EU).</p>';
+      }
+    }
+
+    function runParse() {
+      const dateOrder = document.getElementById('dateOrder').value;
+      const openVal = parseFloat(document.getElementById('openBalInput').value);
+      const closeVal = parseFloat(document.getElementById('closeBalInput').value);
+      const opts = { dateOrder };
+      if (Number.isFinite(openVal)) opts.openingBalance = openVal;
+      if (Number.isFinite(closeVal)) opts.closingBalance = closeVal;
+      renderResult(parseBankStatementLines(currentLines, opts));
+    }
+
+    async function handlePdfFile(file) {
+      const status = document.getElementById('statusBox');
+      status.textContent = `Parsing "${file.name}" 100% locally in browser memory (0 bytes uploaded)...`;
+      try {
+        const pdfjsLib = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.min.mjs');
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs';
+        const arrayBuf = await file.arrayBuffer();
+        const doc = await pdfjsLib.getDocument({ data: arrayBuf }).promise;
+        const allLines = [];
+        for (let p = 1; p <= doc.numPages; p++) {
+          const page = await doc.getPage(p);
+          const content = await page.getTextContent();
+          allLines.push(...groupPdfItemsToLines(content.items));
+        }
+        currentLines = allLines;
+        document.getElementById('reparseBtn').style.display = 'inline-flex';
+        status.textContent = `Parsed ${doc.numPages} page(s) locally from "${file.name}" — 0 bytes sent to any server.`;
+        runParse();
+      } catch (err) {
+        status.textContent = 'Could not read PDF locally: ' + (err?.message || err);
+      }
+    }
+
+    const dz = document.getElementById('dropzone');
+    dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('drag'); });
+    dz.addEventListener('dragleave', () => dz.classList.remove('drag'));
+    dz.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dz.classList.remove('drag');
+      const f = e.dataTransfer.files?.[0];
+      if (f) handlePdfFile(f);
+    });
+    document.getElementById('pdfInput').addEventListener('change', (e) => {
+      const f = e.target.files?.[0];
+      if (f) handlePdfFile(f);
+    });
+
+    document.getElementById('demoBtn').addEventListener('click', () => {
+      currentLines = DEMO_LINES;
+      document.getElementById('reparseBtn').style.display = 'inline-flex';
+      document.getElementById('statusBox').textContent = 'Loaded built-in Chase Checking statement demo (10 transactions, 0 bytes uploaded).';
+      runParse();
+    });
+
+    document.getElementById('reparseBtn').addEventListener('click', runParse);
+    document.getElementById('dateOrder').addEventListener('change', () => { if (currentLines.length) runParse(); });
+
+    document.querySelectorAll('#exportBar button[data-fmt]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!currentResult || !currentResult.transactions.length) return;
+        const fmt = btn.dataset.fmt;
+        const txs = isPro ? currentResult.transactions : currentResult.transactions.slice(0, 25);
+        const csv = exportTransactionsCsv(txs, fmt);
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `localledger-${fmt}-2026-11-24.csv`;
+        a.click();
+      });
+    });
+
+    document.getElementById('activateBtn').addEventListener('click', async () => {
+      const key = document.getElementById('licenseInput').value.trim();
+      const msg = document.getElementById('licenseMsg');
+      if (key.length < 8) { msg.textContent = 'Please enter a valid license key from your Creem receipt email.'; return; }
+      if (LICENSE_WORKER_URL) {
+        msg.textContent = 'Validating key via Creem...';
+        const r = await fetch(LICENSE_WORKER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key }) });
+        const d = await r.json();
+        if (!d.valid) { msg.textContent = 'License key invalid or expired.'; return; }
+      }
+      localStorage.setItem('localledger_pro_key', key);
+      isPro = true;
+      updateLicenseUi();
+      msg.textContent = 'License key saved! Unlimited export unlocked in this browser.';
+      if (currentLines.length) runParse();
+    });
+  </script>
+</body>
+</html>

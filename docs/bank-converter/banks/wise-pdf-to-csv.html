@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convert Wise Business PDF Statement to CSV, QuickBooks & Xero Locally (Zero Uploads · 2026)</title>
+  <meta name="description" content="Free 100% browser-local Wise Business (Global) bank statement PDF to CSV, QuickBooks Online & Xero converter. 0 bytes uploaded to any cloud server, automatic $0.00 balance reconciliation check." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/banks/wise-pdf-to-csv.html" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it safe to convert a Wise Business PDF statement to CSV online?","acceptedAnswer":{"@type":"Answer","text":"Unlike cloud converters (DocuClipper, Docparser) that upload your confidential Wise Business statements to remote servers, LocalLedger runs Mozilla pdf.js 100% locally inside your browser. Zero bytes ever leave your computer."}},{"@type":"Question","name":"Can I import Wise Business CSV output directly into QuickBooks Online or Xero?","acceptedAnswer":{"@type":"Answer","text":"Yes. LocalLedger exports native QuickBooks 3-column CSV, QuickBooks 4-column Credit/Debit CSV, and Xero bank import CSV with DD/MM/YYYY date parsing and opening/closing balance verification."}}]}</script>
+  <style>
+:root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+*{box-sizing:border-box;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#112240 0%,var(--bg) 55%);color:var(--text);line-height:1.6;}
+.wrap{max-width:1100px;margin:0 auto;padding:24px 20px 64px;}
+header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:24px;}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:#fff;text-decoration:none;}
+.badge{font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35);font-weight:700;}
+nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:13px;}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+nav a:hover{color:#fff;}
+.cta{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:700;border:none;cursor:pointer;}
+.cta-green{background:linear-gradient(135deg,#059669,#10b981);}
+.cta-sec{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;background:var(--panel2);color:#fff!important;text-decoration:none;font-size:13.5px;font-weight:600;border:1px solid var(--border);cursor:pointer;}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:18px;}
+.dropzone{border:2px dashed var(--accent);border-radius:14px;padding:28px 20px;text-align:center;background:rgba(56,189,248,.05);cursor:pointer;transition:.15s;}
+.dropzone:hover,.dropzone.drag{background:rgba(56,189,248,.12);border-color:#7dd3fc;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:14px;}
+.metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:14px;}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;}
+.metric .val{font-size:18px;font-weight:800;}
+.pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;}
+.pill.GREEN{background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);}
+.pill.AMBER{background:rgba(245,158,11,.16);color:#fbbf24;border:1px solid rgba(245,158,11,.35);}
+.pill.RED{background:rgba(239,68,68,.16);color:#f87171;border:1px solid rgba(239,68,68,.35);}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);}
+th{color:var(--muted);font-size:11px;text-transform:uppercase;}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0;}
+input,select{background:#09101f;border:1px solid var(--border);color:#fff;padding:9px 12px;border-radius:8px;font-size:13px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px;}
+.price-card{background:#09101f;border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;}
+.price-card.featured{border-color:var(--accent);box-shadow:0 0 0 1px rgba(56,189,248,.3);}
+.price-amt{font-size:32px;font-weight:800;margin:8px 0;}
+a.link{color:var(--accent);text-decoration:none;}
+a.link:hover{text-decoration:underline;}
+.bank-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.bank-chip{background:#09101f;border:1px solid var(--border);color:var(--text);padding:6px 11px;border-radius:8px;font-size:12.5px;text-decoration:none;}
+.bank-chip:hover{border-color:var(--accent);}
+footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+    <a class="brand" href="../../bank-converter/index.html">LocalLedger <span class="badge">0-Byte Upload · 100% Browser Local</span></a>
+    <nav>
+      <a href="../../bank-converter/index.html">Bank PDF &rarr; CSV</a>
+      <a href="../../alternatives/docuclipper-alternative.html">vs DocuClipper</a>
+      <a href="../../alternatives/docparser-alternative.html">vs Docparser</a>
+      <a href="../../vendors/index.html">112 SaaS Security</a>
+      <a href="../../index.html">RiskOps 4-in-1</a>
+    </nav>
+  </header>
+    <section class="card">
+      <span class="pill GREEN">Global · Multi-Currency · 0-Byte Cloud Upload</span>
+      <h1 style="margin:10px 0 8px;font-size:clamp(24px,3.6vw,34px);">Convert Wise Business PDF Statements to CSV, QuickBooks &amp; Xero — 100% Locally</h1>
+      <p style="color:var(--muted);font-size:15px;">Supports Wise multi-currency USD/EUR/GBP PDF statements with DD/MM/YYYY and signed amount parsing.</p>
+      <div class="grid">
+        <div class="metric"><div class="label">Privacy Architecture</div><div class="val" style="color:#34d399;">0 Bytes Uploaded</div></div>
+        <div class="metric"><div class="label">Recommended Date Order</div><div class="val">DD/MM/YYYY</div></div>
+        <div class="metric"><div class="label">Math Verification</div><div class="val">Exact $0.00 Variance Check</div></div>
+        <div class="metric"><div class="label">Accounting Exports</div><div class="val">CSV · QBO · Xero</div></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
+        <a class="cta cta-green" href="../index.html">Open Free Local Wise Business Converter &rarr;</a>
+        <a class="cta-sec" href="../../alternatives/docuclipper-alternative.html">Compare vs DocuClipper ($39/mo)</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:18px;">3 Steps to Convert Wise Business Statements Without Risking Client PII</h2>
+      <ol style="color:var(--muted);font-size:14.5px;line-height:1.85;">
+        <li>Download your native digital monthly PDF statement directly from your Wise Business online banking portal.</li>
+        <li>Open <a class="link" href="../index.html">LocalLedger Converter</a>, select Date Order <strong>UK/EU/AU (DD/MM/YYYY)</strong>, and drop your PDF (runs strictly inside your browser CPU).</li>
+        <li>Confirm the green <strong>RECONCILED EXACT ($0.00 variance)</strong> check, then click <strong>QuickBooks Online CSV</strong> or <strong>Xero Bank Import CSV</strong>.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h3 style="margin-top:0;font-size:15px;">Other Supported Bank PDF Converters</h3>
+      <div class="bank-chips">
+        <a class="bank-chip" href="./chase-pdf-to-csv.html">Chase Bank PDF to CSV</a><a class="bank-chip" href="./bank-of-america-pdf-to-csv.html">Bank of America PDF to CSV</a><a class="bank-chip" href="./wells-fargo-pdf-to-csv.html">Wells Fargo PDF to CSV</a><a class="bank-chip" href="./citibank-pdf-to-csv.html">Citibank PDF to CSV</a><a class="bank-chip" href="./capital-one-pdf-to-csv.html">Capital One PDF to CSV</a><a class="bank-chip" href="./american-express-pdf-to-csv.html">American Express (Amex) PDF to CSV</a><a class="bank-chip" href="./mercury-pdf-to-csv.html">Mercury Bank PDF to CSV</a><a class="bank-chip" href="./brex-pdf-to-csv.html">Brex PDF to CSV</a><a class="bank-chip" href="./ramp-pdf-to-csv.html">Ramp PDF to CSV</a><a class="bank-chip" href="./paypal-pdf-to-csv.html">PayPal Business PDF to CSV</a>
+      </div>
+    </section>
+    <footer>
+    <span><strong>LocalLedger by RiskOps Studio</strong> · 100% Client-Side Processing (0 bytes uploaded)</span>
+    <span>
+      <a class="link" href="../../legal/terms.html">Terms of Service</a> ·
+      <a class="link" href="../../legal/privacy.html">Privacy Policy</a> ·
+      <a class="link" href="../../legal/refund.html">14-Day Refund Policy</a>
+    </span>
+  </footer>
+  </div>
+</body>
+</html>
