@@ -1,9 +1,10 @@
 ﻿# B2B Risk, Compliance, Cloud SLA, OSS Supply-Chain & Quant Finance — Official-API MCP Suite
 
 [![Apify Store](https://img.shields.io/badge/Apify%20Store-durative__hairstreak-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
-[![Live Free Tools Portal](https://img.shields.io/badge/Free%204--in--1%20Web%20Portal-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
+[![Glama MCP Directory](https://img.shields.io/badge/Glama%20MCP-Approved%20Listing-7c3aed?style=flat-square)](https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor)
+[![Live Free Tools Portal](https://img.shields.io/badge/Free%20Tools%20%26%20155%20pSEO%20Pages-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
+[![LocalLedger Bank PDF→CSV](https://img.shields.io/badge/LocalLedger-0--Upload%20Bank%20PDF%20to%20CSV-10b981?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html)
 [![MCP Compatible](https://img.shields.io/badge/MCP-Hosted%20via%20mcp.apify.com-2563eb?style=flat-square)](https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals)
-[![Zero Proxy](https://img.shields.io/badge/Infra-100%25%20Official%20APIs%20%26%20Pure%20Math-10b981?style=flat-square)](#)
 
 > **Launch the Free Interactive 4-in-1 Tools Portal (No Signup Required):**  
 > 👉 **https://qq459538565-bot.github.io/riskops-mcp-suite/** *(Live B2B Trust Center/DMARC DNS Checker, Cloud/AI SLA Pulse, SEC 8-K MCP Builder & Half-Kelly Risk Calculator)*

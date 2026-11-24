@@ -243,12 +243,13 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
             <td style="color:#f87171;">${t.debit ? t.debit.toFixed(2) : ''}</td>
             <td style="color:#34d399;">${t.credit ? t.credit.toFixed(2) : ''}</td>
             <td>${t.balance !== null ? t.balance.toFixed(2) : '—'}</td>
+            <td><span class="pill ${t.rowCheck === 'OK' ? 'GREEN' : t.rowCheck === 'MISMATCH' ? 'RED' : 'AMBER'}" style="font-size:10.5px;">${t.rowCheck === 'OK' ? '✓ OK' : t.rowCheck || 'N/A'}</span></td>
             <td><span class="pill GREEN" style="font-size:11px;">${t.category}</span></td>
           </tr>`).join('');
         const lockNote = (!isPro && res.transactions.length > 25)
           ? `<div style="margin-top:10px;padding:12px;border-radius:10px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);font-size:13px;">Showing first 25 of <strong>${res.transactions.length}</strong> extracted transactions. <a class="link" href="#pricing">Unlock Pro ($19 one-time)</a> to export all ${res.transactions.length} rows.</div>`
           : '';
-        tableWrap.innerHTML = `<table><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th><th>Category</th></tr></thead><tbody>${rowsHtml}</tbody></table>${lockNote}`;
+        tableWrap.innerHTML = `<table><thead><tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th><th>Balance</th><th>Row Audit</th><th>Category</th></tr></thead><tbody>${rowsHtml}</tbody></table>${lockNote}`;
       } else {
         exportBar.style.display = 'none';
         tableWrap.innerHTML = '<p style="color:var(--muted);">No transaction rows matched standard date + amount patterns. Try switching Date Order (US vs UK/EU).</p>';

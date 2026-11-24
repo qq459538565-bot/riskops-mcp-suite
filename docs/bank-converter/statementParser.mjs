@@ -287,13 +287,23 @@ export function parseBankStatementLines(rawLines, options = {}) {
         }
 
         const roundedAmt = Math.round(amount * 100) / 100;
+        const roundedBal = balance !== null ? Math.round(balance * 100) / 100 : null;
+        let rowCheck = 'N/A';
+        if (roundedBal !== null && transactions.length > 0 && transactions[transactions.length - 1].balance !== null) {
+          const expected = Math.round((transactions[transactions.length - 1].balance + roundedAmt) * 100) / 100;
+          rowCheck = Math.abs(expected - roundedBal) <= 0.02 ? 'OK' : 'MISMATCH';
+        } else if (roundedBal !== null && openingBalance !== null && transactions.length === 0) {
+          const expected = Math.round((openingBalance + roundedAmt) * 100) / 100;
+          rowCheck = Math.abs(expected - roundedBal) <= 0.02 ? 'OK' : 'MISMATCH';
+        }
         transactions.push({
           date: parsedDate.iso,
           description: desc,
           debit: roundedAmt < 0 ? Math.abs(roundedAmt) : 0,
           credit: roundedAmt > 0 ? roundedAmt : 0,
           amount: roundedAmt,
-          balance: balance !== null ? Math.round(balance * 100) / 100 : null,
+          balance: roundedBal,
+          rowCheck,
           category: inferCategory(desc, roundedAmt),
         });
         continue;
@@ -381,7 +391,7 @@ export function exportTransactionsCsv(transactions, format = 'standard') {
     );
     return [header, ...rows].join('\n');
   }
-  const header = 'Date,Description,Debit,Credit,Amount,Balance,Category';
+  const header = 'Date,Description,Debit,Credit,Amount,Balance,Row_Balance_Check,Category';
   const rows = transactions.map((t) =>
     [
       t.date,
@@ -390,6 +400,7 @@ export function exportTransactionsCsv(transactions, format = 'standard') {
       t.credit ? t.credit.toFixed(2) : '',
       t.amount.toFixed(2),
       t.balance !== null ? t.balance.toFixed(2) : '',
+      t.rowCheck || 'N/A',
       t.category,
     ].map(csvCell).join(',')
   );
