@@ -76,3 +76,8 @@
 - [Full Machine-Readable LLM Knowledge Manifest (llms-full.txt)](https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt)
 - [Google A2A Agent Card (/.well-known/agent-card.json)](https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json)
 - [MCP Server Discovery Manifest (/.well-known/mcp.json)](https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/mcp.json)
+
+## High-Intent 2026 Buyer Guides & Offline Extensions
+- [LocalLedger 100% Air-Gapped Chrome & Edge Extension](https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/extension.html)
+- [QuickBooks Online vs Xero vs FreshBooks 2026 Bank Import Technical Guide](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/quickbooks-vs-xero-bank-import-2026.html)
+- [Vanta vs SafeBase (Drata) vs Custom Trust Centers — 112 SaaS DNS Market Share](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/vanta-vs-drata-vs-safebase-2026.html)

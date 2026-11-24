@@ -33,6 +33,8 @@ const DATE_START_PATTERNS = [
   /^(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2})(?:,?\s*(\d{2,4}))?\b/i,
   // 15 Jan 2026 or 15 Jan
   /^(\d{1,2})\s+(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t|tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)(?:\s+(\d{2,4}))?\b/i,
+  // DD.MM.YYYY or DD.MM.YY (German / Swiss / EU dot dates — requires year so decimal amounts never match)
+  /^(\d{1,2})\.(\d{1,2})\.(\d{2,4})\b/,
 ];
 
 const IGNORE_LINE_REGEX = /^(page\s+\d+\s+of\s+\d+|date\s+description|posting\s+date|transaction\s+date|account\s+number|statement\s+period|continued\s+on\s+next|member\s+fdic|equal\s+housing|total\s+(deposits|withdrawals|credits|debits)|beginning\s+balance|opening\s+balance|ending\s+balance|closing\s+balance|summary\s+of)/i;
@@ -136,6 +138,21 @@ export function normalizeDate(line, options = {}) {
     if (y < 100) y += 2000;
     if (mo && day >= 1 && day <= 31) {
       return { iso: `${y}-${mo}-${String(day).padStart(2, '0')}`, rest: trimmed.slice(m[0].length).trim() };
+    }
+  }
+
+  // Pattern 4: DD.MM.YYYY or DD.MM.YY (DACH / EU dot date)
+  m = trimmed.match(DATE_START_PATTERNS[4]);
+  if (m) {
+    const day = Number(m[1]);
+    const month = Number(m[2]);
+    let y = Number(m[3]);
+    if (y < 100) y += 2000;
+    if (month >= 1 && month <= 12 && day >= 1 && day <= 31) {
+      return {
+        iso: `${y}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`,
+        rest: trimmed.slice(m[0].length).trim(),
+      };
     }
   }
 
@@ -377,7 +394,7 @@ function csvCell(val) {
 }
 
 export function exportTransactionsCsv(transactions, format = 'standard') {
-  if (format === 'quickbooks_3col') {
+  if (format === 'quickbooks_3col' || format === 'quickbooks') {
     const header = 'Date,Description,Amount';
     const rows = transactions.map((t) =>
       [t.date, t.description, t.amount.toFixed(2)].map(csvCell).join(',')

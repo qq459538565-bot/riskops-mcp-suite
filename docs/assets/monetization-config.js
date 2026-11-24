@@ -1,56 +1,38 @@
 /**
  * RiskOps Studio & LocalLedger — Centralized 2026-2030 Monetization Switchboard
  * -----------------------------------------------------------------------------
- * Update ONE file to activate recurring B2B SaaS affiliate commissions (PartnerStack,
- * Apify Affiliate 20%->30% lifetime, Make 20%), Chrome/Edge extension store links,
- * and Creem/Dodo checkout URLs across all 160+ pages simultaneously.
+ * Update ONE file to activate recurring B2B SaaS affiliate commissions (Apify Affiliate
+ * 20%->30% lifetime, PartnerStack Xero/FreshBooks/QuickBooks/1Password/Zapier/Deel/Rippling,
+ * Make 20%), Chrome/Edge store links, and Creem/Dodo checkout URLs across all 163+ pages.
  */
 window.RISKOPS_MONETIZATION = {
   updatedAt: '2026-11-24',
 
-  // 1) Apify Affiliate Program (20% first 3 months -> 30% lifetime recurring)
-  // Paste your personal referral query param once approved (e.g. '?fpr=yourid')
+  // 1) Apify Affiliate Program (20% first 3 months -> 30% lifetime recurring, up to $5,000/ref)
   apifyAffiliateQuery: '',
 
-  // 2) Recurring B2B SaaS Partners (PartnerStack / Direct -> Payoneer USD)
-  // Official clean URLs active today; replace with your PartnerStack/Make tracking URLs to earn 15%-30% recurring
+  // 2) High-Ticket B2B SaaS Partner Slots (replace official URLs with your approved tracking links)
   partners: {
-    apify: {
-      name: 'Apify Cloud & MCP Platform',
-      pitch: 'Run our 5 hosted zero-proxy RiskOps MCP servers with $5/mo free credits.',
-      url: 'https://apify.com/durative_hairstreak',
-      badge: 'Official MCP Host',
-    },
-    vanta: {
-      name: 'Vanta Automated SOC 2 & Trust Center',
-      pitch: 'Used by 25.9% of the 112 leading SaaS vendors in our live benchmark.',
-      url: 'https://www.vanta.com/',
-      badge: '#1 Benchmarked GRC',
-    },
-    make: {
-      name: 'Make.com Visual Automation',
-      pitch: 'Connect our DMARC, SLA & SEC 8-K APIs into Slack, HubSpot, or Jira in 3 minutes.',
-      url: 'https://www.make.com/',
-      badge: 'No-Code Automation',
-    },
-    quickbooks: {
-      name: 'QuickBooks Online Accounting',
-      pitch: 'Import LocalLedger reconciled CSV/QBO exports cleanly into your books.',
-      url: 'https://quickbooks.intuit.com/',
-      badge: 'Accounting Target',
-    },
-    wise: {
-      name: 'Wise Business Multi-Currency',
-      pitch: 'Receive international client payments & export clean multi-currency statements.',
-      url: 'https://wise.com/business/',
-      badge: 'Global Banking',
-    },
+    apify: { name: 'Apify Cloud & MCP Platform', url: 'https://apify.com/durative_hairstreak', badge: 'Official MCP Host' },
+    vanta: { name: 'Vanta Automated SOC 2 & Trust Center', url: 'https://www.vanta.com/', badge: '#1 Benchmarked GRC' },
+    drata: { name: 'Drata / SafeBase Compliance', url: 'https://drata.com/', badge: 'Enterprise GRC' },
+    onepassword: { name: '1Password Business', url: 'https://1password.com/business/', badge: 'Identity Security' },
+    make: { name: 'Make.com Visual Automation', url: 'https://www.make.com/', badge: 'No-Code Automation' },
+    zapier: { name: 'Zapier Workflow Automation', url: 'https://zapier.com/', badge: 'App Automation' },
+    quickbooks: { name: 'QuickBooks Online', url: 'https://quickbooks.intuit.com/', badge: 'US Accounting Leader' },
+    xero: { name: 'Xero Cloud Accounting', url: 'https://www.xero.com/', badge: 'Global Multi-Currency' },
+    freshbooks: { name: 'FreshBooks Small Business Accounting', url: 'https://www.freshbooks.com/', badge: 'Freelancer Favorite' },
+    wise: { name: 'Wise Business Multi-Currency', url: 'https://wise.com/business/', badge: 'Global Banking' },
+    rippling: { name: 'Rippling HR, IT & Finance', url: 'https://www.rippling.com/', badge: 'Unified Workforce' },
+    deel: { name: 'Deel Global Payroll & Compliance', url: 'https://www.deel.com/', badge: 'Global Hiring' },
+    apollo: { name: 'Apollo.io B2B Sales Intelligence', url: 'https://www.apollo.io/', badge: 'B2B GTM Data' },
+    webflow: { name: 'Webflow Visual Web Platform', url: 'https://webflow.com/', badge: 'Web Builder' },
   },
 
-  // 3) Browser Extensions (Local-First Distribution)
+  // 3) Local-First Browser Extensions (Edge $0 + Chrome Web Store)
   extensions: {
-    edgeStoreUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html',
-    chromeStoreUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html',
+    vendorSecUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/extension/index.html',
+    localLedgerExtUrl: 'https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/extension.html',
   },
 
   // 4) Direct Digital Checkout (Creem.io / Dodo Payments)
@@ -64,7 +46,6 @@ window.RISKOPS_MONETIZATION = {
   const cfg = window.RISKOPS_MONETIZATION;
   if (!cfg) return;
 
-  // Auto-append Apify Affiliate parameter to all apify.com links when configured
   if (cfg.apifyAffiliateQuery) {
     document.querySelectorAll('a[href*="apify.com"]').forEach((a) => {
       try {
@@ -76,7 +57,6 @@ window.RISKOPS_MONETIZATION = {
     });
   }
 
-  // Hydrate data-partner="..." elements dynamically
   document.querySelectorAll('[data-partner]').forEach((el) => {
     const key = el.getAttribute('data-partner');
     const partner = cfg.partners[key];
