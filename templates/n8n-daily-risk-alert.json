@@ -1,71 +1,171 @@
 {
-  "name": "Daily SEC 8-K Cyber Breach & Accounting Red-Flag Alert (Apify -> Slack)",
+  "name": "Daily SEC 8-K Cyber Breach, Restatement & C-Suite Exit Alert (Apify -> Slack)",
   "nodes": [
     {
       "parameters": {
+        "content": "## Daily SEC Form 8-K Corporate Risk & Distress Monitor\n\nAutomatically scans official **SEC EDGAR Form 8-K** filings every market weekday for high-severity events:\n- **Item 1.05**: Material Cybersecurity Incidents\n- **Item 4.01 / 4.02**: Auditor Resignations & Financial Restatements\n- **Item 1.03 / 3.01**: Bankruptcy & Delisting Notices\n- **Item 5.02**: CEO / CFO Departures\n\n### Setup (2 minutes)\n1. Get a free [Apify API Token](https://apify.com/durative_hairstreak/sec-8k-risk-signals).\n2. In **Run SEC 8-K Risk Signals Actor**, add a **Header Auth** credential:\n   - **Name**: `Authorization`\n   - **Value**: `Bearer YOUR_APIFY_API_TOKEN`\n3. Connect your **Slack** credential and target `#risk-alerts` channel in the last node.\n4. *(Optional)* Switch `mode` to `\"ticker_audit\"` and pass your watchlist `\"tickers\": [\"NVDA\", \"TSLA\", \"SMCI\"]`.\n\n*Powered by [RiskOps MCP Suite](https://www.localledgerstudio.xyz/).*",
+        "height": 450,
+        "width": 390,
+        "color": 5
+      },
+      "id": "sticky-sec-guide",
+      "name": "Setup Guide",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Alert Threshold\nOnly filings with deterministic `riskScore >= 70` (RED / CRITICAL red flags) trigger Slack notifications so your channel stays noise-free.",
+        "height": 130,
+        "width": 340,
+        "color": 3
+      },
+      "id": "sticky-sec-filter",
+      "name": "Noise Filter Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        740,
+        100
+      ]
+    },
+    {
+      "parameters": {
         "rule": {
-          "interval": [{ "field": "cronExpression", "expression": "0 13 * * 1-5" }]
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 13 * * 1-5"
+            }
+          ]
         }
       },
       "id": "cron-trigger",
       "name": "Every Weekday 13:00 UTC",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
-      "position": [220, 300]
+      "position": [
+        300,
+        300
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.apify.com/v2/acts/durative_hairstreak~sec-8k-risk-signals/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~sec-8k-risk-signals/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "{\n  \"mode\": \"market_scan\",\n  \"riskItems\": [\"1.05\", \"4.01\", \"4.02\", \"1.03\", \"3.01\"],\n  \"lookbackDays\": 2,\n  \"maxResults\": 20,\n  \"includeExcerpts\": true,\n  \"minRiskScore\": 65\n}"
+        "jsonBody": "{\n  \"mode\": \"market_scan\",\n  \"riskItems\": [\"1.05\", \"4.01\", \"4.02\", \"1.03\", \"3.01\", \"5.02\"],\n  \"lookbackDays\": 2,\n  \"maxResults\": 20,\n  \"includeExcerpts\": true,\n  \"minRiskScore\": 65\n}",
+        "options": {
+          "timeout": 120000
+        }
       },
       "id": "apify-call",
       "name": "Run SEC 8-K Risk Signals Actor",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [480, 300]
+      "position": [
+        540,
+        300
+      ]
     },
     {
       "parameters": {
         "conditions": {
-          "number": [
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
             {
-              "value1": "={{ $json.riskScore }}",
-              "operation": "largerEqual",
-              "value2": 70
+              "id": "cond-risk-score",
+              "leftValue": "={{ Number($json.riskScore ?? 0) }}",
+              "rightValue": 70,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
             }
-          ]
-        }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
       },
       "id": "filter-red",
       "name": "Filter RED / HIGH Alerts (>=70)",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [740, 300]
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        300
+      ]
     },
     {
       "parameters": {
-        "text": "=:rotating_light: *SEC 8-K Risk Alert* ({{ $json.riskTrafficLight }} {{ $json.riskScore }}/100)\n*Company:* {{ $json.companyName }} ({{ $json.ticker || 'N/A' }})\n*Filed:* {{ $json.filingDate }} | *Form:* {{ $json.formType }} | *Items:* {{ $json.matchedRiskItems.join(', ') }}\n*Red Flags:* {{ ($json.detectedRedFlags || []).join('; ') || 'None' }}\n*Filing:* {{ $json.filingUrl }}"
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "C0000000000",
+          "mode": "id"
+        },
+        "text": "=:rotating_light: *SEC 8-K Risk Alert* ({{ $json.riskTrafficLight }} {{ $json.riskScore }}/100)\n*Company:* {{ $json.companyName }} ({{ $json.ticker || 'N/A' }})\n*Filed:* {{ $json.filingDate }} | *Form:* {{ $json.formType }} | *Items:* {{ ($json.matchedRiskItems || []).join(', ') }}\n*Red Flags:* {{ ($json.detectedRedFlags || []).join('; ') || 'None' }}\n*Filing:* {{ $json.filingUrl }}",
+        "otherOptions": {}
       },
       "id": "slack-alert",
       "name": "Post to Slack Risk Channel",
       "type": "n8n-nodes-base.slack",
       "typeVersion": 2.2,
-      "position": [1000, 260]
+      "position": [
+        1060,
+        260
+      ]
     }
   ],
   "connections": {
     "Every Weekday 13:00 UTC": {
-      "main": [[{ "node": "Run SEC 8-K Risk Signals Actor", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Run SEC 8-K Risk Signals Actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Run SEC 8-K Risk Signals Actor": {
-      "main": [[{ "node": "Filter RED / HIGH Alerts (>=70)", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Filter RED / HIGH Alerts (>=70)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Filter RED / HIGH Alerts (>=70)": {
-      "main": [[{ "node": "Post to Slack Risk Channel", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Post to Slack Risk Channel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
+  },
+  "settings": {
+    "executionOrder": "v1"
   },
   "meta": {
     "templateCredsSetupCompleted": false

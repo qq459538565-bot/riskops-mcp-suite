@@ -1,58 +1,236 @@
 {
-  "name": "B2B Security & GRC Prospect Qualification (Webhook -> Apify Security Auditor -> CRM)",
+  "name": "Automated B2B Vendor Security & Trust Center Audit (Webhook -> Apify -> Slack/CRM)",
   "nodes": [
+    {
+      "parameters": {
+        "content": "## Automated B2B Vendor Security & GRC Audit\n\nAudit any B2B prospect or vendor domain in seconds for **Trust Centers (Vanta, Drata, SafeBase, Secureframe)**, **DMARC/SPF/CAA/MX email security**, **TLS health**, and **SOC 2 / ISO 27001** public signals.\n\n### Setup (2 minutes)\n1. Create a free [Apify account](https://apify.com/durative_hairstreak/b2b-vendor-security-auditor) and copy your **Personal API Token** (`Settings -> Integrations`).\n2. In the **Audit Vendor Security & Trust Center** node, create a **Header Auth** credential:\n   - **Name**: `Authorization`\n   - **Value**: `Bearer YOUR_APIFY_API_TOKEN`\n3. Replace the Slack channel or connect your HubSpot / Salesforce / Clay CRM on the `True` branch.\n4. Send a `POST` request to the Webhook URL with JSON body: `{\"domains\": [\"linear.app\", \"vercel.com\"]}`.\n\n*Powered by [RiskOps MCP Suite](https://www.localledgerstudio.xyz/) — zero-proxy deterministic DNS/TLS auditing.*",
+        "height": 420,
+        "width": 380,
+        "color": 4
+      },
+      "id": "sticky-overview",
+      "name": "Setup Guide",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Branching Logic\n- **Score <= 75 (`true`)**: Weak DMARC/SPF or missing Trust Center -> route to **Security Sales / TPRM Review Alert**.\n- **Score > 75 (`false`)**: Strong security posture -> respond immediately with clean audit JSON.",
+        "height": 150,
+        "width": 380,
+        "color": 6
+      },
+      "id": "sticky-routing",
+      "name": "Routing Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        760,
+        80
+      ]
+    },
     {
       "parameters": {
         "httpMethod": "POST",
         "path": "vendor-security-audit",
-        "responseMode": "lastNode"
+        "responseMode": "lastNode",
+        "options": {}
       },
       "id": "webhook-in",
       "name": "Receive Prospect Domains (Clay/CRM)",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
-      "position": [220, 300]
+      "position": [
+        320,
+        300
+      ]
     },
     {
       "parameters": {
         "method": "POST",
-        "url": "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"domains\": {{ JSON.stringify($json.body.domains || ['linear.app', 'vercel.com']) }},\n  \"checkCompliancePages\": true,\n  \"checkSecurityTxt\": true,\n  \"maxPostureScore\": 100\n}"
+        "jsonBody": "={\n  \"domains\": {{ JSON.stringify($json.body?.domains || ['linear.app', 'vercel.com']) }},\n  \"checkCompliancePages\": true,\n  \"checkSecurityTxt\": true,\n  \"maxPostureScore\": 100\n}",
+        "options": {
+          "timeout": 120000
+        }
       },
       "id": "apify-sec",
       "name": "Audit Vendor Security & Trust Center",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
-      "position": [500, 300]
+      "position": [
+        560,
+        300
+      ]
     },
     {
       "parameters": {
         "conditions": {
-          "number": [
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
             {
-              "value1": "={{ $json.securityPostureScore }}",
-              "operation": "smallerEqual",
-              "value2": 75
+              "id": "cond-score-gap",
+              "leftValue": "={{ Number($json.securityPostureScore ?? 100) }}",
+              "rightValue": 75,
+              "operator": {
+                "type": "number",
+                "operation": "lte"
+              }
             }
-          ]
-        }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
       },
       "id": "filter-gap",
       "name": "Filter Security/GRC Gap Prospects (<=75)",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2,
-      "position": [780, 300]
+      "typeVersion": 2.2,
+      "position": [
+        820,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fld-domain",
+              "name": "domain",
+              "value": "={{ $json.domain }}",
+              "type": "string"
+            },
+            {
+              "id": "fld-score",
+              "name": "securityPostureScore",
+              "value": "={{ $json.securityPostureScore }}",
+              "type": "number"
+            },
+            {
+              "id": "fld-grade",
+              "name": "grade",
+              "value": "={{ $json.grade || 'N/A' }}",
+              "type": "string"
+            },
+            {
+              "id": "fld-grc",
+              "name": "trustCenterPlatform",
+              "value": "={{ $json.trustCenterPlatform || 'None Detected' }}",
+              "type": "string"
+            },
+            {
+              "id": "fld-summary",
+              "name": "outreachSummary",
+              "value": "={{ `[TPRM GAP] ${$json.domain} scored ${$json.securityPostureScore}/100 | Trust Center: ${$json.trustCenterPlatform || 'None'} | DMARC: ${$json.dmarcPolicy || 'Missing'}` }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "format-gap",
+      "name": "Format High-Priority Gap Alert",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fld-pass-domain",
+              "name": "domain",
+              "value": "={{ $json.domain }}",
+              "type": "string"
+            },
+            {
+              "id": "fld-pass-score",
+              "name": "securityPostureScore",
+              "value": "={{ $json.securityPostureScore }}",
+              "type": "number"
+            },
+            {
+              "id": "fld-pass-status",
+              "name": "status",
+              "value": "PASSED_BASELINE",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "format-pass",
+      "name": "Format Baseline Pass Record",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1080,
+        400
+      ]
     }
   ],
   "connections": {
     "Receive Prospect Domains (Clay/CRM)": {
-      "main": [[{ "node": "Audit Vendor Security & Trust Center", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Audit Vendor Security & Trust Center",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     },
     "Audit Vendor Security & Trust Center": {
-      "main": [[{ "node": "Filter Security/GRC Gap Prospects (<=75)", "type": "main", "index": 0 }]]
+      "main": [
+        [
+          {
+            "node": "Filter Security/GRC Gap Prospects (<=75)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Security/GRC Gap Prospects (<=75)": {
+      "main": [
+        [
+          {
+            "node": "Format High-Priority Gap Alert",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Format Baseline Pass Record",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
+  },
+  "settings": {
+    "executionOrder": "v1"
   },
   "meta": {
     "templateCredsSetupCompleted": false
