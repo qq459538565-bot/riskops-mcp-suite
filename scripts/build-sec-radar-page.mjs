@@ -120,7 +120,7 @@ export function buildSecRadarPages(repoRoot = process.cwd()) {
     <p style="color:var(--muted);font-size:15px;margin:0 0 16px;">Automated public SEC EDGAR scanner tracking <strong>Item 4.02</strong> (Financial Non-Reliance / Restatements), <strong>Item 4.01</strong> (Auditor Resignations), <strong>Item 3.01</strong> (Exchange Delisting Notices), <strong>Item 1.03</strong> (Bankruptcy), and <strong>Item 1.05</strong> (Material Cybersecurity Incidents). Today's highlighted tickers: <code>${esc(cashtags)}</code>.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <a class="cta" data-partner="apify" href="https://apify.com/durative_hairstreak/sec-8k-risk-signals" target="_blank" rel="noopener">Scan 500+ Live Filings / Connect Claude MCP &rarr;</a>
-      <a class="cta-green cta" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Get Free Weekly Email Radar &rarr;</a>
+      <a class="cta-green cta" href="https://riskopsradar.substack.com/subscribe" target="_blank" rel="noopener">Get Free Weekly Email Radar &rarr;</a>
       <a class="cta-sec" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Free TradeGuard Risk Math</a>
       <a class="cta-sec" href="./latest.json" target="_blank">Raw JSON Feed</a>
     </div>
@@ -133,7 +133,7 @@ export function buildSecRadarPages(repoRoot = process.cwd()) {
         <h2 style="margin:10px 0 6px;font-size:20px;">Never Miss a Form 8-K Restatement, Delisting, or Breach Again</h2>
         <p style="color:var(--muted);font-size:13.5px;margin:0;">Every week we send one zero-fluff digest summarizing the highest-severity US SEC 8-K forensic alerts, direct <code>sec.gov</code> filings, and open empirical benchmarks — free on Substack.</p>
       </div>
-      <a class="cta cta-green" style="padding:13px 22px;font-size:14.5px;" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Subscribe Free on Substack &rarr;</a>
+      <a class="cta cta-green" style="padding:13px 22px;font-size:14.5px;" href="https://riskopsradar.substack.com/subscribe" target="_blank" rel="noopener">Subscribe Free on Substack &rarr;</a>
     </div>
   </section>
 
@@ -162,7 +162,7 @@ export function buildSecRadarPages(repoRoot = process.cwd()) {
           <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Don't write code? Get one clean weekly SEC 8-K red-flag summary by email, and run free browser-local Average Down &amp; Kelly risk math before buying any sharp dip. <strong style="color:#6ee7b7;">Launch Early-Bird: TradeGuard Pro $19 (one-time, zero subscription, 14-day refund).</strong></p>
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <a class="cta cta-green" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Free Email Alerts &rarr;</a>
+          <a class="cta cta-green" href="https://riskopsradar.substack.com/subscribe" target="_blank" rel="noopener">Free Email Alerts &rarr;</a>
           <a class="cta-sec" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Try TradeGuard Free</a>
         </div>
       </div>
