@@ -124,8 +124,9 @@ curl -X POST "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-secur
 ## Commercial Offline SDKs & Desktop Utilities
 
 - **LocalLedger Studio Offline Desktop Tools:** [www.localledgerstudio.xyz](https://www.localledgerstudio.xyz/) (TradeGuard, EInvoiceLocal, CRAGuard, PropGuard, YC Security Datasets)
-- **LocalLedger-JS Bank Statement Parser SDK ($39 on Codester):** [View Commercial SDK](https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk)
-- **QuantCalc-JS Financial Analysis Widget ($29 on Codester):** [View Commercial Widget](https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget)
+- **TickTie-JS Invoice & Ledger Reconciliation SDK ($49 on Codester #76885):** [View Commercial SDK](https://www.codester.com/items/76885/ticktie-js-invoice-reconciliation-sdk)
+- **LocalLedger-JS Bank Statement Parser SDK ($29 Launch Special · Reg. $39 on Codester #76737):** [View Commercial SDK](https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk)
+- **QuantCalc-JS Financial Analysis Widget ($19 Launch Special · Reg. $29 on Codester #76738):** [View Commercial Widget](https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget)
 
 ## Auto-Updated Live SEC 8-K Alerts & Ready-to-Import n8n Templates
 
