@@ -1,0 +1,60 @@
+{
+  "name": "Weekly US/EU/UK GovCon Funded Contract Winners Radar (Schedule -> Apify -> High-Budget CRM)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "weeks", "weeksInterval": 1 }]
+        }
+      },
+      "id": "cron-govcon",
+      "name": "Weekly GovCon Buyer Scan",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~govcon-contract-award-signals/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"regions\": [\"US_AWARDS\", \"EU_TED\", \"UK_CONTRACTS\"],\n  \"keywords\": [\"cybersecurity\", \"cloud\", \"software\", \"data\"],\n  \"minAmountUsd\": 500000,\n  \"cpvPrefix\": \"72\",\n  \"lookbackDays\": 14,\n  \"maxResults\": 30\n}"
+      },
+      "id": "apify-govcon",
+      "name": "Fetch US/EU/UK Contract Awards",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.buyingBudgetScore }}",
+              "operation": "largerEqual",
+              "value2": 80
+            }
+          ]
+        }
+      },
+      "id": "filter-high-budget",
+      "name": "Filter High-Budget Buyers (>=80)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Weekly GovCon Buyer Scan": {
+      "main": [[{ "node": "Fetch US/EU/UK Contract Awards", "type": "main", "index": 0 }]]
+    },
+    "Fetch US/EU/UK Contract Awards": {
+      "main": [[{ "node": "Filter High-Budget Buyers (>=80)", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

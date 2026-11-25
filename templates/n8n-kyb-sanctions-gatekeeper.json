@@ -1,0 +1,60 @@
+{
+  "name": "AI Agent Pre-Payment KYB & OFAC/UN Sanctions Gatekeeper (Webhook -> Apify -> Halt/Approve)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "kyb-sanctions-gate",
+        "responseMode": "lastNode"
+      },
+      "id": "webhook-kyb",
+      "name": "Receive Counterparty Name / LEI",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~global-entity-kyb-sanctions-gatekeeper/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"entities\": {{ JSON.stringify($json.body.entities || ['Stripe, Inc.', 'Lazarus Group']) }},\n  \"checkSanctions\": true,\n  \"checkGleifLei\": true,\n  \"checkSecIssuer\": true,\n  \"matchThreshold\": 0.78\n}"
+      },
+      "id": "apify-kyb",
+      "name": "Screen OFAC + UN + GLEIF LEI + SEC",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.verdict }}",
+              "operation": "notEqual",
+              "value2": "CLEAR"
+            }
+          ]
+        }
+      },
+      "id": "filter-block",
+      "name": "Route BLOCK / REVIEW Verdicts",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Receive Counterparty Name / LEI": {
+      "main": [[{ "node": "Screen OFAC + UN + GLEIF LEI + SEC", "type": "main", "index": 0 }]]
+    },
+    "Screen OFAC + UN + GLEIF LEI + SEC": {
+      "main": [[{ "node": "Route BLOCK / REVIEW Verdicts", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}

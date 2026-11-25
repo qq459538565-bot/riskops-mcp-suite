@@ -1,0 +1,60 @@
+{
+  "name": "Weekly B2B SaaS Pricing Hike & New AI Subprocessor Diff Alert (Schedule -> Apify -> Slack)",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [{ "field": "weeks", "weeksInterval": 1 }]
+        }
+      },
+      "id": "cron-diff",
+      "name": "Weekly Competitor & TPRM Watch",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/durative_hairstreak~saas-pricing-subprocessor-diff-monitor/run-sync-get-dataset-items?token={{$env.APIFY_API_TOKEN}}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"domains\": [\"linear.app\", \"vercel.com\", \"stripe.com\", \"supabase.com\", \"posthog.com\"],\n  \"checkPricing\": true,\n  \"checkSubprocessors\": true,\n  \"previousSnapshots\": {}\n}"
+      },
+      "id": "apify-diff",
+      "name": "Audit Pricing & AI Subprocessors",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.diffStatus }}",
+              "operation": "equal",
+              "value2": "CHANGED_HIGH"
+            }
+          ]
+        }
+      },
+      "id": "filter-high-diff",
+      "name": "Filter High-Severity Price / AI Subprocessor Alerts",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [780, 300]
+    }
+  ],
+  "connections": {
+    "Weekly Competitor & TPRM Watch": {
+      "main": [[{ "node": "Audit Pricing & AI Subprocessors", "type": "main", "index": 0 }]]
+    },
+    "Audit Pricing & AI Subprocessors": {
+      "main": [[{ "node": "Filter High-Severity Price / AI Subprocessor Alerts", "type": "main", "index": 0 }]]
+    }
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  }
+}
