@@ -1,0 +1,22 @@
+{
+  "name": "@riskops-studio/riskops-local-mcp",
+  "version": "1.0.0",
+  "description": "Zero-dependency local MCP server for B2B vendor security auditing (Cloudflare DoH DMARC/SPF/Trust Center), SEC EDGAR 8-K risk lookup, OSV.dev CVE checks, and deterministic DCF/Kelly quant math.",
+  "type": "module",
+  "bin": {
+    "riskops-mcp": "./index.mjs"
+  },
+  "scripts": {
+    "start": "node ./index.mjs",
+    "test": "node ./test-mcp.mjs"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qq459538565-bot/riskops-mcp-suite.git"
+  },
+  "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/"
+}
