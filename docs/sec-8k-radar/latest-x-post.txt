@@ -1,0 +1,9 @@
+🚨 US SEC 8-K Red-Flag Radar (2026-11-24)
+
+• $SSGC Item 4.02 [100/100]
+• $AREC Item 4.02 [100/100]
+• $CRMT Item 1.03 [100/100]
+• $SOBR Item 3.01 [82/100]
+• $DRVN Item 3.01 [82/100]
+
+Objective EDGAR parser (not investment advice). Free daily feed & API in bio.

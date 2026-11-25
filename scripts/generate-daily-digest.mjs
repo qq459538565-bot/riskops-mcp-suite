@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { buildSecRadarPages } from './build-sec-radar-page.mjs';
 
 const token = process.env.APIFY_TOKEN;
 if (!token) {
@@ -55,4 +56,5 @@ ${rows.join('\n')}
 `;
 
 fs.writeFileSync('DAILY_SEC_RISK_DIGEST.md', md, 'utf8');
-console.log(`Updated DAILY_SEC_RISK_DIGEST.md with ${items.length} live signals.`);
+buildSecRadarPages(process.cwd());
+console.log(`Updated DAILY_SEC_RISK_DIGEST.md and live web dashboard docs/sec-8k-radar/ with ${items.length} live signals.`);
