@@ -1,9 +1,39 @@
 {
-  "updatedAt": "2026-11-24",
-  "latestFilingDate": "2026-11-24",
-  "cashtags": "$SSGC $AREC $CRMT $SOBR $DRVN",
+  "updatedAt": "2026-11-25",
+  "latestFilingDate": "2026-11-25",
+  "cashtags": "$CRMT $LEGO $AREC $SSGC $SDST",
   "count": 5,
   "items": [
+    {
+      "filingDate": "2026-11-25",
+      "ticker": "CRMT",
+      "companyName": "AMERICAS CARMART INC",
+      "riskScore": 100,
+      "severity": "RED",
+      "secItems": "1.03, 3.01, 5.02",
+      "redFlags": "Chapter 11 / Insolvency Filing",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/799850/000117184326007728/f8ka_112426.htm"
+    },
+    {
+      "filingDate": "2026-11-25",
+      "ticker": "LEGO",
+      "companyName": "Legato Merger Corp. IV",
+      "riskScore": 100,
+      "severity": "RED",
+      "secItems": "4.02",
+      "redFlags": "Non-Reliance / Financial Restatement; Material Weakness in Internal Controls",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/2087450/000182912626012882/legatomerger4_8k.htm"
+    },
+    {
+      "filingDate": "2026-11-25",
+      "ticker": "AREC",
+      "companyName": "American Resources Corp",
+      "riskScore": 100,
+      "severity": "RED",
+      "secItems": "4.02",
+      "redFlags": "Non-Reliance / Financial Restatement",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1590715/000147793226007314/arec_8ka.htm"
+    },
     {
       "filingDate": "2026-11-24",
       "ticker": "SSGC",
@@ -15,44 +45,14 @@
       "filingUrl": "https://www.sec.gov/Archives/edgar/data/1584693/000149315226054001/form8-k.htm"
     },
     {
-      "filingDate": "2026-11-24",
-      "ticker": "AREC",
-      "companyName": "American Resources Corp",
+      "filingDate": "2026-11-25",
+      "ticker": "SDST",
+      "companyName": "Stardust Power Inc.",
       "riskScore": 100,
       "severity": "RED",
-      "secItems": "4.02",
-      "redFlags": "Non-Reliance / Financial Restatement",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1590715/000147793226007287/arec_8k.htm"
-    },
-    {
-      "filingDate": "2026-11-24",
-      "ticker": "CRMT",
-      "companyName": "AMERICAS CARMART INC",
-      "riskScore": 100,
-      "severity": "RED",
-      "secItems": "1.03",
-      "redFlags": "Chapter 11 / Insolvency Filing; Event of Default / Debt Acceleration",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/799850/000117184326007671/f8k_112426.htm"
-    },
-    {
-      "filingDate": "2026-11-24",
-      "ticker": "SOBR",
-      "companyName": "SOBR Safe, Inc.",
-      "riskScore": 82,
-      "severity": "AMBER",
-      "secItems": "3.01",
-      "redFlags": "High-Severity Exchange / Governance Filing Alert",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1425627/000147793226007280/sobr_8k.htm"
-    },
-    {
-      "filingDate": "2026-11-24",
-      "ticker": "DRVN",
-      "companyName": "Driven Brands Holdings Inc.",
-      "riskScore": 82,
-      "severity": "AMBER",
-      "secItems": "3.01",
-      "redFlags": "High-Severity Exchange / Governance Filing Alert",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1804745/000162828026075574/drvn-20261120.htm"
+      "secItems": "3.01, 5.02",
+      "redFlags": "Disagreement with Auditor / Reportable Event; Nasdaq / NYSE Deficiency or Delisting Notice",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1831979/000149315226054278/form8-k.htm"
     }
   ]
 }
