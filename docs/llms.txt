@@ -2,6 +2,11 @@
 
 > Live public DNS-over-HTTPS security posture benchmark of 112 leading SaaS & AI vendors, plus 5 hosted zero-proxy Apify & MCP tools for Claude Desktop, Cursor, n8n, and Clay.
 
+## Instant Zero-Signup Edge REST API & Streamable HTTP Remote MCP (0ms Cold Start)
+- Live Streamable HTTP Remote MCP Endpoint (5 Core Tools, Free 15 RPM Sandbox, Optional X-API-Key Pro): https://api.localledgerstudio.xyz/mcp
+- OpenAPI 3.0.3 Machine Spec (REST Endpoints: /v1/security/audit, /v1/sla/check, /v1/oss/audit, /v1/quant/compute, /v1/sec/8k-risk): https://api.localledgerstudio.xyz/openapi-rapidapi.json
+- Live Health & Manifest Endpoint: https://api.localledgerstudio.xyz/health
+
 ## Interactive Free Tools & Directories
 - [4-in-1 Live Tools Portal (Vendor Security, SEC 8-K, Cloud SLA & Kelly Calculator)](https://qq459538565-bot.github.io/riskops-mcp-suite/index.html)
 - [Top 112 SaaS & AI Vendor Security Posture & Trust Center Directory](https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/index.html)

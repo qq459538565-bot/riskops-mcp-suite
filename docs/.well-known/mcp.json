@@ -6,6 +6,16 @@
   "llmsTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms.txt",
   "llmsFullTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
   "agentCard": "https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json",
+  "edgeRemoteMcp": {
+    "name": "riskops-edge-remote-mcp",
+    "status": "public",
+    "transport": "streamable-http",
+    "url": "https://api.localledgerstudio.xyz/mcp",
+    "openApiUrl": "https://api.localledgerstudio.xyz/openapi-rapidapi.json",
+    "healthUrl": "https://api.localledgerstudio.xyz/health",
+    "auth": ["none-free-sandbox-15rpm", "X-API-Key-pro"],
+    "pricing": "free-sandbox-plus-direct-pro-key"
+  },
   "allInOneRemote": {
     "name": "riskops-6-in-1-hosted-mcp",
     "status": "public",

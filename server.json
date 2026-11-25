@@ -8,6 +8,18 @@
   "remotes": [
     {
       "type": "streamable-http",
+      "url": "https://api.localledgerstudio.xyz/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Optional Pro API key for higher batch & RPM limits (free public sandbox works with zero auth at 15 req/min)",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    },
+    {
+      "type": "streamable-http",
       "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
       "headers": [
         {

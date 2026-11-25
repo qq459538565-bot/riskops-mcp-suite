@@ -1,12 +1,14 @@
 ﻿# RiskOps MCP Suite — Local & Hosted B2B Risk, SEC 8-K, Vendor Security, OSS CVE & Quant Finance MCP Server
 
 [![Glama MCP Server](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite/badges/score.svg)](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite)
-[![Apify Store](https://img.shields.io/badge/Apify%20Store-5%20Hosted%20MCP%20Actors-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
+[![Live Edge MCP & REST API](https://img.shields.io/badge/Live%20Remote%20MCP%20%26%20API-api.localledgerstudio.xyz-f59e0b?style=flat-square)](https://api.localledgerstudio.xyz/health)
+[![Apify Store](https://img.shields.io/badge/Apify%20Store-6%20Hosted%20MCP%20Actors-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
 [![Live Free Tools Portal](https://img.shields.io/badge/Free%20Tools%20%26%201%2C149%20Pages-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
 [![LocalLedger Studio](https://img.shields.io/badge/LocalLedger%20Studio-Offline%20Finance%20Tools-10b981?style=flat-square)](https://www.localledgerstudio.xyz/)
 [![TickTieLocal](https://img.shields.io/badge/TickTieLocal-Offline%20Audit%20Matcher-6366f1?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html)
 
-> **Launch Free Interactive Browser Tools & Empirical Benchmarks (100% Public Data, No Signup):**  
+> **Launch Free Interactive Browser Tools, Live Edge API & Empirical Benchmarks (100% Public Data, No Signup):**  
+> - **Instant Zero-Install Remote MCP Endpoint (Streamable HTTP, 5 Tools):** `https://api.localledgerstudio.xyz/mcp` · [OpenAPI 3.0.3 Spec](https://api.localledgerstudio.xyz/openapi-rapidapi.json) · [Health Check](https://api.localledgerstudio.xyz/health)  
 > - **2026 YC 1,200-Startup Security & DMARC Benchmark (39.3% DMARC Gap + Free 100-Row CSV):** https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html  
 > - **Searchable Top 1,000 Y Combinator Security & Trust Center Directory:** https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/yc-1000.html  
 > - **RiskOps 4-in-1 Live Portal (Vendor Security, SEC 8-K, Cloud SLA, Quant):** https://qq459538565-bot.github.io/riskops-mcp-suite/  
@@ -16,7 +18,33 @@
 
 Production-grade, zero-proxy **B2B Financial Risk, Cloud SLA, Vendor Security, OSS Supply-Chain & Quantitative Finance** MCP tools built on 100% public official APIs (`data.sec.gov`, `efts.sec.gov`, Cloudflare DoH, Atlassian Statuspage v2 JSON, Google OSV.dev, CISA KEV, and deterministic IEEE-754 financial math).
 
-Run locally with **zero external npm dependencies and zero API keys**, or scale to batch workloads via **Apify Hosted MCP**.
+Connect instantly over **Streamable HTTP Remote MCP** (`https://api.localledgerstudio.xyz/mcp` — zero install, free rate-limited sandbox), run locally with **zero npm dependencies**, or scale to 500+ batch workloads via **Apify Hosted MCP** or a **Direct Commercial API Key**.
+
+---
+
+## Option 0: Instant Zero-Install Remote MCP & Edge REST API (Free Sandbox · 0ms Cold Start)
+
+Test all 5 core engines immediately in Claude Desktop, Cursor, Windsurf, Cline, or n8n without cloning anything or creating an account (free public sandbox: `15 req/min`, up to `3` items/call; for high-volume batch runs, use a [Direct Pro API Key (`$19/mo`)](https://www.localledgerstudio.xyz/#api) or Apify Pay-Per-Event below):
+
+```json
+{
+  "mcpServers": {
+    "riskops-edge-remote": {
+      "url": "https://api.localledgerstudio.xyz/mcp"
+    }
+  }
+}
+```
+
+### 1-Line REST API Smoke Test (OpenAPI 3.0.3: `https://api.localledgerstudio.xyz/openapi-rapidapi.json`)
+
+```bash
+curl -X POST "https://api.localledgerstudio.xyz/v1/security/audit" \
+  -H "Content-Type: application/json" \
+  -d '{"domains":["openai.com"],"checkCompliancePages":false,"checkSecurityTxt":false}'
+```
+
+Available live REST routes on `https://api.localledgerstudio.xyz`: `GET /health`, `GET /openapi-rapidapi.json`, `POST /mcp`, `POST /v1/security/audit`, `POST /v1/sla/check`, `POST /v1/oss/audit`, `POST /v1/quant/compute`, `POST /v1/sec/8k-risk`.
 
 ---
 

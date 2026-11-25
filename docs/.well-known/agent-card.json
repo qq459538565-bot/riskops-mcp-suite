@@ -8,6 +8,8 @@
   },
   "version": "1.4.0",
   "documentationUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
+  "edgeRemoteMcpEndpoint": "https://api.localledgerstudio.xyz/mcp",
+  "edgeOpenApiUrl": "https://api.localledgerstudio.xyz/openapi-rapidapi.json",
   "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
   "agenticPayments": {
     "provider": "Apify Pay-Per-Event (PPE)",
