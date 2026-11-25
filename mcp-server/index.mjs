@@ -8,7 +8,7 @@ import readline from 'node:readline';
 
 const SERVER_INFO = {
   name: 'riskops-mcp-suite',
-  version: '1.0.0'
+  version: '1.1.0'
 };
 
 const PROTOCOL_VERSION = '2024-11-05';
@@ -108,8 +108,38 @@ const TOOLS = [
       required: ['ecosystem', 'packageName']
     },
     annotations: { readOnlyHint: true, openWorldHint: true }
+  },
+  {
+    name: 'check_cloud_sla_status',
+    description: 'Check live operational status and active incidents for major AI & Cloud providers (openai, anthropic, github, cloudflare, vercel, supabase, datadog, or custom Statuspage v2 baseUrl). Read-only, no API key required.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        provider: {
+          type: 'string',
+          enum: ['openai', 'anthropic', 'github', 'cloudflare', 'vercel', 'supabase', 'datadog', 'custom'],
+          description: 'Preset cloud/AI provider key or "custom" when passing baseUrl'
+        },
+        baseUrl: {
+          type: 'string',
+          description: 'Optional custom Statuspage v2 base URL (e.g. "https://status.stripe.com") when provider="custom"'
+        }
+      },
+      required: ['provider']
+    },
+    annotations: { readOnlyHint: true, openWorldHint: true }
   }
 ];
+
+const STATUSPAGE_PRESETS = {
+  openai: 'https://status.openai.com',
+  anthropic: 'https://status.anthropic.com',
+  github: 'https://www.githubstatus.com',
+  cloudflare: 'https://www.cloudflarestatus.com',
+  vercel: 'https://www.vercel-status.com',
+  supabase: 'https://status.supabase.com',
+  datadog: 'https://status.datadoghq.com'
+};
 
 function cleanDomain(raw) {
   const cleaned = String(raw || '')
@@ -193,7 +223,12 @@ async function runAuditVendorSecurity({ domain }) {
     mxCount: mxRecs.length,
     trustCenterPlatform: trustPlatform,
     gaps,
-    batchAuditTip: 'Need bulk 100+ vendor audits with TLS/headers/SOC2 checks? Use https://apify.com/durative_hairstreak/b2b-vendor-security-auditor'
+    hostedBatchApi: {
+      scope: 'Bulk 100-500+ domains with TLS expiry, HTTP security headers, SOC2/ISO/HIPAA page checks & Clay/n8n sync REST',
+      mcpEndpoint: 'https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor',
+      storeUrl: 'https://apify.com/durative_hairstreak/b2b-vendor-security-auditor',
+      pricing: '$0.005 start + $0.015/domain (Pay-Per-Event)'
+    }
   };
 }
 
@@ -327,7 +362,12 @@ async function runSearchSec8k({ query, daysBack = 14, limit = 5 }) {
     totalMatches: data?.hits?.total?.value ?? filings.length,
     returned: filings.length,
     filings,
-    hostedTip: 'For automated Item 1.05/4.02/5.02 severity scoring & Slack webhooks, see https://apify.com/durative_hairstreak/sec-8k-risk-signals'
+    hostedBatchApi: {
+      scope: 'Automated Item 1.05/4.02/4.01/5.02/1.03/3.01 risk scoring (0-100), SEC comment letters & daily watchlist webhooks',
+      mcpEndpoint: 'https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals',
+      storeUrl: 'https://apify.com/durative_hairstreak/sec-8k-risk-signals',
+      pricing: '$0.005 start + $0.012/filing (Pay-Per-Event)'
+    }
   };
 }
 
@@ -354,7 +394,53 @@ async function runAuditOssCve({ ecosystem, packageName, version }) {
       aliases: v.aliases || [],
       summary: v.summary || '',
       modified: v.modified || ''
-    }))
+    })),
+    hostedBatchApi: {
+      scope: 'Bulk package.json/requirements.txt scanning + CISA KEV active exploit flags + SPDX licenses + OpenSSF Scorecard',
+      mcpEndpoint: 'https://mcp.apify.com/?actors=durative_hairstreak/oss-dependency-risk-auditor',
+      storeUrl: 'https://apify.com/durative_hairstreak/oss-dependency-risk-auditor',
+      pricing: '$0.005 start + $0.008/package (Pay-Per-Event)'
+    }
+  };
+}
+
+async function runCheckCloudSlaStatus({ provider, baseUrl }) {
+  const key = String(provider || '').trim().toLowerCase();
+  const rawBase = key === 'custom' ? String(baseUrl || '').trim() : STATUSPAGE_PRESETS[key];
+  if (!rawBase || !/^https:\/\/[a-z0-9.-]+/i.test(rawBase)) {
+    throw new Error(`Invalid or unsupported provider/baseUrl: "${provider}"`);
+  }
+  const cleanBase = rawBase.replace(/\/+$/, '');
+  const res = await fetch(`${cleanBase}/api/v2/summary.json`, {
+    headers: { Accept: 'application/json', 'User-Agent': USER_AGENT },
+    signal: AbortSignal.timeout(10000)
+  });
+  if (!res.ok) throw new Error(`Statuspage HTTP ${res.status} for ${cleanBase}`);
+  const data = await res.json();
+  const components = Array.isArray(data.components) ? data.components : [];
+  const degraded = components.filter((c) => c.status && c.status !== 'operational');
+  const activeIncidents = Array.isArray(data.incidents) ? data.incidents : [];
+  return {
+    provider: data.page?.name || key,
+    statusUrl: data.page?.url || cleanBase,
+    indicator: data.status?.indicator || 'unknown',
+    description: data.status?.description || '',
+    totalComponents: components.length,
+    degradedCount: degraded.length,
+    degradedComponents: degraded.slice(0, 8).map((c) => ({ name: c.name, status: c.status })),
+    activeIncidentCount: activeIncidents.length,
+    activeIncidents: activeIncidents.slice(0, 5).map((inc) => ({
+      name: inc.name,
+      impact: inc.impact,
+      status: inc.status,
+      updatedAt: inc.updated_at
+    })),
+    hostedBatchApi: {
+      scope: 'Multi-vendor 22+ cloud/AI SLA audit with merged-interval 30d/90d contractual uptime % math',
+      mcpEndpoint: 'https://mcp.apify.com/?actors=durative_hairstreak/saas-status-sla-monitor',
+      storeUrl: 'https://apify.com/durative_hairstreak/saas-status-sla-monitor',
+      pricing: '$0.005 start + $0.008/vendor (Pay-Per-Event)'
+    }
   };
 }
 
@@ -398,6 +484,7 @@ async function handleRequest(req) {
       else if (toolName === 'calculate_quant_risk_dcf') output = runQuantRiskDcf(args);
       else if (toolName === 'search_sec_8k_risk_filings') output = await runSearchSec8k(args);
       else if (toolName === 'audit_oss_package_cve') output = await runAuditOssCve(args);
+      else if (toolName === 'check_cloud_sla_status') output = await runCheckCloudSlaStatus(args);
       else throw new Error(`Unknown tool: ${toolName}`);
 
       send({

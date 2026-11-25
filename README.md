@@ -27,7 +27,7 @@ Requires Node.js >= 18. No API keys, no npm install required.
 ```bash
 git clone https://github.com/qq459538565-bot/riskops-mcp-suite.git
 cd riskops-mcp-suite/mcp-server
-npm test   # runs 5/5 live MCP stdio E2E checks
+npm test   # runs 6/6 live MCP stdio E2E checks
 ```
 
 ### Claude Desktop / Cursor / Windsurf Config
@@ -43,42 +43,51 @@ npm test   # runs 5/5 live MCP stdio E2E checks
 }
 ```
 
-### Included Local MCP Tools (`readOnlyHint: true`)
+### Included Local MCP Tools (`readOnlyHint: true`, Free Single Lookups)
 
 | Tool | What It Does | Data Source |
 | :--- | :--- | :--- |
 | `audit_vendor_security` | Audits DMARC, SPF, CAA, MX, and Trust Center CNAMEs (Vanta/Drata/SafeBase/HyperComply) -> 0–100 score & gaps | Live Cloudflare DoH |
-| `calculate_quant_risk_dcf` | Deterministic 5-yr DCF intrinsic value, Half-Kelly sizing, and Sharpe/Max Drawdown stats (zero LLM math hallucination) | Pure IEEE-754 math |
 | `search_sec_8k_risk_filings` | Searches US SEC EDGAR Form 8-K disclosures (Item 1.05 cyber breaches, 4.02 restatements, 4.01 auditor exits, 5.02 C-suite) | Official SEC EDGAR EFTS |
+| `check_cloud_sla_status` | Live operational status & active incidents for OpenAI, Anthropic, GitHub, Cloudflare, Vercel, Supabase, Datadog, or custom Statuspage v2 URLs | Official Statuspage v2 JSON |
 | `audit_oss_package_cve` | Checks npm, PyPI, Go, Maven, or crates.io package versions for known CVEs | Official Google OSV.dev |
+| `calculate_quant_risk_dcf` | Deterministic 5-yr DCF intrinsic value, Half-Kelly sizing, and Sharpe/Max Drawdown stats | Pure IEEE-754 math |
 
 ---
 
-## Option 2: Hosted Apify & Streamable-HTTP MCP Matrix (Batch & Scheduled Workloads)
+## Option 2: Hosted Apify & Streamable-HTTP MCP Matrix (Pay-Per-Event Batch & Autonomous Agent Workloads)
 
-All 5 hosted Actors are live on Apify Store with Pay-Per-Event pricing and Glama discovery ([Glama Connector Listing](https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor)):
+All **5 hosted Actors** are **PUBLIC & Pay-Per-Event LIVE** on Apify Store with **limited permissions** — compatible with both standard Apify Bearer tokens and autonomous agent spend-capped prepaid tokens via `agi.apify.com`:
 
-| Tool | Live Apify Store & MCP Endpoint | Best For |
-| :--- | :--- | :--- |
-| **1. SEC 8-K Risk Signals & Corporate Distress Monitor** | [Apify Store](https://apify.com/durative_hairstreak/sec-8k-risk-signals) · `durative_hairstreak/sec-8k-risk-signals` | Quant/AI Agents, Cyber GTM (`Item 1.05`), Forensic Accounting (`4.02`/`4.01`/`5.02`/`1.03`/`3.01` + SEC comment letters) |
-| **2. SaaS & Cloud Status Page SLA Uptime Monitor** | [Apify Store](https://apify.com/durative_hairstreak/saas-status-sla-monitor) · `durative_hairstreak/saas-status-sla-monitor` | SRE / DevOps & AI apps monitoring 22+ vendors with merged-interval 30d/90d SLA % math |
-| **3. B2B Vendor Security Posture & Trust Signal Auditor** | [Apify Store](https://apify.com/durative_hairstreak/b2b-vendor-security-auditor) · `durative_hairstreak/b2b-vendor-security-auditor` | Enterprise TPRM & Clay prospecting (100+ domains batch Vanta/SafeBase/Drata fingerprinting, DMARC/SPF/TLS/headers) |
-| **4. Open-Source Supply-Chain & CVE Risk Auditor** | [Apify Store](https://apify.com/durative_hairstreak/oss-dependency-risk-auditor) · `durative_hairstreak/oss-dependency-risk-auditor` | AI Coding Agents (Claude Code, Cursor) & CI/CD pre-install gating (OSV.dev CVEs, CISA KEV active exploits, SPDX, OpenSSF) |
-| **5. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine** | [Apify Store](https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine) · `durative_hairstreak/quant-portfolio-dcf-math-engine` | Institutional Sharpe/Sortino/Calmar/Max Drawdown, VaR/CVaR, Half-Kelly sizing, 5×5 DCF sensitivity, XIRR & Black-Scholes Greeks |
+| Tool | Live Apify Store & MCP Slug | Pay-Per-Event Pricing | Best For |
+| :--- | :--- | :--- | :--- |
+| **1. B2B Vendor Security Posture & Trust Signal Auditor** *(Flagship Batch)* | [Apify Store](https://apify.com/durative_hairstreak/b2b-vendor-security-auditor) · `durative_hairstreak/b2b-vendor-security-auditor` | `$0.005` start + `$0.015`/domain | Clay / RevOps / TPRM bulk enrichment (500+ domains: Vanta/SafeBase/Drata fingerprinting, DMARC/SPF/TLS/headers) |
+| **2. SEC 8-K Risk Signals & Corporate Distress Monitor** *(Flagship Monitor)* | [Apify Store](https://apify.com/durative_hairstreak/sec-8k-risk-signals) · `durative_hairstreak/sec-8k-risk-signals` | `$0.005` start + `$0.012`/filing | Quant/AI Agents, Cyber GTM (`Item 1.05`), Forensic Accounting (`4.02`/`4.01`/`5.02`/`1.03`/`3.01` + comment letters) |
+| **3. SaaS & Cloud Status Page SLA Uptime Monitor** | [Apify Store](https://apify.com/durative_hairstreak/saas-status-sla-monitor) · `durative_hairstreak/saas-status-sla-monitor` | `$0.005` start + `$0.008`/vendor | SRE / DevOps monitoring 22+ vendors with merged-interval 30d/90d contractual SLA % math |
+| **4. Open-Source Supply-Chain & CVE Risk Auditor** | [Apify Store](https://apify.com/durative_hairstreak/oss-dependency-risk-auditor) · `durative_hairstreak/oss-dependency-risk-auditor` | `$0.005` start + `$0.008`/package | AI Coding Agents & CI/CD pre-install gating (OSV.dev CVEs, CISA KEV active exploits, SPDX, OpenSSF) |
+| **5. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine** | [Apify Store](https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine) · `durative_hairstreak/quant-portfolio-dcf-math-engine` | `$0.005` start + `$0.005`/calc | Sandbox-free agents & workflows needing Sharpe/Sortino/VaR, Half-Kelly, 5×5 DCF, XIRR & Black-Scholes Greeks |
 
-### Hosted Claude Desktop / Cursor MCP Setup
+### Connect All 5 Hosted Tools in One Streamable-HTTP MCP Entry (Claude / Cursor / Windsurf)
 
 ```json
 {
   "mcpServers": {
-    "apify-sec-risk-monitor": {
-      "url": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
+    "riskops-5-in-1": {
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
       "headers": {
         "Authorization": "Bearer YOUR_APIFY_API_TOKEN"
       }
     }
   }
 }
+```
+
+### Clay HTTP API / n8n 1-Call Bulk B2B Security Enrichment (`$0.015`/domain)
+
+```bash
+curl -X POST "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items?token=YOUR_APIFY_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"domains":["openai.com","anthropic.com","linear.app"],"checkCompliancePages":true,"checkSecurityTxt":true,"maxPostureScore":100}'
 ```
 
 ---

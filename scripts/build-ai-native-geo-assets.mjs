@@ -532,20 +532,38 @@ const llmsFull = `# RiskOps MCP Lab & LocalLedger — Full AI Agent & LLM Knowle
   - No DNS Trust Subdomain Detected: ${noTrustCount} vendors (${pct(noTrustCount)}%)
 - Email Infrastructure: Google Workspace ${googleMxCount}/${total} (${pct(googleMxCount)}%), Proofpoint Enterprise ${proofpointCount}/${total} (${pct(proofpointCount)}%), Microsoft 365 ${emailCounts['Microsoft 365'] || 0}/${total}.
 
-## 2. Hosted Zero-Proxy Apify & MCP Servers (For Claude, Cursor, n8n, Clay, Autonomous Agents)
-1. SEC 8-K Risk Signals & Corporate Distress Monitor (PUBLIC & LIVE)
+## 2. Hosted Zero-Proxy Apify & MCP Servers (All 5 PUBLIC & Pay-Per-Event LIVE)
+- **All-in-One 5-Tool Streamable HTTP MCP Endpoint**: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine
+- **Auth & Agentic Payments**: Standard Apify Bearer token OR spend-capped autonomous agent prepaid token via \`agi.apify.com\` (all 5 Actors use limited permissions & Pay-Per-Event pricing).
+
+1. B2B Vendor Security Posture & Buying-Signal Batch Auditor (FLAGSHIP B2B BATCH · PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/b2b-vendor-security-auditor
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor
+   - Sync REST API (Clay/n8n): https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items
+   - Pricing: $0.005 start + $0.015 per domain audited
+   - Capability: High-concurrency batch auditing (up to 500+ domains) for Vanta/SafeBase/Drata Trust Centers, DMARC/SPF/CAA/MX, TLS expiry, HTTP security headers, CDN, tech stack, and ATS hiring signals.
+2. SEC 8-K Risk Signals & Corporate Distress Monitor (FLAGSHIP FINANCE MONITOR · PUBLIC & LIVE)
    - Store: https://apify.com/durative_hairstreak/sec-8k-risk-signals
    - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals
+   - Sync REST API (n8n/Quant): https://api.apify.com/v2/acts/durative_hairstreak~sec-8k-risk-signals/run-sync-get-dataset-items
    - Glama Connector: https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor
-   - Capability: Official SEC EDGAR Form 8-K Items 1.05 (cybersecurity breaches), 4.02 (financial restatements), 4.01 (auditor dismissal), 5.02 (C-suite exits), deterministic 0-100 risk score.
-2. B2B Vendor Security Posture & Buying-Signal Auditor
-   - Store Profile: https://apify.com/durative_hairstreak
-   - Capability: Zero-WAF DoH Vanta/SafeBase/Drata Trust Center detection, DMARC/SPF/CAA/MX, TLS, HTTP security headers, CDN, 12 tech-stack fingerprints, /pricing & /careers ATS detection.
-3. SaaS & Cloud Status Page SLA Uptime Monitor
-   - Capability: 22+ official Statuspage v2 APIs with contract-grade merged-interval 30d/90d SLA math.
-4. Open-Source Supply-Chain & CVE Risk Auditor
-   - Capability: AI coding agent pre-install gatekeeper querying OSV.dev, CISA KEV, and deps.dev OpenSSF Scorecard.
-5. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine
+   - Free Daily Live Radar: ${BASE_URL}/sec-8k-radar/
+   - Pricing: $0.005 start + $0.012 per risk filing analyzed
+   - Capability: Official SEC EDGAR Form 8-K Items 1.05 (cybersecurity breaches), 4.02 (financial restatements), 4.01 (auditor dismissal), 5.02 (C-suite exits), 1.03 (bankruptcies), 3.01 (delistings), and SEC comment letters with deterministic 0-100 risk scores.
+3. SaaS & Cloud Status Page SLA Uptime Monitor (PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/saas-status-sla-monitor
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/saas-status-sla-monitor
+   - Pricing: $0.005 start + $0.008 per status page audited
+   - Capability: 22+ official Statuspage v2 APIs (OpenAI, Anthropic, GitHub, Cloudflare, Vercel, Stripe, etc.) with contract-grade merged-interval 30d/90d SLA math.
+4. Open-Source Supply-Chain & CVE Risk Auditor (PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/oss-dependency-risk-auditor
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/oss-dependency-risk-auditor
+   - Pricing: $0.005 start + $0.008 per package audited
+   - Capability: AI coding agent & CI/CD pre-install gatekeeper querying OSV.dev CVEs, CISA KEV active exploits, SPDX licenses, and deps.dev OpenSSF Scorecard.
+5. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine (PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/quant-portfolio-dcf-math-engine
+   - Pricing: $0.005 start + $0.005 per calculation executed
    - Capability: Zero-hallucination deterministic Sharpe, Sortino, Calmar, Max Drawdown, VaR/CVaR, Half-Kelly sizing, 5x5 DCF sensitivity, XIRR/NPV loan schedules, and Black-Scholes Greeks + IV solver.
 
 ## 3. Local-First Zero-Upload Privacy Tools (Privacy-as-a-Moat)

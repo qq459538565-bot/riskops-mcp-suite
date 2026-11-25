@@ -1,44 +1,106 @@
 {
   "schemaVersion": "2026-01",
+  "updatedAt": "2026-11-25",
   "publisher": "RiskOps MCP Lab (durative_hairstreak)",
   "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
   "llmsTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms.txt",
   "llmsFullTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
+  "agentCard": "https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json",
+  "allInOneRemote": {
+    "name": "riskops-5-in-1-hosted-mcp",
+    "status": "public",
+    "transport": "streamable-http",
+    "url": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+    "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+    "pricing": "pay-per-event"
+  },
+  "localZeroKeyStdio": {
+    "name": "@riskops-studio/riskops-local-mcp",
+    "status": "public",
+    "transport": "stdio",
+    "repoUrl": "https://github.com/qq459538565-bot/riskops-mcp-suite/tree/main/mcp-server",
+    "pricing": "free-single-lookup"
+  },
   "servers": [
     {
-      "name": "com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor",
+      "name": "durative_hairstreak/b2b-vendor-security-auditor",
+      "priority": "flagship-b2b-batch",
+      "status": "public",
+      "transport": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor",
+      "storeUrl": "https://apify.com/durative_hairstreak/b2b-vendor-security-auditor",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items",
+      "freeWebDemo": "https://qq459538565-bot.github.io/riskops-mcp-suite/index.html",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "vendor-domain-audited",
+        "unitUsd": 0.015
+      }
+    },
+    {
+      "name": "durative_hairstreak/sec-8k-risk-signals",
+      "priority": "flagship-b2b-monitor",
       "status": "public",
       "transport": "streamable-http",
       "url": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
       "storeUrl": "https://apify.com/durative_hairstreak/sec-8k-risk-signals",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~sec-8k-risk-signals/run-sync-get-dataset-items",
       "glamaUrl": "https://glama.ai/mcp/connectors/com.apify.mcp/sec-8-k-risk-signals-and-corporate-distress-monitor",
-      "auth": "apify-bearer-token",
-      "pricing": "pay-per-event"
-    },
-    {
-      "name": "durative_hairstreak/b2b-vendor-security-auditor",
-      "status": "scheduled-public-2026-12",
-      "transport": "streamable-http",
-      "storeUrl": "https://apify.com/durative_hairstreak",
-      "freeWebDemo": "https://qq459538565-bot.github.io/riskops-mcp-suite/index.html"
+      "freeDailyRadar": "https://qq459538565-bot.github.io/riskops-mcp-suite/sec-8k-radar/",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "risk-filing-analyzed",
+        "unitUsd": 0.012
+      }
     },
     {
       "name": "durative_hairstreak/saas-status-sla-monitor",
-      "status": "scheduled-public-2026-12",
+      "status": "public",
       "transport": "streamable-http",
-      "storeUrl": "https://apify.com/durative_hairstreak"
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/saas-status-sla-monitor",
+      "storeUrl": "https://apify.com/durative_hairstreak/saas-status-sla-monitor",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~saas-status-sla-monitor/run-sync-get-dataset-items",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "status-page-audited",
+        "unitUsd": 0.008
+      }
     },
     {
       "name": "durative_hairstreak/oss-dependency-risk-auditor",
-      "status": "scheduled-public-2026-12",
+      "status": "public",
       "transport": "streamable-http",
-      "storeUrl": "https://apify.com/durative_hairstreak"
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/oss-dependency-risk-auditor",
+      "storeUrl": "https://apify.com/durative_hairstreak/oss-dependency-risk-auditor",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~oss-dependency-risk-auditor/run-sync-get-dataset-items",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "package-audited",
+        "unitUsd": 0.008
+      }
     },
     {
       "name": "durative_hairstreak/quant-portfolio-dcf-math-engine",
-      "status": "scheduled-public-2026-12",
+      "status": "public",
       "transport": "streamable-http",
-      "storeUrl": "https://apify.com/durative_hairstreak"
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "storeUrl": "https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~quant-portfolio-dcf-math-engine/run-sync-get-dataset-items",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "calculation-executed",
+        "unitUsd": 0.005
+      }
     }
   ]
 }

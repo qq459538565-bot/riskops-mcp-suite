@@ -8,12 +8,13 @@
 - [SecurityScorecard, UpGuard & EasyDMARC Lightweight Alternative Guide](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/securityscorecard-upguard-alternative.html)
 - [UptimeRobot & Statuspage Alternative for AI/Cloud Dependency SLAs](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/uptimerobot-statuspage-alternative.html)
 
-## Hosted Apify & MCP Servers (Zero-Proxy Official APIs)
-- SEC 8-K Risk Signals & Corporate Distress Monitor: https://apify.com/durative_hairstreak/sec-8k-risk-signals (MCP: https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals)
-- SaaS & Cloud Status Page SLA Uptime Monitor: https://apify.com/durative_hairstreak (22+ official Statuspage v2 APIs)
-- B2B Vendor Security Posture & Trust Signal Auditor: https://apify.com/durative_hairstreak (Zero-WAF DoH Vanta/SafeBase/Drata detection, DMARC/SPF/MX, TLS)
-- Open-Source Supply-Chain & CVE Risk Auditor: https://apify.com/durative_hairstreak (OSV.dev + CISA KEV + deps.dev OpenSSF)
-- Quant Finance, Portfolio Risk, Kelly & DCF Math Engine: https://apify.com/durative_hairstreak (Deterministic Sharpe, Sortino, VaR/CVaR, Half-Kelly, 5x5 DCF, XIRR & Black-Scholes Greeks)
+## Hosted Apify & MCP Servers (All 5 PUBLIC & Pay-Per-Event LIVE · Supports Apify Bearer Token & agi.apify.com Prepaid Tokens)
+- All-in-One 5-Tool Streamable HTTP MCP Endpoint: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine
+- B2B Vendor Security Posture & Trust Signal Auditor ($0.005 start + $0.015/domain · Clay/n8n batch flagship): https://apify.com/durative_hairstreak/b2b-vendor-security-auditor (MCP: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor)
+- SEC 8-K Risk Signals & Corporate Distress Monitor ($0.005 start + $0.012/filing · daily radar flagship): https://apify.com/durative_hairstreak/sec-8k-risk-signals (MCP: https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals · Free Daily Radar: https://qq459538565-bot.github.io/riskops-mcp-suite/sec-8k-radar/)
+- SaaS & Cloud Status Page SLA Uptime Monitor ($0.005 start + $0.008/vendor · 22+ official Statuspage v2 APIs): https://apify.com/durative_hairstreak/saas-status-sla-monitor (MCP: https://mcp.apify.com/?actors=durative_hairstreak/saas-status-sla-monitor)
+- Open-Source Supply-Chain & CVE Risk Auditor ($0.005 start + $0.008/package · OSV.dev + CISA KEV + deps.dev OpenSSF): https://apify.com/durative_hairstreak/oss-dependency-risk-auditor (MCP: https://mcp.apify.com/?actors=durative_hairstreak/oss-dependency-risk-auditor)
+- Quant Finance, Portfolio Risk, Kelly & DCF Math Engine ($0.005 start + $0.005/calc · Sharpe, VaR/CVaR, Half-Kelly, 5x5 DCF, Black-Scholes): https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine (MCP: https://mcp.apify.com/?actors=durative_hairstreak/quant-portfolio-dcf-math-engine)
 
 ## Featured Live Vendor Security Audits (Sample of 112 Pages)
 - [Apify (apify.com) — Grade A+ (100/100), Trust: Vanta, DMARC: reject](https://qq459538565-bot.github.io/riskops-mcp-suite/vendor/apify-com.html)

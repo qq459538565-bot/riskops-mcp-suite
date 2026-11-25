@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
-  "name": "io.github.qq459538565-bot/sec-8k-risk-signals",
-  "title": "SEC 8-K Risk Signals & Corporate Distress Monitor",
-  "description": "Real-time US SEC Form 8-K forensic risk monitor (cyber breaches Item 1.05, financial restatements Item 4.02, auditor exits Item 4.01, C-suite departures Item 5.02, bankruptcies Item 1.03, delistings Item 3.01) and SEC comment letters via official EDGAR APIs.",
-  "version": "1.0.0",
-  "websiteUrl": "https://apify.com/durative_hairstreak/sec-8k-risk-signals",
+  "name": "io.github.qq459538565-bot/riskops-mcp-suite",
+  "title": "RiskOps B2B Security, SEC 8-K, Cloud SLA, OSS CVE & Quant MCP Suite",
+  "description": "5-in-1 zero-proxy B2B intelligence MCP suite on official public APIs: (1) B2B Vendor Security & Vanta/SafeBase/Drata Trust Center batch auditor, (2) US SEC Form 8-K forensic risk monitor (Items 1.05/4.02/4.01/5.02/1.03/3.01), (3) 22+ Cloud/AI Statuspage SLA calculator, (4) OSV.dev + CISA KEV supply-chain gatekeeper, and (5) deterministic DCF/Kelly/Sharpe quant math engine. Pay-Per-Event via Apify MCP or agi.apify.com prepaid tokens.",
+  "version": "1.1.0",
+  "websiteUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer YOUR_APIFY_API_TOKEN",
+          "description": "Bearer YOUR_APIFY_API_TOKEN (standard Apify token or agi.apify.com prepaid agentic token)",
           "isRequired": true,
           "isSecret": true
         }

@@ -37,12 +37,13 @@ try {
   // 1. Initialize
   const initRes = await rpc('initialize', { protocolVersion: '2024-11-05', capabilities: {}, clientInfo: { name: 'test', version: '1.0' } });
   assert.equal(initRes.result.serverInfo.name, 'riskops-mcp-suite');
-  console.log('PASS 1/5: initialize ->', initRes.result.serverInfo);
+  assert.equal(initRes.result.serverInfo.version, '1.1.0');
+  console.log('PASS 1/6: initialize ->', initRes.result.serverInfo);
 
   // 2. tools/list
   const listRes = await rpc('tools/list');
-  assert.equal(listRes.result.tools.length, 4);
-  console.log('PASS 2/5: tools/list ->', listRes.result.tools.map((t) => t.name).join(', '));
+  assert.equal(listRes.result.tools.length, 5);
+  console.log('PASS 2/6: tools/list ->', listRes.result.tools.map((t) => t.name).join(', '));
 
   // 3. Deterministic DCF & Kelly
   const dcfRes = await rpc('tools/call', {
@@ -51,7 +52,7 @@ try {
   });
   const dcfData = JSON.parse(dcfRes.result.content[0].text);
   assert.ok(dcfData.intrinsicValuePerShare > 20, `unexpected DCF: ${dcfData.intrinsicValuePerShare}`);
-  console.log('PASS 3/5: calculate_quant_risk_dcf -> intrinsicPerShare =', dcfData.intrinsicValuePerShare);
+  console.log('PASS 3/6: calculate_quant_risk_dcf -> intrinsicPerShare =', dcfData.intrinsicValuePerShare);
 
   // 4. Live Cloudflare DoH Vendor Security Audit
   const dnsRes = await rpc('tools/call', {
@@ -61,7 +62,8 @@ try {
   const dnsData = JSON.parse(dnsRes.result.content[0].text);
   assert.equal(dnsData.domain, 'stripe.com');
   assert.equal(dnsData.dmarcPolicy, 'reject');
-  console.log('PASS 4/5: audit_vendor_security(stripe.com) -> score =', dnsData.postureScore, 'dmarc =', dnsData.dmarcPolicy);
+  assert.ok(dnsData.hostedBatchApi?.mcpEndpoint?.includes('b2b-vendor-security-auditor'));
+  console.log('PASS 4/6: audit_vendor_security(stripe.com) -> score =', dnsData.postureScore, 'dmarc =', dnsData.dmarcPolicy);
 
   // 5. Live OSV.dev CVE check
   const cveRes = await rpc('tools/call', {
@@ -70,9 +72,20 @@ try {
   });
   const cveData = JSON.parse(cveRes.result.content[0].text);
   assert.ok(cveData.vulnerabilityCount >= 1, 'Expected known CVEs for lodash@4.17.20');
-  console.log('PASS 5/5: audit_oss_package_cve(lodash@4.17.20) -> vulns =', cveData.vulnerabilityCount);
+  assert.ok(cveData.hostedBatchApi?.mcpEndpoint?.includes('oss-dependency-risk-auditor'));
+  console.log('PASS 5/6: audit_oss_package_cve(lodash@4.17.20) -> vulns =', cveData.vulnerabilityCount);
 
-  console.log('ALL 5/5 MCP STDIO E2E TESTS PASSED!');
+  // 6. Live Cloud/AI Statuspage check
+  const slaRes = await rpc('tools/call', {
+    name: 'check_cloud_sla_status',
+    arguments: { provider: 'cloudflare' }
+  });
+  const slaData = JSON.parse(slaRes.result.content[0].text);
+  assert.ok(slaData.provider, 'Expected Statuspage provider name');
+  assert.ok(slaData.hostedBatchApi?.mcpEndpoint?.includes('saas-status-sla-monitor'));
+  console.log('PASS 6/6: check_cloud_sla_status(cloudflare) ->', slaData.indicator, slaData.description);
+
+  console.log('ALL 6/6 MCP STDIO E2E TESTS PASSED!');
 } finally {
   child.kill();
 }

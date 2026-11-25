@@ -1,13 +1,19 @@
 {
   "name": "RiskOps MCP Lab",
-  "description": "Zero-proxy, deterministic official-API intelligence suite for AI Agents, RevOps, Security/TPRM teams, and accountants: SEC Form 8-K distress signals, Cloud/AI Statuspage SLA uptime math, DNS-over-HTTPS B2B Vendor Security & Vanta/SafeBase Trust Center auditing, OSS CVE/KEV pre-install gating, and deterministic quantitative portfolio/DCF math.",
+  "description": "Zero-proxy, deterministic official-API intelligence suite for AI Agents, RevOps, Clay/n8n pipelines, Security/TPRM teams, and quant analysts: high-concurrency B2B Vendor Security & Vanta/SafeBase Trust Center auditing, US SEC Form 8-K forensic distress signals, Cloud/AI Statuspage SLA uptime math, OSS CVE/KEV pre-install gating, and deterministic quantitative portfolio/DCF math.",
   "url": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
   "provider": {
     "organization": "RiskOps Studio / LocalLedger",
     "url": "https://apify.com/durative_hairstreak"
   },
-  "version": "1.2.0",
+  "version": "1.3.0",
   "documentationUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
+  "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+  "agenticPayments": {
+    "provider": "Apify Pay-Per-Event (PPE)",
+    "authMethods": ["Bearer APIFY_API_TOKEN", "agi.apify.com prepaid spend-capped token"],
+    "permissions": "limited-permissions"
+  },
   "capabilities": {
     "streaming": false,
     "pushNotifications": false,
@@ -18,36 +24,56 @@
   "defaultOutputModes": ["application/json", "text/csv", "text/markdown"],
   "skills": [
     {
-      "id": "sec-8k-risk-signals",
-      "name": "US SEC Form 8-K Risk & Distress Signals",
-      "description": "Monitors official SEC EDGAR Form 8-K filings (Item 1.05 cyber breaches, 4.02 accounting restatements, 4.01 auditor changes, 5.02 C-suite departures) with deterministic 0-100 risk scores.",
-      "tags": ["sec", "edgar", "8-k", "cyber-breach", "finance", "risk", "mcp"],
-      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals"
+      "id": "b2b-vendor-security-auditor",
+      "name": "B2B Vendor Security, Trust Center & Buying-Signal Batch Auditor",
+      "description": "High-concurrency batch auditor for Clay, n8n, TPRM, and RevOps AI agents: audits up to 500+ company domains via zero-WAF Cloudflare DoH for Vanta/SafeBase/Drata Trust Centers, DMARC/SPF/CAA/MX posture, TLS expiry, HTTP headers, CDN, tech stack, and ATS hiring signals.",
+      "tags": ["security", "dmarc", "vanta", "safebase", "drata", "tprm", "revops", "clay", "batch-enrichment", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/b2b-vendor-security-auditor",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.015 per domain audited",
+      "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html"
     },
     {
-      "id": "b2b-vendor-security-auditor",
-      "name": "B2B Vendor Security, Trust Center & Buying-Signal Auditor",
-      "description": "Audits any company domain via zero-WAF Cloudflare DoH for Vanta/SafeBase/Drata Trust Centers, DMARC/SPF/CAA/MX posture, TLS, HTTP headers, CDN, tech stack, and ATS hiring signals.",
-      "tags": ["security", "dmarc", "vanta", "safebase", "drata", "tprm", "revops", "mcp"],
-      "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html"
+      "id": "sec-8k-risk-signals",
+      "name": "US SEC Form 8-K Risk & Corporate Distress Monitor",
+      "description": "Monitors official SEC EDGAR Form 8-K filings (Item 1.05 cyber breaches, 4.02 accounting restatements, 4.01 auditor changes, 5.02 C-suite departures, 1.03 bankruptcies, 3.01 delistings) and SEC comment letters with deterministic 0-100 risk scores and low false-positive parsing.",
+      "tags": ["sec", "edgar", "8-k", "cyber-breach", "finance", "quant", "risk", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/sec-8k-risk-signals",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/sec-8k-risk-signals",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~sec-8k-risk-signals/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.012 per risk filing analyzed",
+      "homepage": "https://qq459538565-bot.github.io/riskops-mcp-suite/sec-8k-radar/"
     },
     {
       "id": "saas-status-sla-monitor",
       "name": "AI & Cloud Dependency SLA Uptime Calculator",
       "description": "Queries 22+ official Statuspage v2 APIs (OpenAI, Anthropic, Stripe, GitHub, Cloudflare, Supabase, Vercel) and calculates exact merged-interval 30-day and 90-day contractual SLA percentages.",
-      "tags": ["sla", "uptime", "sre", "statuspage", "cloud", "mcp"]
+      "tags": ["sla", "uptime", "sre", "statuspage", "cloud", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/saas-status-sla-monitor",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/saas-status-sla-monitor",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~saas-status-sla-monitor/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.008 per status page audited"
     },
     {
       "id": "oss-dependency-risk-auditor",
       "name": "Open-Source Supply-Chain & CISA KEV Gatekeeper",
-      "description": "Pre-install security verification for AI coding agents querying official OSV.dev, CISA Known Exploited Vulnerabilities (KEV), and deps.dev OpenSSF Scorecard metrics.",
-      "tags": ["cve", "osv", "cisa-kev", "supply-chain", "npm", "pypi", "mcp"]
+      "description": "Pre-install security verification for AI coding agents and CI/CD querying official OSV.dev, CISA Known Exploited Vulnerabilities (KEV), SPDX licenses, and deps.dev OpenSSF Scorecard metrics.",
+      "tags": ["cve", "osv", "cisa-kev", "supply-chain", "npm", "pypi", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/oss-dependency-risk-auditor",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/oss-dependency-risk-auditor",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~oss-dependency-risk-auditor/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.008 per package audited"
     },
     {
       "id": "quant-portfolio-dcf-math-engine",
       "name": "Zero-Hallucination Quant Finance, Kelly & DCF Math Engine",
-      "description": "Pure deterministic financial mathematics for AI agents: Sharpe/Sortino/Calmar/VaR/CVaR, Half-Kelly sizing, 5x5 DCF sensitivity matrices, XIRR/NPV amortization, and Black-Scholes Greeks + IV solver.",
-      "tags": ["quant", "dcf", "kelly", "var", "options", "finance-math", "mcp"]
+      "description": "Pure deterministic financial mathematics for sandbox-free AI agents and workflows: Sharpe/Sortino/Calmar/VaR/CVaR, Half-Kelly sizing, 5x5 DCF sensitivity matrices, XIRR/NPV amortization, and Black-Scholes Greeks + IV solver.",
+      "tags": ["quant", "dcf", "kelly", "var", "options", "finance-math", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~quant-portfolio-dcf-math-engine/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.005 per calculation executed"
     }
   ],
   "openDatasets": [
@@ -57,6 +83,12 @@
       "csvUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/saas-security-benchmark-2026.csv",
       "reportUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html",
       "refreshCadence": "weekly"
+    },
+    {
+      "name": "2026 Y Combinator 1,200-Startup DNS Security & Trust Center Benchmark (100-Row Open Sample)",
+      "csvUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-sample-100.csv",
+      "reportUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html",
+      "refreshCadence": "quarterly"
     }
   ]
 }
