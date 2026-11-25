@@ -1,14 +1,14 @@
 {
   "name": "RiskOps MCP Lab",
-  "description": "Zero-proxy, deterministic official-API intelligence suite for AI Agents, RevOps, Clay/n8n pipelines, Security/TPRM teams, and quant analysts: high-concurrency B2B Vendor Security & Vanta/SafeBase Trust Center auditing, US SEC Form 8-K forensic distress signals, Cloud/AI Statuspage SLA uptime math, OSS CVE/KEV pre-install gating, and deterministic quantitative portfolio/DCF math.",
+  "description": "Zero-proxy, deterministic official-API intelligence suite for AI Agents, FinTech/Compliance, RevOps, Clay/n8n pipelines, Security/TPRM teams, and quant analysts: live Global Entity KYB & OFAC/UN Sanctions Screening, high-concurrency B2B Vendor Security & Vanta/SafeBase Trust Center auditing, US SEC Form 8-K forensic distress signals, Cloud/AI Statuspage SLA uptime math, OSS CVE/KEV pre-install gating, and deterministic quantitative portfolio/DCF math.",
   "url": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
   "provider": {
     "organization": "RiskOps Studio / LocalLedger",
     "url": "https://apify.com/durative_hairstreak"
   },
-  "version": "1.3.0",
+  "version": "1.4.0",
   "documentationUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
-  "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+  "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
   "agenticPayments": {
     "provider": "Apify Pay-Per-Event (PPE)",
     "authMethods": ["Bearer APIFY_API_TOKEN", "agi.apify.com prepaid spend-capped token"],
@@ -23,6 +23,16 @@
   "defaultInputModes": ["application/json"],
   "defaultOutputModes": ["application/json", "text/csv", "text/markdown"],
   "skills": [
+    {
+      "id": "global-entity-kyb-sanctions-gatekeeper",
+      "name": "Global Entity KYB, LEI & Sanctions Screening Gatekeeper (OFAC + UN + GLEIF + SEC)",
+      "description": "Pre-payment and onboarding compliance gatekeeper for AI agents, fintech, and TPRM: screens companies and counterparties live against US Treasury OFAC SDN & Non-SDN, UN Security Council Consolidated Sanctions, GLEIF Global LEI Registry, and US SEC EDGAR issuers with deterministic CLEAR/REVIEW/BLOCK verdicts.",
+      "tags": ["kyb", "aml", "ofac", "sanctions", "un-sanctions", "gleif", "lei", "compliance", "tprm", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~global-entity-kyb-sanctions-gatekeeper/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.025 per entity screened"
+    },
     {
       "id": "b2b-vendor-security-auditor",
       "name": "B2B Vendor Security, Trust Center & Buying-Signal Batch Auditor",

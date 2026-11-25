@@ -7,10 +7,10 @@
   "llmsFullTxt": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
   "agentCard": "https://qq459538565-bot.github.io/riskops-mcp-suite/.well-known/agent-card.json",
   "allInOneRemote": {
-    "name": "riskops-5-in-1-hosted-mcp",
+    "name": "riskops-6-in-1-hosted-mcp",
     "status": "public",
     "transport": "streamable-http",
-    "url": "https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+    "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
     "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
     "pricing": "pay-per-event"
   },
@@ -22,6 +22,22 @@
     "pricing": "free-single-lookup"
   },
   "servers": [
+    {
+      "name": "durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
+      "priority": "flagship-compliance-gatekeeper",
+      "status": "public",
+      "transport": "streamable-http",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
+      "storeUrl": "https://apify.com/durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
+      "restSyncUrl": "https://api.apify.com/v2/acts/durative_hairstreak~global-entity-kyb-sanctions-gatekeeper/run-sync-get-dataset-items",
+      "auth": ["apify-bearer-token", "agi.apify.com-prepaid-token"],
+      "pricing": {
+        "model": "pay-per-event",
+        "startUsd": 0.005,
+        "unitEvent": "entity-screened",
+        "unitUsd": 0.025
+      }
+    },
     {
       "name": "durative_hairstreak/b2b-vendor-security-auditor",
       "priority": "flagship-b2b-batch",

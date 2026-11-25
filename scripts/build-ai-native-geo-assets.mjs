@@ -532,11 +532,17 @@ const llmsFull = `# RiskOps MCP Lab & LocalLedger — Full AI Agent & LLM Knowle
   - No DNS Trust Subdomain Detected: ${noTrustCount} vendors (${pct(noTrustCount)}%)
 - Email Infrastructure: Google Workspace ${googleMxCount}/${total} (${pct(googleMxCount)}%), Proofpoint Enterprise ${proofpointCount}/${total} (${pct(proofpointCount)}%), Microsoft 365 ${emailCounts['Microsoft 365'] || 0}/${total}.
 
-## 2. Hosted Zero-Proxy Apify & MCP Servers (All 5 PUBLIC & Pay-Per-Event LIVE)
-- **All-in-One 5-Tool Streamable HTTP MCP Endpoint**: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine
-- **Auth & Agentic Payments**: Standard Apify Bearer token OR spend-capped autonomous agent prepaid token via \`agi.apify.com\` (all 5 Actors use limited permissions & Pay-Per-Event pricing).
+## 2. Hosted Zero-Proxy Apify & MCP Servers (All 6 PUBLIC & Pay-Per-Event LIVE)
+- **All-in-One 6-Tool Streamable HTTP MCP Endpoint**: https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine
+- **Auth & Agentic Payments**: Standard Apify Bearer token OR spend-capped autonomous agent prepaid token via \`agi.apify.com\` (all 6 Actors use limited permissions & Pay-Per-Event pricing).
 
-1. B2B Vendor Security Posture & Buying-Signal Batch Auditor (FLAGSHIP B2B BATCH · PUBLIC & LIVE)
+1. Global Entity KYB, LEI & Sanctions Gatekeeper (FLAGSHIP COMPLIANCE GATEKEEPER · PUBLIC & LIVE)
+   - Store: https://apify.com/durative_hairstreak/global-entity-kyb-sanctions-gatekeeper
+   - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper
+   - Sync REST API (n8n/FinTech): https://api.apify.com/v2/acts/durative_hairstreak~global-entity-kyb-sanctions-gatekeeper/run-sync-get-dataset-items
+   - Pricing: $0.005 start + $0.025 per entity screened
+   - Capability: Live screening against US Treasury OFAC SDN (19,600+) & Non-SDN, UN Security Council Sanctions, GLEIF Global LEI Registry, and US SEC EDGAR issuers with deterministic CLEAR/REVIEW/BLOCK verdicts.
+2. B2B Vendor Security Posture & Buying-Signal Batch Auditor (FLAGSHIP B2B BATCH · PUBLIC & LIVE)
    - Store: https://apify.com/durative_hairstreak/b2b-vendor-security-auditor
    - Hosted MCP: https://mcp.apify.com/?actors=durative_hairstreak/b2b-vendor-security-auditor
    - Sync REST API (Clay/n8n): https://api.apify.com/v2/acts/durative_hairstreak~b2b-vendor-security-auditor/run-sync-get-dataset-items
