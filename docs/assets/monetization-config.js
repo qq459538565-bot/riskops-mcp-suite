@@ -3,10 +3,10 @@
  * -----------------------------------------------------------------------------
  * Update ONE file to activate recurring B2B SaaS affiliate commissions (Apify Affiliate
  * 20%->30% lifetime, PartnerStack Xero/FreshBooks/QuickBooks/1Password/Zapier/Deel/Rippling,
- * Make 20%), Chrome/Edge store links, and Creem/Dodo checkout URLs across all 163+ pages.
+ * Make 20%), Chrome/Edge store links, and live Dodo Payments checkout URLs across all 1,149+ pages.
  */
 window.RISKOPS_MONETIZATION = {
-  updatedAt: '2026-11-24',
+  updatedAt: '2026-11-25',
 
   // 1) Apify Affiliate Program (20% first 3 months -> 30% lifetime recurring, up to $5,000/ref)
   apifyAffiliateQuery: '',
@@ -35,12 +35,18 @@ window.RISKOPS_MONETIZATION = {
     localLedgerExtUrl: 'https://addons.mozilla.org/en-US/firefox/addon/localledger-offline/',
   },
 
-  // 4) Live Instant USD Checkout (Codester Live + Dodo Payments Pending Persona)
+  // 4) Live Instant USD/EUR Checkout (Codester 3/3 Live + Dodo Payments 6/6 LIVE Approved)
   checkout: {
     localLedgerSdkCodesterUrl: 'https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk',
     quantCalcWidgetCodesterUrl: 'https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget',
-    localLedgerProUrl: 'mailto:qq459538565@gmail.com?subject=LocalLedger%20Pro%20License%20(%2419)',
-    vendorSecProUrl: 'mailto:qq459538565@gmail.com?subject=VendorSec%20Pro%20License%20(%2429)',
+    tradeGuardProUrl: 'https://checkout.dodopayments.com/buy/pdt_0Nsd8eCytZ4OmQerpMj8q?quantity=1',
+    eInvoiceLocalProUrl: 'https://checkout.dodopayments.com/buy/pdt_0Nsd8y0XIvowuAkdi5S29?quantity=1',
+    craGuardProUrl: 'https://checkout.dodopayments.com/buy/pdt_0NsdA0IknfnvVbvDYa54A?quantity=1',
+    propGuardProUrl: 'https://checkout.dodopayments.com/buy/pdt_0NsdAKTvIijlvhWhJLDos?quantity=1',
+    ycHotGaps678Url: 'https://checkout.dodopayments.com/buy/pdt_0NsdBWWWtCiuraBgGVHkJ?quantity=1',
+    ycFull1200Url: 'https://checkout.dodopayments.com/buy/pdt_0NsdBcDrFwa4gPTRZYJNT?quantity=1',
+    localLedgerProUrl: 'https://checkout.dodopayments.com/buy/pdt_0Nsd8eCytZ4OmQerpMj8q?quantity=1',
+    vendorSecProUrl: 'https://checkout.dodopayments.com/buy/pdt_0NsdBWWWtCiuraBgGVHkJ?quantity=1',
   },
 };
 
