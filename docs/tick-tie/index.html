@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TickTieLocal — 100% Offline PDF Invoice vs. CSV Audit Tick-and-Tie Matcher (Lightweight DataSnipper Alternative)</title>
+  <meta name="description" content="Match vendor PDF invoices against your AP/AR CSV ledger 100% locally inside your browser with zero cloud uploads. Automatically flags Exact Matches, Amount Variances, Missing Invoices, Duplicates & Unrecorded PDFs." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TickTieLocal — Browser-Local Audit Tick-and-Tie Matcher",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser (100% Local — Zero Server Upload)",
+    "url": "https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html",
+    "offers": [
+      { "@type": "Offer", "name": "Free Browser Audit Tool", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Commercial Source SDK License", "price": "49", "priceCurrency": "USD" }
+    ],
+    "description": "Lightweight privacy-first alternative to DataSnipper for small CPA firms, controllers, and freelance auditors. Reconciles PDF invoices against CSV ledgers completely locally in the browser."
+  }
+  </script>
+  <style>
+    :root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;--red:#ef4444;}
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#12243f 0%,var(--bg) 55%);color:var(--text);line-height:1.6;}
+    .wrap{max-width:1120px;margin:0 auto;padding:24px 20px 64px;}
+    header{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:16px;margin-bottom:22px;}
+    .brand{font-weight:800;font-size:18px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .badge{font-size:11px;padding:3px 9px;border-radius:999px;background:rgba(16,185,129,.16);color:#34d399;border:1px solid rgba(16,185,129,.35);font-weight:700;}
+    nav{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;}
+    nav a:hover{color:#fff;}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:22px;margin-bottom:18px;}
+    .split{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px;margin-top:14px;}
+    .box{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:16px;}
+    textarea{width:100%;background:#060b16;color:#e6edf7;border:1px solid var(--border);border-radius:8px;padding:10px;font-family:Consolas,monospace;font-size:12px;}
+    .drop{border:2px dashed var(--accent);border-radius:12px;padding:20px;text-align:center;background:rgba(56,189,248,.05);cursor:pointer;margin-top:8px;}
+    .drop:hover{background:rgba(56,189,248,.12);}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;border:none;font-weight:700;font-size:13.5px;cursor:pointer;color:#fff;background:linear-gradient(135deg,#0284c7,#2563eb);text-decoration:none;}
+    .btn-green{background:linear-gradient(135deg,#059669,#10b981);}
+    .btn-sec{background:var(--panel2);border:1px solid var(--border);color:#e6edf7;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin:16px 0;}
+    .metric{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:13px;}
+    .metric .k{font-size:10.5px;text-transform:uppercase;color:var(--muted);}
+    .metric .v{font-size:22px;font-weight:800;margin-top:4px;}
+    .pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;}
+    .pill.EXACT_MATCH{background:rgba(16,185,129,.18);color:#34d399;border:1px solid rgba(16,185,129,.4);}
+    .pill.AMOUNT_VARIANCE,.pill.UNRECORDED_PDF{background:rgba(245,158,11,.18);color:#fbbf24;border:1px solid rgba(245,158,11,.4);}
+    .pill.MISSING_PDF,.pill.DUPLICATE_LEDGER{background:rgba(239,68,68,.18);color:#f87171;border:1px solid rgba(239,68,68,.4);}
+    table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
+    th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);}
+    th{color:var(--muted);font-size:11px;text-transform:uppercase;}
+    footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+    a.link{color:var(--accent);text-decoration:none;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./index.html">TickTieLocal <span class="badge">100% Browser-Local · Zero Client Data Upload</span></a>
+      <nav>
+        <a href="../alternatives/datasnipper-alternative.html">vs DataSnipper</a>
+        <a href="../bank-converter/index.html">Bank PDF &rarr; CSV</a>
+        <a href="../reports/state-of-saas-security-2026.html">112 SaaS Report</a>
+        <a href="../index.html">RiskOps Hub</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h1 style="margin:0 0 8px;font-size:clamp(24px,3.6vw,34px);">Offline PDF Invoice vs. CSV Ledger "Tick-and-Tie" Audit Matcher</h1>
+      <p style="color:var(--muted);font-size:15px;margin:0 0 14px;">Built for boutique CPA firms, financial controllers, and solo auditors who find DataSnipper overkill or refuse to upload client invoices to cloud servers. Drop your AP/AR CSV ledger + vendor PDF invoices to flag <strong>Exact Matches, Amount Variances, Missing Receipts, Duplicates &amp; Unrecorded PDFs</strong> locally in seconds.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button id="sampleBtn" class="btn btn-green" type="button">Load 1-Click Sample Audit Engagement (5 Exceptions Demo)</button>
+        <a class="btn btn-sec" href="../alternatives/datasnipper-alternative.html">Compare vs. DataSnipper Enterprise</a>
+      </div>
+
+      <div class="split">
+        <div class="box">
+          <strong style="font-size:13.5px;">Step 1: Paste or Upload AP/AR Ledger CSV</strong>
+          <div style="margin:8px 0;"><input id="csvFile" type="file" accept=".csv,text/csv" style="font-size:12px;" /></div>
+          <textarea id="csvInput" rows="7" placeholder="Invoice_No,Date,Vendor,Total_Amount&#10;INV-2026-101,2026-11-01,Amazon Web Services,1250.00"></textarea>
+        </div>
+        <div class="box">
+          <strong style="font-size:13.5px;">Step 2: Drop Supporting Vendor PDF Invoices (0-Byte Upload)</strong>
+          <div id="pdfDrop" class="drop">
+            <input id="pdfFiles" type="file" accept=".pdf,application/pdf" multiple style="display:none;" />
+            <div style="font-weight:700;">Click or Drop 1–50 Vendor PDF Invoices Here</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px;">Parsed 100% locally via Mozilla pdf.js Web Worker</div>
+          </div>
+          <div id="pdfStatus" style="font-size:12.5px;color:var(--muted);margin-top:10px;">0 PDF invoices loaded. Click "Load Sample Audit Engagement" above to test immediately.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+        <button id="runAuditBtn" class="btn" type="button">Run Automated Tick-and-Tie Reconciliation</button>
+        <button id="exportBtn" class="btn btn-sec" type="button" style="display:none;">Export Audit Workpaper CSV &darr;</button>
+        <button id="printBtn" class="btn btn-sec" type="button" style="display:none;">Print Exception Report (PDF)</button>
+      </div>
+
+      <div id="metricsWrap"></div>
+      <div id="tableWrap" style="overflow-x:auto;"></div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:18px;">Need This Offline Engine Inside Your CPA Practice or Fintech App?</h2>
+      <p style="color:var(--muted);font-size:14px;">Get the full zero-dependency commercial JavaScript SDK + unit tests + standalone audit UI, or email <code>qq459538565@gmail.com</code> for custom ERP/NetSuite/QuickBooks column adapters.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn btn-green" href="https://www.localledgerstudio.xyz/" target="_blank" rel="noopener">Explore LocalLedger Studio Privacy Suite &rarr;</a>
+        <a class="btn btn-sec" href="https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk" target="_blank" rel="noopener">Also Need Bank PDF Parser SDK ($39)</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>TickTieLocal · LocalLedger Studio Privacy-First Audit Engineering</span>
+      <span><a class="link" href="../legal/privacy.html">Zero-Upload Privacy Policy</a> · <a class="link" href="../bank-converter/index.html">Bank Statement Converter</a></span>
+    </footer>
+  </div>
+
+  <script type="module">
+    import { exportWorkpaperCsv, extractInvoiceFromText, parseCsvLedger, runTickAndTie } from './tickTieEngine.mjs';
+
+    let parsedPdfs = [];
+    let lastAudit = null;
+
+    const $ = (id) => document.getElementById(id);
+
+    $('csvFile').addEventListener('change', async (e) => {
+      const f = e.target.files?.[0];
+      if (!f) return;
+      $('csvInput').value = await f.text();
+    });
+
+    const dz = $('pdfDrop');
+    dz.addEventListener('click', () => $('pdfFiles').click());
+    dz.addEventListener('dragover', (e) => e.preventDefault());
+    dz.addEventListener('drop', (e) => { e.preventDefault(); handlePdfFiles(e.dataTransfer.files); });
+    $('pdfFiles').addEventListener('change', (e) => handlePdfFiles(e.target.files));
+
+    async function handlePdfFiles(fileList) {
+      const files = Array.from(fileList || []).filter((f) => /\.pdf$/i.test(f.name) || f.type === 'application/pdf');
+      if (!files.length) return;
+      $('pdfStatus').textContent = `Extracting text from ${files.length} PDF invoice(s) locally...`;
+      const pdfjsLib = await import('https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.min.mjs');
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/build/pdf.worker.min.mjs';
+      const docs = [];
+      for (const file of files) {
+        const buf = await file.arrayBuffer();
+        const doc = await pdfjsLib.getDocument({ data: buf }).promise;
+        let fullText = '';
+        for (let p = 1; p <= doc.numPages; p++) {
+          const page = await doc.getPage(p);
+          const content = await page.getTextContent();
+          fullText += content.items.map((it) => it.str).join(' ') + '\n';
+        }
+        docs.push(extractInvoiceFromText(file.name, fullText));
+      }
+      parsedPdfs = docs;
+      $('pdfStatus').textContent = `Loaded ${docs.length} PDF invoice(s) locally (0 bytes uploaded): ${docs.map((d) => `${d.filename} [${d.rawInvoiceNo || '?'} · ${d.amount ?? '?'}]`).join(', ')}`;
+    }
+
+    function renderAudit(res) {
+      lastAudit = res;
+      const c = res.counts;
+      $('metricsWrap').innerHTML = `
+        <div class="grid">
+          <div class="metric"><div class="k">Exact Matches ✓</div><div class="v" style="color:#34d399;">${c.exactMatches}</div></div>
+          <div class="metric"><div class="k">Amount Variances</div><div class="v" style="color:#fbbf24;">${c.amountVariances}</div></div>
+          <div class="metric"><div class="k">Missing PDFs</div><div class="v" style="color:#f87171;">${c.missingPdfs}</div></div>
+          <div class="metric"><div class="k">Duplicate Entries</div><div class="v" style="color:#f87171;">${c.duplicateLedgerRows}</div></div>
+          <div class="metric"><div class="k">Unrecorded PDFs</div><div class="v" style="color:#fbbf24;">${c.unrecordedPdfs}</div></div>
+        </div>`;
+
+      const rows = res.items
+        .map(
+          (x) => `<tr>
+          <td><span class="pill ${x.status}">${x.status.replace(/_/g, ' ')}</span></td>
+          <td>${x.rowNumber ?? '—'}</td>
+          <td>${(x.ledgerInvoiceNo || '').replace(/</g, '&lt;')}</td>
+          <td>${(x.ledgerVendor || '').replace(/</g, '&lt;')}</td>
+          <td>${x.ledgerAmount !== null ? x.ledgerAmount.toFixed(2) : '—'}</td>
+          <td>${(x.pdfFile || '').replace(/</g, '&lt;')}</td>
+          <td>${x.pdfAmount !== null ? x.pdfAmount.toFixed(2) : '—'}</td>
+          <td style="font-size:12px;color:#93a4c3;">${(x.note || '').replace(/</g, '&lt;')}</td>
+        </tr>`
+        )
+        .join('');
+      $('tableWrap').innerHTML = `<table><thead><tr><th>Status</th><th>Row</th><th>Inv #</th><th>Vendor</th><th>Ledger Amt</th><th>PDF Evidence</th><th>PDF Amt</th><th>Audit Finding</th></tr></thead><tbody>${rows}</tbody></table>`;
+      $('exportBtn').style.display = 'inline-flex';
+      $('printBtn').style.display = 'inline-flex';
+    }
+
+    $('runAuditBtn').addEventListener('click', () => {
+      const ledger = parseCsvLedger($('csvInput').value);
+      if (!ledger.length) { alert('Please paste or upload a CSV ledger with header + at least 1 row.'); return; }
+      renderAudit(runTickAndTie(ledger, parsedPdfs));
+    });
+
+    $('sampleBtn').addEventListener('click', () => {
+      $('csvInput').value = `Invoice_No,Date,Vendor,Total_Amount
+INV-2026-101,2026-11-01,Amazon Web Services,1250.00
+INV-2026-102,2026-11-03,Hetzner Online GmbH,480.50
+INV-2026-103,2026-11-05,Gamma Legal LLP,2400.00
+INV-2026-104,2026-11-08,Cloudflare Enterprise,890.00
+INV-2026-101,2026-11-01,Amazon Web Services,1250.00`;
+      parsedPdfs = [
+        extractInvoiceFromText('aws-nov-101.pdf', 'Amazon Web Services Inc\nInvoice Number: INV-2026-101\nDate: 2026-11-01\nTotal Due: $1,250.00'),
+        extractInvoiceFromText('hetzner-102.pdf', 'Hetzner Online GmbH\nRechnungsnummer: INV-2026-102\nDatum: 03.11.2026\nGesamtbetrag: 525,50 €'),
+        extractInvoiceFromText('cloudflare-104.pdf', 'Cloudflare Inc\nInvoice # INV-2026-104\nDate: 2026-11-08\nAmount Due: $890.00'),
+        extractInvoiceFromText('delta-freight-999.pdf', 'Delta Freight Logistics\nInvoice # INV-2026-999\nDate: 2026-11-12\nTotal: $320.00'),
+      ];
+      $('pdfStatus').textContent = 'Loaded 4 sample vendor invoices locally (demonstrating Exact Match, €45 Variance, Missing Legal Receipt, Duplicate AWS Posting & Unrecorded Freight Invoice).';
+      renderAudit(runTickAndTie(parseCsvLedger($('csvInput').value), parsedPdfs));
+    });
+
+    $('exportBtn').addEventListener('click', () => {
+      if (!lastAudit) return;
+      const blob = new Blob([exportWorkpaperCsv(lastAudit.items)], { type: 'text/csv' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `ticktie-audit-workpaper-${new Date().toISOString().slice(0, 10)}.csv`;
+      a.click();
+    });
+
+    $('printBtn').addEventListener('click', () => window.print());
+  </script>
+  <script src="../assets/monetization-config.js" defer></script>
+</body>
+</html>

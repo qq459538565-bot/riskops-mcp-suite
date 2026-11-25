@@ -154,6 +154,234 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
     </section>
 
     <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">1B. Full 24 AI &amp; LLM Companies Breakdown (Reproducible via <code>dig TXT _dmarc.&lt;domain&gt;</code>)</h2>
+      <p style="color:var(--muted);font-size:14px;">Every single record below is verifiable from any terminal using <code>dig +short TXT _dmarc.huggingface.co</code> or <code>dig +short TXT _dmarc.cursor.com</code>. Out of 24 leading AI vendors audited on 2026-11-24, <strong>11 enforce strict <code>p=reject</code></strong> while <strong>13 sit at <code>p=quarantine</code> or <code>p=none</code></strong>:</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>AI Vendor</th><th>Domain</th><th>Score</th><th>DMARC Policy</th><th>SPF Strict (-all)</th><th>DNS CAA</th><th>Trust Center (DNS CNAME)</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a class="link" href="../vendor/huggingface-co.html"><strong>Hugging Face</strong></a></td>
+              <td><code>huggingface.co</code></td>
+              <td><strong>43</strong> (D)</td>
+              <td><span class="pill AMBER">p=none</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/replicate-com.html"><strong>Replicate</strong></a></td>
+              <td><code>replicate.com</code></td>
+              <td><strong>57</strong> (C)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/midjourney-com.html"><strong>Midjourney</strong></a></td>
+              <td><code>midjourney.com</code></td>
+              <td><strong>57</strong> (C)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/replit-com.html"><strong>Replit</strong></a></td>
+              <td><code>replit.com</code></td>
+              <td><strong>65</strong> (C)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/mistral-ai.html"><strong>Mistral AI</strong></a></td>
+              <td><code>mistral.ai</code></td>
+              <td><strong>67</strong> (C)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/weaviate-io.html"><strong>Weaviate</strong></a></td>
+              <td><code>weaviate.io</code></td>
+              <td><strong>67</strong> (C)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/wandb-ai.html"><strong>Weights &amp; Biases</strong></a></td>
+              <td><code>wandb.ai</code></td>
+              <td><strong>75</strong> (B)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>None Detected via DNS</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/cursor-com.html"><strong>Cursor</strong></a></td>
+              <td><code>cursor.com</code></td>
+              <td><strong>77</strong> (B)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/cohere-com.html"><strong>Cohere</strong></a></td>
+              <td><code>cohere.com</code></td>
+              <td><strong>77</strong> (B)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/scale-com.html"><strong>Scale AI</strong></a></td>
+              <td><code>scale.com</code></td>
+              <td><strong>77</strong> (B)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/firecrawl-dev.html"><strong>Firecrawl</strong></a></td>
+              <td><code>firecrawl.dev</code></td>
+              <td><strong>77</strong> (B)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/elevenlabs-io.html"><strong>ElevenLabs</strong></a></td>
+              <td><code>elevenlabs.io</code></td>
+              <td><strong>82</strong> (A)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Yes (-all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/exa-ai.html"><strong>Exa</strong></a></td>
+              <td><code>exa.ai</code></td>
+              <td><strong>85</strong> (A)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/browserbase-com.html"><strong>Browserbase</strong></a></td>
+              <td><code>browserbase.com</code></td>
+              <td><strong>85</strong> (A)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>No</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/together-ai.html"><strong>Together AI</strong></a></td>
+              <td><code>together.ai</code></td>
+              <td><strong>87</strong> (A)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/tavily-com.html"><strong>Tavily</strong></a></td>
+              <td><code>tavily.com</code></td>
+              <td><strong>87</strong> (A)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/pinecone-io.html"><strong>Pinecone</strong></a></td>
+              <td><code>pinecone.io</code></td>
+              <td><strong>92</strong> (A+)</td>
+              <td><span class="pill AMBER">p=quarantine</span></td>
+              <td>Yes (-all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/anthropic-com.html"><strong>Anthropic</strong></a></td>
+              <td><code>anthropic.com</code></td>
+              <td><strong>95</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/perplexity-ai.html"><strong>Perplexity AI</strong></a></td>
+              <td><code>perplexity.ai</code></td>
+              <td><strong>95</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/groq-com.html"><strong>Groq</strong></a></td>
+              <td><code>groq.com</code></td>
+              <td><strong>95</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/langchain-com.html"><strong>LangChain</strong></a></td>
+              <td><code>langchain.com</code></td>
+              <td><strong>95</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/vapi-ai.html"><strong>Vapi</strong></a></td>
+              <td><code>vapi.ai</code></td>
+              <td><strong>95</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Soft (~all)</td>
+              <td>Yes</td>
+              <td>SafeBase (Drata)</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/openai-com.html"><strong>OpenAI</strong></a></td>
+              <td><code>openai.com</code></td>
+              <td><strong>100</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Yes (-all)</td>
+              <td>Yes</td>
+              <td>SafeBase (Drata)</td>
+            </tr>
+<tr>
+              <td><a class="link" href="../vendor/modal-com.html"><strong>Modal</strong></a></td>
+              <td><code>modal.com</code></td>
+              <td><strong>100</strong> (A+)</td>
+              <td><span class="pill GREEN">p=reject</span></td>
+              <td>Yes (-all)</td>
+              <td>Yes</td>
+              <td>Vanta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
       <h2 style="margin-top:0;font-size:20px;">2. Trust Center GRC Market Share &amp; Email Stack Concentration</h2>
       <div class="grid">
         <div class="stat">

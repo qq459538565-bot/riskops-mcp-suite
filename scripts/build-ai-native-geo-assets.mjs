@@ -292,6 +292,33 @@ const reportHtml = `<!DOCTYPE html>
     </section>
 
     <section class="card">
+      <h2 style="margin-top:0;font-size:20px;">1B. Full 24 AI &amp; LLM Companies Breakdown (Reproducible via <code>dig TXT _dmarc.&lt;domain&gt;</code>)</h2>
+      <p style="color:var(--muted);font-size:14px;">Every single record below is verifiable from any terminal using <code>dig +short TXT _dmarc.huggingface.co</code> or <code>dig +short TXT _dmarc.cursor.com</code>. Out of 24 leading AI vendors audited on ${auditedDate}, <strong>${aiCat.reject} enforce strict <code>p=reject</code></strong> while <strong>${aiCat.count - aiCat.reject} sit at <code>p=quarantine</code> or <code>p=none</code></strong>:</p>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead><tr><th>AI Vendor</th><th>Domain</th><th>Score</th><th>DMARC Policy</th><th>SPF Strict (-all)</th><th>DNS CAA</th><th>Trust Center (DNS CNAME)</th></tr></thead>
+          <tbody>
+            ${records
+              .filter((r) => r.category === 'AI & LLM')
+              .sort((a, b) => a.score - b.score)
+              .map(
+                (r) => `<tr>
+              <td><a class="link" href="../vendor/${escHtml(r.slug)}.html"><strong>${escHtml(r.name)}</strong></a></td>
+              <td><code>${escHtml(r.domain)}</code></td>
+              <td><strong>${r.score}</strong> (${escHtml(r.grade)})</td>
+              <td><span class="pill ${r.dmarcPolicy === 'reject' ? 'GREEN' : 'AMBER'}">p=${escHtml(r.dmarcPolicy)}</span></td>
+              <td>${r.spfStrict ? 'Yes (-all)' : 'Soft (~all)'}</td>
+              <td>${r.caaPresent ? 'Yes' : 'No'}</td>
+              <td>${escHtml(r.grcPlatform)}</td>
+            </tr>`
+              )
+              .join('\n')}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
       <h2 style="margin-top:0;font-size:20px;">2. Trust Center GRC Market Share &amp; Email Stack Concentration</h2>
       <div class="grid">
         <div class="stat">

@@ -88,3 +88,5 @@
 - [2026 State of YC Startup Security Report (1,200 Live Audits: 39.3% DMARC Gap, 67.2% No Trust Center, Vanta 172 vs SafeBase 47)](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html)
 - [Top 1,000 Y Combinator Startups Searchable Security & DMARC Directory](https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/yc-1000.html)
 - [Free 100-Row YC Security & DMARC Benchmark Sample CSV](https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-sample-100.csv)
+- [TickTieLocal 100% Offline PDF Invoice vs CSV Audit Matcher (DataSnipper Alternative)](https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html)
+- [Lightweight Offline DataSnipper Alternative for Small CPA Firms](https://qq459538565-bot.github.io/riskops-mcp-suite/alternatives/datasnipper-alternative.html)
