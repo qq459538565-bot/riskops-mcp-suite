@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TickTieLocal — 100% Offline PDF Invoice vs. CSV Audit Tick-and-Tie Matcher (Lightweight DataSnipper Alternative)</title>
-  <meta name="description" content="Match vendor PDF invoices against your AP/AR CSV ledger 100% locally inside your browser with zero cloud uploads. Automatically flags Exact Matches, Amount Variances, Missing Invoices, Duplicates & Unrecorded PDFs." />
+  <title>TickTieLocal — Offline PDF Invoice vs. CSV Audit Tick-and-Tie Matcher (0-Byte Upload)</title>
+  <meta name="description" content="Thursday night in busy season with 40 vendor PDFs and an AP CSV? Match digital vendor invoices against your ledger inside one browser tab — works with Wi-Fi switched off. Flags Exact Matches, Variances, Missing PDFs, Duplicates &amp; Unrecorded Invoices." />
   <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html" />
   <script type="application/ld+json">
   {
@@ -18,7 +18,7 @@
       { "@type": "Offer", "name": "Free Browser Audit Tool", "price": "0", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Commercial Source SDK License", "price": "49", "priceCurrency": "USD" }
     ],
-    "description": "Lightweight privacy-first alternative to DataSnipper for small CPA firms, controllers, and freelance auditors. Reconciles PDF invoices against CSV ledgers completely locally in the browser."
+    "description": "Offline alternative to DataSnipper for small CPA firms, controllers, and solo auditors. Matches native digital PDF invoices against AP/AR CSV ledgers locally inside the browser with zero server uploads."
   }
   </script>
   <style>
@@ -49,6 +49,12 @@
     .pill.EXACT_MATCH{background:rgba(16,185,129,.18);color:#34d399;border:1px solid rgba(16,185,129,.4);}
     .pill.AMOUNT_VARIANCE,.pill.UNRECORDED_PDF{background:rgba(245,158,11,.18);color:#fbbf24;border:1px solid rgba(245,158,11,.4);}
     .pill.MISSING_PDF,.pill.DUPLICATE_LEDGER{background:rgba(239,68,68,.18);color:#f87171;border:1px solid rgba(239,68,68,.4);}
+    .honest-box{background:#09101f;border:1px solid rgba(245,158,11,.42);border-left:4px solid var(--amber);border-radius:12px;padding:15px 18px;}
+    .honest-box h2{margin:0 0 6px;font-size:16.5px;color:#fbbf24;}
+    .honest-box p{margin:0;color:var(--muted);font-size:14px;}
+    .honest-box strong{color:var(--text);}
+    .sample-hint{margin-top:10px;padding:10px 13px;border-radius:10px;background:#09101f;border:1px solid var(--border);font-size:13px;color:var(--muted);}
+    .sample-hint strong{color:var(--text);}
     table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;}
     th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border);}
     th{color:var(--muted);font-size:11px;text-transform:uppercase;}
@@ -59,21 +65,25 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="./index.html">TickTieLocal <span class="badge">100% Browser-Local · Zero Client Data Upload</span></a>
+      <a class="brand" href="./index.html">TickTieLocal <span class="badge">0-Byte Upload · Works With Wi-Fi Off</span></a>
       <nav>
         <a href="../alternatives/datasnipper-alternative.html">vs DataSnipper</a>
         <a href="../bank-converter/index.html">Bank PDF &rarr; CSV</a>
         <a href="../reports/state-of-saas-security-2026.html">112 SaaS Report</a>
-        <a href="../index.html">RiskOps Hub</a>
+        <a href="../index.html">RiskOps Studio</a>
       </nav>
     </header>
 
     <section class="card">
-      <h1 style="margin:0 0 8px;font-size:clamp(24px,3.6vw,34px);">Offline PDF Invoice vs. CSV Ledger "Tick-and-Tie" Audit Matcher</h1>
-      <p style="color:var(--muted);font-size:15px;margin:0 0 14px;">Built for boutique CPA firms, financial controllers, and solo auditors who find DataSnipper overkill or refuse to upload client invoices to cloud servers. Drop your AP/AR CSV ledger + vendor PDF invoices to flag <strong>Exact Matches, Amount Variances, Missing Receipts, Duplicates &amp; Unrecorded PDFs</strong> locally in seconds.</p>
+      <h1 style="margin:0 0 10px;font-size:clamp(24px,3.6vw,34px);line-height:1.18;">Tick-and-Tie 40 Vendor PDFs Against Your AP Ledger — <span style="color:#34d399;">Without a $10,000 Annual Contract</span></h1>
+      <p style="color:var(--muted);font-size:15px;margin:0 0 10px;">It's Thursday night in busy season. You have an AP trial balance CSV on one screen, a client folder full of vendor PDFs on the other, and an NDA that says those legal and cloud bills never leave your laptop.</p>
+      <p style="color:var(--muted);font-size:14.5px;margin:0 0 14px;">Drop your CSV and supporting PDFs below. Mozilla <code>pdf.js</code> extracts invoice numbers, dates, and totals inside browser memory in under a second and sorts every line into five clear audit buckets: <strong>Exact Match, Amount Variance, Missing PDF, Duplicate Ledger Row, and Unrecorded PDF</strong>.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button id="sampleBtn" class="btn btn-green" type="button">Load 1-Click Sample Audit Engagement (5 Exceptions Demo)</button>
-        <a class="btn btn-sec" href="../alternatives/datasnipper-alternative.html">Compare vs. DataSnipper Enterprise</a>
+        <button id="sampleBtn" class="btn btn-green" type="button">Run 1-Click Sample Engagement (5 Audit Cases)</button>
+        <a class="btn btn-sec" href="../alternatives/datasnipper-alternative.html">Read Honest Comparison vs. DataSnipper</a>
+      </div>
+      <div class="sample-hint">
+        <strong>What the 1-click sample tests:</strong> loads 5 AP ledger rows + 4 local PDFs (AWS, German Hetzner <code>525,50 €</code>, Cloudflare, and an unbooked Delta Freight bill) so you can watch it flag an Exact Match, a €45 German VAT/FX variance, a missing $2,400 legal bill, a duplicate AWS entry, and an unrecorded cutoff liability — zero upload required.
       </div>
 
       <div class="split">
@@ -86,15 +96,15 @@
           <strong style="font-size:13.5px;">Step 2: Drop Supporting Vendor PDF Invoices (0-Byte Upload)</strong>
           <div id="pdfDrop" class="drop">
             <input id="pdfFiles" type="file" accept=".pdf,application/pdf" multiple style="display:none;" />
-            <div style="font-weight:700;">Click or Drop 1–50 Vendor PDF Invoices Here</div>
-            <div style="font-size:12px;color:var(--muted);margin-top:4px;">Parsed 100% locally via Mozilla pdf.js Web Worker</div>
+            <div style="font-weight:700;">Click or Drop 1–50 Native Digital Vendor PDFs Here</div>
+            <div style="font-size:12px;color:var(--muted);margin-top:4px;">Switch Wi-Fi off after load — parsed 100% locally via Mozilla pdf.js</div>
           </div>
-          <div id="pdfStatus" style="font-size:12.5px;color:var(--muted);margin-top:10px;">0 PDF invoices loaded. Click "Load Sample Audit Engagement" above to test immediately.</div>
+          <div id="pdfStatus" style="font-size:12.5px;color:var(--muted);margin-top:10px;">0 PDF invoices loaded. Click "Run 1-Click Sample Engagement" above to see all 5 audit exception types immediately.</div>
         </div>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
-        <button id="runAuditBtn" class="btn" type="button">Run Automated Tick-and-Tie Reconciliation</button>
+        <button id="runAuditBtn" class="btn" type="button">Run Tick-and-Tie Reconciliation</button>
         <button id="exportBtn" class="btn btn-sec" type="button" style="display:none;">Export Audit Workpaper CSV &darr;</button>
         <button id="printBtn" class="btn btn-sec" type="button" style="display:none;">Print Exception Report (PDF)</button>
       </div>
@@ -104,16 +114,23 @@
     </section>
 
     <section class="card">
-      <h2 style="margin-top:0;font-size:18px;">Need This Offline Engine Inside Your CPA Practice or Fintech App?</h2>
-      <p style="color:var(--muted);font-size:14px;">Get the full zero-dependency commercial JavaScript SDK + unit tests + standalone audit UI, or email <code>qq459538565@gmail.com</code> for custom ERP/NetSuite/QuickBooks column adapters.</p>
+      <div class="honest-box">
+        <h2>Honest Caveat: Native Digital Text PDFs Only (No Photo OCR)</h2>
+        <p>TickTieLocal reads selectable text straight out of vendor PDFs (AWS, Stripe, Hetzner, law firms, SaaS billing portals) inside your browser. It does <strong>not</strong> run OCR on crooked smartphone photos of crumpled paper receipts or flat scanner images, and it is not a multi-staff Excel COM add-in. If half your client folder is photographed paper, buy <strong>DataSnipper</strong> or <strong>Dext</strong>. If you reconcile clean digital PDFs against an AP/AR CSV and refuse to upload client files to third-party clouds, use this.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;font-size:18px;">Want the Standalone Offline Engine Inside Your CPA Practice or Fintech App? ($49 One-Time)</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:6px;">No per-seat annual contract and no vendor cloud dependency. Get the full zero-dependency JavaScript source SDK (<code>tickTieEngine.mjs</code>), automated unit tests, and self-hostable audit UI for a flat <strong>$49 commercial license</strong> — or email <code>qq459538565@gmail.com</code> if you need a custom NetSuite, Xero, or QuickBooks column adapter.</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-green" href="https://www.localledgerstudio.xyz/" target="_blank" rel="noopener">Explore LocalLedger Studio Privacy Suite &rarr;</a>
-        <a class="btn btn-sec" href="https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk" target="_blank" rel="noopener">Also Need Bank PDF Parser SDK ($39)</a>
+        <a class="btn btn-green" href="https://www.localledgerstudio.xyz/" target="_blank" rel="noopener">Explore LocalLedger Studio Offline Suite &rarr;</a>
+        <a class="btn btn-sec" href="https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk" target="_blank" rel="noopener">Need Bank Statement PDF SDK Too? ($39 on Codester)</a>
       </div>
     </section>
 
     <footer>
-      <span>TickTieLocal · LocalLedger Studio Privacy-First Audit Engineering</span>
+      <span>TickTieLocal · LocalLedger Studio Browser-Local Audit Tooling</span>
       <span><a class="link" href="../legal/privacy.html">Zero-Upload Privacy Policy</a> · <a class="link" href="../bank-converter/index.html">Bank Statement Converter</a></span>
     </footer>
   </div>

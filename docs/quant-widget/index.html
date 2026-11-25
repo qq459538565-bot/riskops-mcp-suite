@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuantCalc-JS 鈥?Embeddable DCF Valuation, Portfolio Risk &amp; Kelly Calculator Widget</title>
-  <meta name="description" content="Zero-dependency interactive JavaScript financial calculator widget featuring 5x5 DCF sensitivity matrix, Bull/Base/Bear scenarios, Sharpe/Sortino/VaR portfolio analytics, Kelly Criterion &amp; Loan/IRR solver." />
+  <title>QuantCalc-JS — Drop-In DCF, Kelly, Sharpe &amp; IRR Financial Calculator Widget (Zero Dependencies)</title>
+  <meta name="description" content="Stop burning a weekend coding DCF 5x5 sensitivity grids, Sharpe/Sortino risk metrics, Kelly sizing, and loan/IRR math — or trusting LLMs with compound interest. Pure zero-dependency ES module widget." />
+  <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/quant-widget/index.html" />
   <style>
-    :root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;}
+    :root{--bg:#070b14;--panel:#0e1628;--panel2:#131f38;--border:#1f2e4d;--text:#e6edf7;--muted:#93a4c3;--accent:#38bdf8;--green:#10b981;--amber:#f59e0b;}
     *{box-sizing:border-box;}
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#162040 0%,var(--bg) 55%);color:var(--text);padding:24px 16px 56px;}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;background:radial-gradient(circle at top right,#162040 0%,var(--bg) 55%);color:var(--text);padding:24px 16px 56px;line-height:1.6;}
     .wrap{max-width:980px;margin:0 auto;}
     .qc-root{background:var(--panel);border:1px solid var(--border);border-radius:18px;padding:22px;}
     .qc-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:14px;margin-bottom:16px;}
@@ -33,21 +34,89 @@
     .qc-tbl td.qc-hl{background:rgba(56,189,248,.2);color:#fff;font-weight:800;}
     .qc-err{color:#f87171;font-size:13px;padding:10px;background:rgba(239,68,68,.12);border-radius:8px;}
     .qc-note{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px 22px;margin-top:16px;}
+    .hero-panel{margin-top:0;margin-bottom:14px;padding:18px 22px;}
+    .eyebrow{display:inline-block;padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;background:rgba(56,189,248,.14);color:var(--accent);border:1px solid rgba(56,189,248,.32);margin-bottom:8px;}
+    .btn-green{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#059669,#10b981);color:#fff;text-decoration:none;padding:10px 16px;border-radius:9px;font-weight:700;font-size:13px;}
+    .btn-sec{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);color:#e6edf7;border:1px solid var(--border);text-decoration:none;padding:10px 14px;border-radius:9px;font-weight:600;font-size:13px;}
+    .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;margin-top:12px;}
+    .sub-box{background:#09101f;border:1px solid var(--border);border-radius:12px;padding:15px;}
+    .sub-box h3{margin:0 0 6px;font-size:15px;color:#fff;}
+    .sub-box p,.sub-box li{margin:0;color:var(--muted);font-size:13.5px;}
+    .honest-box{background:#09101f;border:1px solid rgba(245,158,11,.42);border-left:4px solid var(--amber);border-radius:12px;padding:16px 18px;}
+    .honest-box h2{margin:0 0 6px;font-size:16.5px;color:#fbbf24;}
+    .honest-box p{margin:0;color:var(--muted);font-size:14px;}
+    .honest-box strong{color:var(--text);}
+    pre{background:#070c17;border:1px solid var(--border);border-radius:10px;padding:12px 14px;overflow-x:auto;font-size:12.5px;color:#cbd5e1;margin:10px 0 0;}
+    code{font-family:Consolas,monospace;font-size:12.5px;color:#cbd5e1;}
+    footer{margin-top:26px;padding-top:16px;border-top:1px solid var(--border);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+    a.link{color:var(--accent);text-decoration:none;}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:#0e1628;border:1px solid #1f2e4d;border-radius:14px;padding:12px 18px;margin-bottom:14px;">
-      <div>
-        <strong style="font-size:14.5px;">QuantCalc-JS v1.0 — Embeddable 4-in-1 Finance Widget</strong>
-        <div style="font-size:12px;color:#93a4c3;">Zero dependencies · Full ESM source + docs + unit tests · Drop into any site in 2 lines</div>
+    <section class="panel hero-panel">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+        <div style="max-width:650px;">
+          <span class="eyebrow">CODESTER #76738 LIVE DEMO · ZERO DEPENDENCIES · 4/4 NODE TESTS PASSING</span>
+          <h1 style="margin:0 0 8px;font-size:clamp(21px,3.2vw,29px);line-height:1.2;">Stop Wasting a Weekend Building DCF, Kelly &amp; Sharpe Calculators (Or Letting an LLM Guess Compound Interest)</h1>
+          <p style="margin:0;font-size:14px;color:var(--muted);">Finance newsletters, investing blogs, and SaaS dashboards usually pick between two bad options: paste in a clunky third-party iframe that breaks on mobile, or spend Sunday night debugging WACC sensitivity edge cases. <strong>QuantCalc-JS</strong> is a pure ES module you drop straight into your own page. Edit any input below — all four calculators update in under 1ms with zero server calls.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:230px;">
+          <a href="https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget" target="_blank" rel="noopener" class="btn-green" style="justify-content:center;">Buy Full Source on Codester ($29) &rarr;</a>
+          <div style="font-size:11.5px;color:var(--muted);text-align:center;">$29 license ($34 total w/ Codester buyer fee)</div>
+          <a href="../index.html" class="btn-sec" style="justify-content:center;">Back to RiskOps Studio</a>
+        </div>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#059669,#10b981);color:#fff;text-decoration:none;padding:9px 15px;border-radius:9px;font-weight:700;font-size:13px;">Buy Commercial License ($29) &rarr;</a>
-        <a href="../index.html" style="background:#131f38;color:#e6edf7;border:1px solid #1f2e4d;text-decoration:none;padding:9px 13px;border-radius:9px;font-weight:600;font-size:13px;">Back to RiskOps Hub</a>
-      </div>
-    </div>
+    </section>
+
     <div id="quant-mount"></div>
+
+    <section class="panel">
+      <h2 style="margin:0 0 6px;font-size:19px;">Why Drop-In Pure JS Beats Fragile Iframe Embeds</h2>
+      <p style="margin:0;font-size:14px;color:var(--muted);">No external script tags, no third-party branding watermark, no layout-shift scrollbars inside iframes, and zero npm bloat. Import the widget into React, Vue, Next.js, Webflow, WordPress, or plain HTML in two lines — or call the five pure math functions (<code>calculateDcf</code>, <code>calculatePortfolioRisk</code>, <code>calculateKelly</code>, <code>calculateLoan</code>, <code>calculateIrr</code>) directly inside your Node.js API or AI agent tool.</p>
+      <pre>import { mountQuantWidget } from './quantWidget.mjs';
+mountQuantWidget(document.getElementById('quant-mount'), { currency: '$', defaultTab: 'dcf' });</pre>
+      <div class="two-col">
+        <div class="sub-box">
+          <h3>What's Inside the 4-Tab Engine</h3>
+          <ul style="padding-left:18px;margin-top:6px;">
+            <li style="margin-bottom:5px;"><strong>5-Year Two-Stage DCF:</strong> Bear / Base / Bull intrinsic value per share, Margin of Safety %, and a 5×5 WACC × Terminal Growth grid.</li>
+            <li style="margin-bottom:5px;"><strong>Portfolio Risk:</strong> Total Return, CAGR, Annualized Volatility, Sharpe, Sortino, Calmar, Max Drawdown, and Historical 95% VaR / CVaR.</li>
+            <li style="margin-bottom:5px;"><strong>Kelly Sizing:</strong> Expectancy per 1R, positive-edge gate, Full Kelly, Half-Kelly, and Quarter-Kelly dollar allocations.</li>
+            <li><strong>Loan &amp; IRR Solver:</strong> Monthly payment, total interest, total repaid, plus Newton-Raphson periodic cashflow IRR.</li>
+          </ul>
+        </div>
+        <div class="sub-box">
+          <h3>What Ships in the Codester #76738 ZIP</h3>
+          <ul style="padding-left:18px;margin-top:6px;">
+            <li style="margin-bottom:5px;"><code>src/quantEngine.mjs</code> — pure deterministic math module, zero dependencies, runs in browsers and Node.js 18+.</li>
+            <li style="margin-bottom:5px;"><code>src/quantWidget.mjs</code> — responsive dark UI component with customizable currency (<code>$</code>, <code>€</code>, <code>£</code>) and default tab.</li>
+            <li style="margin-bottom:5px;"><code>test/quantEngine.test.mjs</code> — 4/4 automated Node.js unit tests passing out of the box (<code>node --test</code>).</li>
+            <li><code>demo/index.html</code> + <code>docs/index.html</code> — working standalone demo and clean API reference.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="honest-box">
+        <h2>Honest Caveat: Pure Deterministic Math Only — Bring Your Own Price Feed</h2>
+        <p>QuantCalc-JS does <strong>not</strong> pull live stock quotes, ticker fundamentals, or SEC filings from Yahoo Finance or any external market API. That is deliberate: external scrapers break every few months and force you to manage API keys and rate limits. You pass in the numbers (from user input or your own price feed), and QuantCalc-JS handles the math deterministically with zero server bills. Also note: <code>calculateIrr</code> solves periodic cashflow IRR for equal intervals (<code>t0, t1, t2...</code>), not irregular calendar-dated XIRR.</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <div style="font-size:13.5px;color:var(--muted);">One-time purchase, full source code ownership, zero recurring API fees.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget" target="_blank" rel="noopener" class="btn-green">Get QuantCalc-JS on Codester (#76738 · $29) &rarr;</a>
+          <a href="https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk" target="_blank" rel="noopener" class="btn-sec">Also See: Bank PDF Parser SDK (#76737 · $39)</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span><strong>QuantCalc-JS by RiskOps Studio</strong> · Educational &amp; analytical calculator widget only — not investment advice.</span>
+      <span><a class="link" href="../index.html">RiskOps Studio</a> · <a class="link" href="../bank-converter/index.html">LocalLedger Bank PDF Tool</a></span>
+    </footer>
   </div>
   <script type="module">
     import { mountQuantWidget } from './quantWidget.mjs';

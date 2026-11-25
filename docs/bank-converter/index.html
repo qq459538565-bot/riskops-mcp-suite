@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LocalLedger — 100% Local Browser Bank Statement PDF to CSV, QuickBooks &amp; Xero Converter (Zero Uploads)</title>
-  <meta name="description" content="Convert Chase, Bank of America, Wells Fargo, Mercury, Wise &amp; UK/EU bank statement PDFs to clean CSV, QuickBooks &amp; Xero 100% inside your browser. Zero server uploads, automatic $0.00 balance reconciliation check." />
+  <title>LocalLedger — Offline Bank Statement PDF to CSV, QuickBooks &amp; Xero Converter (0-Byte Upload)</title>
+  <meta name="description" content="Convert Chase, BofA, Wells Fargo, Mercury, Wise, Amex, Barclays &amp; German/EU (1.234,56 €) bank PDFs to QuickBooks, Xero, and Excel CSV inside your own browser. Turn Wi-Fi off after load — 0 bytes leave your machine." />
   <link rel="canonical" href="https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html" />
   <script type="application/ld+json">
   {
@@ -18,9 +18,10 @@
         "url": "https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html",
         "offers": [
           { "@type": "Offer", "name": "Free Preview & Sample Export", "price": "0", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Unlimited Annual Pro", "price": "19", "priceCurrency": "USD" }
+          { "@type": "Offer", "name": "Pro One-Time Pack", "price": "19", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "LocalLedger-JS Commercial SDK (Codester #76737)", "price": "39", "priceCurrency": "USD" }
         ],
-        "description": "Convert US, UK, EU, and Australian bank statement PDFs (Chase, BofA, Wells Fargo, Mercury, Wise, Amex, Barclays, N26, CommBank) to QuickBooks, Xero, and Excel CSV 100% locally inside your browser with exact $0.00 balance reconciliation and zero cloud uploads."
+        "description": "Convert native digital US, UK, EU, German (1.234,56 EUR, DD.MM.YYYY), and Australian bank statement PDFs to QuickBooks, Xero, and Excel CSV 100% locally inside your browser with exact $0.00 balance reconciliation and zero cloud uploads."
       },
       {
         "@type": "FAQPage",
@@ -30,15 +31,23 @@
             "name": "Is there a bank statement PDF to CSV converter that does not upload files to a cloud server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. LocalLedger parses bank statement PDFs 100% locally in your browser using Mozilla pdf.js Web Workers. Zero bytes of your financial statement leave your device, making it a privacy-first alternative to cloud upload tools like DocuClipper and Docparser."
+              "text": "Yes. LocalLedger parses digital bank statement PDFs 100% locally in your browser using Mozilla pdf.js Web Workers. Zero bytes of your financial statement leave your device — you can switch Wi-Fi off after loading the page and it still parses cleanly."
             }
           },
           {
             "@type": "Question",
-            "name": "Does LocalLedger support European comma-decimal bank statements and credit card sign flipping?",
+            "name": "Does LocalLedger support European comma-decimal bank statements, German dot dates, and Amex sign flipping?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. LocalLedger natively parses EU formats like 1.234,56 EUR (N26, Deutsche Bank, Wise), UK DD/MM/YYYY formats (Barclays, HSBC), AU CR/DR suffixes (CommBank), and includes a 1-click Flip Signs toggle for American Express and credit card QuickBooks imports."
+              "text": "Yes. LocalLedger parses EU formats like 1.234,56 EUR and DD.MM.YYYY (N26, Deutsche Bank, Wise), UK DD/MM/YYYY formats (Barclays, HSBC), AU CR/DR suffixes (CommBank), accounting parentheses (45.00), and includes a 1-click Flip Signs toggle for American Express and credit card QuickBooks imports."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does LocalLedger work on scanned paper bank statements or phone photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. LocalLedger reads selectable text from native digital PDFs downloaded directly from online banking portals. If a PDF is a flat scan or phone photo, it flags SCANNED_PDF_DETECTED instead of guessing numbers. Use a cloud OCR tool such as Dext or DocuClipper for scanned paper."
             }
           }
         ]
@@ -80,6 +89,11 @@ input,select{background:#09101f;border:1px solid var(--border);color:#fff;paddin
 .price-card{background:#09101f;border:1px solid var(--border);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;}
 .price-card.featured{border-color:var(--accent);box-shadow:0 0 0 1px rgba(56,189,248,.3);}
 .price-amt{font-size:32px;font-weight:800;margin:8px 0;}
+.honest-box{background:#09101f;border:1px solid rgba(245,158,11,.42);border-left:4px solid var(--amber);border-radius:12px;padding:16px 18px;}
+.honest-box h2{margin:0 0 8px;font-size:17px;color:#fbbf24;}
+.honest-box p,.honest-box li{color:var(--muted);font-size:14px;}
+.honest-box strong{color:var(--text);}
+.dev-box{background:linear-gradient(135deg,rgba(14,165,233,.10),rgba(16,185,129,.08));border:1px solid rgba(56,189,248,.35);border-radius:14px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
 a.link{color:var(--accent);text-decoration:none;}
 a.link:hover{text-decoration:underline;}
 .bank-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
@@ -91,25 +105,26 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
 <body>
   <div class="wrap">
     <header>
-    <a class="brand" href="../bank-converter/index.html">LocalLedger <span class="badge">0-Byte Upload · 100% Browser Local</span></a>
+    <a class="brand" href="../bank-converter/index.html">LocalLedger <span class="badge">0-Byte Upload · Works With Wi-Fi Off</span></a>
     <nav>
       <a href="../bank-converter/index.html">Bank PDF &rarr; CSV</a>
       <a href="../bank-converter/extension.html">Offline Extension</a>
       <a href="../alternatives/quickbooks-vs-xero-bank-import-2026.html">QBO vs Xero</a>
       <a href="../alternatives/docuclipper-alternative.html">vs DocuClipper</a>
-      <a href="../vendors/index.html">112 SaaS Security</a>
-      <a href="../index.html">RiskOps 4-in-1</a>
+      <a href="../tick-tie/index.html">Audit Tick-and-Tie</a>
+      <a href="../index.html">RiskOps Studio</a>
     </nav>
   </header>
 
     <section class="card">
-      <h1 style="margin:0 0 8px;font-size:clamp(24px,3.8vw,36px);line-height:1.18;">Convert Bank Statement PDFs to CSV, QuickBooks &amp; Xero — <span style="color:#34d399;">Without Uploading a Single Byte</span></h1>
-      <p style="color:var(--muted);max-width:820px;margin:0 0 16px;font-size:15px;">Stop paying $39–$99/mo to DocuClipper or Docparser — and stop uploading confidential client bank statements to cloud servers or hallucinating LLMs. LocalLedger runs Mozilla <code>pdf.js</code> + deterministic opening/closing balance math <strong>100% locally inside your browser</strong>.</p>
+      <h1 style="margin:0 0 10px;font-size:clamp(24px,3.8vw,35px);line-height:1.18;">Turn Bank Statement PDFs Into Clean QuickBooks &amp; Xero CSVs — <span style="color:#34d399;">Without Uploading Your Client's Numbers</span></h1>
+      <p style="color:var(--muted);max-width:860px;margin:0 0 10px;font-size:15px;">Your client's bank feed died four months ago, they won't let you upload unredacted account statements to a cloud converter, and you're staring at 14 monthly PDFs — half of them Amex statements with backwards signs or German <code>1.234,56 €</code> exports that break Excel on sight.</p>
+      <p style="color:var(--muted);max-width:860px;margin:0 0 16px;font-size:14.5px;">LocalLedger runs Mozilla <code>pdf.js</code> and deterministic balance math inside this browser tab. <strong>Switch your Wi-Fi off after the page loads and test it yourself</strong> — every row is checked against <code>Opening + Credits - Debits = Closing</code> to <code>$0.00</code> before you download a single CSV.</p>
 
       <div id="dropzone" class="dropzone" onclick="document.getElementById('pdfInput').click()">
         <input id="pdfInput" type="file" accept="application/pdf" multiple style="display:none" />
-        <div style="font-size:18px;font-weight:700;margin-bottom:6px;">Drop 1 or Multiple Bank Statement PDFs Here (Jan–Dec Batch Merge Supported!)</div>
-        <div style="color:var(--muted);font-size:13px;">Works offline after page load · Supports multi-month batch merge across Chase, BofA, Wells Fargo, Mercury, Wise, Amex, Barclays, HSBC &amp; 30+ banks</div>
+        <div style="font-size:17.5px;font-weight:700;margin-bottom:6px;">Drop 1 or More Digital Bank PDFs Here (Jan–Dec Multi-File Merge Supported)</div>
+        <div style="color:var(--muted);font-size:13px;">0 bytes leave your laptop · Parses US (<code>MM/DD/YYYY</code>), UK (<code>DD/MM/YYYY</code>), German/EU (<code>DD.MM.YYYY</code> &amp; <code>1.234,56 €</code>), AU (<code>CR/DR</code>), and Amex sign flips</div>
       </div>
 
       <div class="controls">
@@ -122,7 +137,7 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
           </select>
         </label>
         <label style="font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:5px;cursor:pointer;">
-          <input id="flipSignsChk" type="checkbox" style="padding:0;" /> Flip Signs (Amex/Credit Card)
+          <input id="flipSignsChk" type="checkbox" style="padding:0;" /> Flip Signs (Amex / Credit Card)
         </label>
         <input id="openBalInput" type="text" placeholder="Optional Opening Bal" style="width:155px;" />
         <input id="closeBalInput" type="text" placeholder="Optional Closing Bal" style="width:155px;" />
@@ -142,59 +157,84 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
       <div id="tableWrap" style="overflow-x:auto;"></div>
     </section>
 
+    <section class="card">
+      <div class="honest-box">
+        <h2>Honest Caveat: Who Should NOT Use LocalLedger?</h2>
+        <p style="margin:0 0 8px;">Save yourself five minutes before dropping files in. LocalLedger does one job well and intentionally skips OCR:</p>
+        <ul style="margin:0;padding-left:20px;">
+          <li style="margin-bottom:6px;"><strong>Scanned paper statements or phone photos:</strong> LocalLedger extracts selectable text from native digital PDFs downloaded straight from online banking portals. Drop in a flat scan or photographed paper statement and it will stop with <code>SCANNED_PDF_DETECTED</code> instead of hallucinating digits. For paper scans, buy Dext or DocuClipper.</li>
+          <li><strong>Who this IS built for:</strong> Bookkeepers, CPAs, and founders holding clean digital PDFs from Chase, BofA, Wells Fargo, Mercury, Wise, Amex, Barclays, HSBC, N26, Deutsche Bank, or CommBank who want a fast local CSV, exact <code>$0.00</code> balance verification, and zero client data sent to an outside server.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="dev-box">
+        <div style="max-width:680px;">
+          <span class="pill GREEN" style="margin-bottom:8px;">FOR DEVELOPERS &amp; FINTECH TEAMS · CODESTER #76737</span>
+          <h2 style="margin:0 0 6px;font-size:19px;">Want This Exact Parser Inside Your Own App — Without Burning Two Weekends on Bank Regexes?</h2>
+          <p style="margin:0;color:var(--muted);font-size:14px;">Everything running in the demo above ships as <strong>LocalLedger-JS</strong>: one zero-dependency ES module (<code>statementParser.mjs</code>), <strong>10/10 passing Node.js unit tests</strong> (Chase, Mercury, UK Barclays, German/EU <code>1.234,56 €</code> &amp; <code>DD.MM.YYYY</code>, Amex sign flip, AU <code>CR/DR</code>, variance detection, scanned-PDF guard), plus QuickBooks 3/4-col &amp; Xero CSV exporters. Pay once, keep the source, pay $0 in OCR API bills.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;min-width:220px;">
+          <a class="cta cta-green" href="https://www.codester.com/items/76737/localledger-js-bank-statement-parser-sdk" target="_blank" rel="noopener" style="justify-content:center;">Buy JS SDK Source ($39 on Codester) &rarr;</a>
+          <a class="cta-sec" href="../alternatives/quickbooks-vs-xero-bank-import-2026.html" style="justify-content:center;">Read QBO vs. Xero CSV Guide</a>
+        </div>
+      </div>
+    </section>
+
     <section class="card" id="pricing">
-      <h2 style="margin-top:0;font-size:22px;">Simple, Honest Pricing — Zero Monthly Subscription Traps</h2>
-      <p style="color:var(--muted);font-size:14px;margin-top:4px;">Pay only when you need bulk conversion. Processed securely via <strong>Creem</strong> (Merchant of Record — instant license key delivery by email + 14-day money-back guarantee).</p>
+      <h2 style="margin-top:0;font-size:21px;">End-User Pricing — Test With Your Own PDF Before Paying a Dollar</h2>
+      <p style="color:var(--muted);font-size:14px;margin-top:4px;">Run your real statement in the free preview first so you know it parses cleanly and balances to <code>$0.00</code>. Need more than 25 rows? Unlock unlimited exports below — 14-day refund policy if a statement layout trips you up.</p>
       <div class="pricing-grid">
         <div class="price-card">
           <div>
-            <div style="font-weight:700;color:var(--muted);">FREE PREVIEW</div>
+            <div style="font-weight:700;color:var(--muted);">FREE BROWSER PREVIEW</div>
             <div class="price-amt">$0</div>
             <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
-              <li>100% browser-local PDF extraction</li>
-              <li>Exact opening/closing math check</li>
+              <li>Full browser-local PDF extraction (0 bytes uploaded)</li>
+              <li>Opening/closing math check &amp; per-row balance audit</li>
               <li>Export up to 25 rows per statement</li>
-              <li>No account or credit card required</li>
+              <li>No account, email, or card required</li>
             </ul>
           </div>
-          <a class="cta-sec" href="#dropzone" style="justify-content:center;margin-top:14px;">Start Converting Free</a>
+          <a class="cta-sec" href="#dropzone" style="justify-content:center;margin-top:14px;">Test a PDF Free Above</a>
         </div>
         <div class="price-card featured">
           <div>
-            <span class="pill GREEN">MOST POPULAR FOR TAX SEASON</span>
+            <span class="pill GREEN">NO SUBSCRIPTION</span>
             <div style="font-weight:700;margin-top:8px;">PRO ONE-TIME PACK</div>
             <div class="price-amt">$19 <span style="font-size:14px;font-weight:500;color:var(--muted);">one-time</span></div>
             <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
-              <li><strong>Unlimited rows</strong> per PDF statement</li>
-              <li>All 4 formats: Clean CSV, QBO 3/4-Col, Xero</li>
-              <li>US, UK, EU, AU &amp; CA bank date formats</li>
-              <li>No recurring subscription — yours for 12 months</li>
+              <li><strong>Unlimited rows</strong> across every statement you convert</li>
+              <li>Clean CSV, QuickBooks 3-Col/4-Col, and Xero export</li>
+              <li>US, UK, EU/German &amp; AU date and currency rules</li>
+              <li>One payment for 12 months — no auto-renewal</li>
             </ul>
           </div>
-          <a id="buyPackBtn" class="cta" href="mailto:qq459538565@gmail.com?subject=LocalLedger%20Pro%20License%20($19%20One-Time)%20Request&body=Hi%2C%20I%20would%20like%20to%20purchase%20the%20LocalLedger%20%2419%20One-Time%20Pro%20License.%20Primary%20bank(s)%20I%20convert%3A%20" style="justify-content:center;margin-top:14px;">Get Pro License ($19 One-Time)</a>
+          <a id="buyPackBtn" class="cta" href="mailto:qq459538565@gmail.com?subject=LocalLedger%20Pro%20License%20($19%20One-Time)%20Request&body=Hi%2C%20I%20would%20like%20to%20purchase%20the%20LocalLedger%20%2419%20One-Time%20Pro%20License.%20Primary%20bank(s)%20I%20convert%3A%20" style="justify-content:center;margin-top:14px;">Request Pro License ($19 One-Time)</a>
         </div>
         <div class="price-card">
           <div>
-            <div style="font-weight:700;color:var(--muted);">ACCOUNTANT / BOOKKEEPER</div>
+            <div style="font-weight:700;color:var(--muted);">BOOKKEEPER / FIRM DESK</div>
             <div class="price-amt">$12 <span style="font-size:14px;font-weight:500;color:var(--muted);">/ month</span></div>
             <ul style="padding-left:18px;color:var(--muted);font-size:13.5px;">
-              <li>Unlimited client statements &amp; batch Jan–Dec merge</li>
-              <li>Priority support for custom bank PDF layouts</li>
-              <li>Includes MSP White-Label PDF Security Audits</li>
-              <li>Cancel anytime in 1 click</li>
+              <li>Unlimited client statements &amp; Jan–Dec batch merge</li>
+              <li>Priority custom rules if a client's bank layout breaks</li>
+              <li>Cancel anytime by email, zero lock-in</li>
+              <li>Or buy full JS source ownership for $39 on Codester</li>
             </ul>
           </div>
-          <a id="buySubBtn" class="cta-sec" href="mailto:qq459538565@gmail.com?subject=LocalLedger%20Accountant%20Pro%20($12%2Fmo)%20Request&body=Hi%2C%20I%20would%20like%20to%20activate%20Accountant%20Pro%20(%2412%2Fmo).%20Monthly%20statement%20volume%3A%20" style="justify-content:center;margin-top:14px;">Start Accountant Pro ($12/mo)</a>
+          <a id="buySubBtn" class="cta-sec" href="mailto:qq459538565@gmail.com?subject=LocalLedger%20Accountant%20Pro%20($12%2Fmo)%20Request&body=Hi%2C%20I%20would%20like%20to%20activate%20Accountant%20Pro%20(%2412%2Fmo).%20Monthly%20statement%20volume%3A%20" style="justify-content:center;margin-top:14px;">Request Firm Desk ($12/mo)</a>
         </div>
       </div>
 
       <div style="margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.28);font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;">
-        <span><strong>Bank PDF layout not parsing cleanly?</strong> Tell us your bank name (never send real statements) — we add custom layout rules within 24 hours.</span>
+        <span><strong>Weird bank layout didn't parse cleanly?</strong> Tell us the bank name and column format (never attach real client statements) — we add layout rules within 24 hours.</span>
         <a class="cta-sec" target="_blank" rel="noopener" href="https://github.com/qq459538565-bot/riskops-mcp-suite/issues/new?title=Bank+Format+Request%3A+&body=Bank+name+%26+country%3A+%0ADate+format+(MM%2FDD+or+DD%2FMM)%3A+%0AIssue+observed+(please+do+NOT+attach+real+client+PDFs)%3A+">Request Bank Format &rarr;</a>
       </div>
 
       <div id="unlock-license" style="margin-top:18px;padding:16px;border-radius:12px;background:#09101f;border:1px solid var(--border);display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <strong style="font-size:13.5px;">Already have a Creem License Key?</strong>
+        <strong style="font-size:13.5px;">Already have a Pro License Key?</strong>
         <input id="licenseInput" type="text" placeholder="Paste license key (e.g., LL-PRO-XXXX-XXXX)" style="flex:1;min-width:220px;" />
         <button id="activateBtn" class="cta cta-green" type="button">Unlock Unlimited Export</button>
         <span id="licenseMsg" style="font-size:12.5px;color:var(--muted);"></span>
@@ -202,14 +242,14 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
     </section>
 
     <section class="card">
-      <h2 style="margin-top:0;font-size:18px;">Supported Banks &amp; Dedicated Conversion Guides (30 Banks)</h2>
+      <h2 style="margin-top:0;font-size:18px;">Bank-Specific Format Notes &amp; Guides (30 Banks)</h2>
       <div class="bank-chips">
         <a class="bank-chip" href="./banks/chase-pdf-to-csv.html">Chase Bank (US)</a><a class="bank-chip" href="./banks/bank-of-america-pdf-to-csv.html">Bank of America (US)</a><a class="bank-chip" href="./banks/wells-fargo-pdf-to-csv.html">Wells Fargo (US)</a><a class="bank-chip" href="./banks/citibank-pdf-to-csv.html">Citibank (US/Global)</a><a class="bank-chip" href="./banks/capital-one-pdf-to-csv.html">Capital One (US)</a><a class="bank-chip" href="./banks/american-express-pdf-to-csv.html">American Express (Amex) (US/Global)</a><a class="bank-chip" href="./banks/mercury-pdf-to-csv.html">Mercury Bank (US Startup)</a><a class="bank-chip" href="./banks/wise-pdf-to-csv.html">Wise Business (Global)</a><a class="bank-chip" href="./banks/brex-pdf-to-csv.html">Brex (US Startup)</a><a class="bank-chip" href="./banks/ramp-pdf-to-csv.html">Ramp (US Startup)</a><a class="bank-chip" href="./banks/paypal-pdf-to-csv.html">PayPal Business (Global)</a><a class="bank-chip" href="./banks/stripe-pdf-to-csv.html">Stripe Payouts (Global)</a><a class="bank-chip" href="./banks/hsbc-pdf-to-csv.html">HSBC (UK/Global)</a><a class="bank-chip" href="./banks/barclays-pdf-to-csv.html">Barclays (UK)</a><a class="bank-chip" href="./banks/lloyds-pdf-to-csv.html">Lloyds Bank (UK)</a><a class="bank-chip" href="./banks/natwest-pdf-to-csv.html">NatWest (UK)</a><a class="bank-chip" href="./banks/monzo-pdf-to-csv.html">Monzo (UK)</a><a class="bank-chip" href="./banks/revolut-pdf-to-csv.html">Revolut Business (UK/EU)</a><a class="bank-chip" href="./banks/td-bank-pdf-to-csv.html">TD Bank (US/Canada)</a><a class="bank-chip" href="./banks/rbc-pdf-to-csv.html">RBC Royal Bank (Canada)</a><a class="bank-chip" href="./banks/scotiabank-pdf-to-csv.html">Scotiabank (Canada)</a><a class="bank-chip" href="./banks/commbank-pdf-to-csv.html">CommBank (CBA) (Australia)</a><a class="bank-chip" href="./banks/anz-pdf-to-csv.html">ANZ Bank (Australia/NZ)</a><a class="bank-chip" href="./banks/westpac-pdf-to-csv.html">Westpac (Australia)</a><a class="bank-chip" href="./banks/ing-pdf-to-csv.html">ING Bank (EU/Australia)</a><a class="bank-chip" href="./banks/n26-pdf-to-csv.html">N26 (EU)</a><a class="bank-chip" href="./banks/deutsche-bank-pdf-to-csv.html">Deutsche Bank (Germany/EU)</a><a class="bank-chip" href="./banks/ubs-pdf-to-csv.html">UBS (Switzerland/Global)</a><a class="bank-chip" href="./banks/us-bank-pdf-to-csv.html">U.S. Bank (US)</a><a class="bank-chip" href="./banks/pnc-bank-pdf-to-csv.html">PNC Bank (US)</a>
       </div>
     </section>
 
     <footer>
-    <span><strong>LocalLedger by RiskOps Studio</strong> · 100% Client-Side Processing (0 bytes uploaded)</span>
+    <span><strong>LocalLedger by RiskOps Studio</strong> · 100% Client-Side Parsing (0 bytes uploaded)</span>
     <span>
       <a class="link" href="../legal/terms.html">Terms of Service</a> ·
       <a class="link" href="../legal/privacy.html">Privacy Policy</a> ·
