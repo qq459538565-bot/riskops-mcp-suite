@@ -2,12 +2,14 @@
 
 [![Glama MCP Server](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite/badges/score.svg)](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite)
 [![Apify Store](https://img.shields.io/badge/Apify%20Store-5%20Hosted%20MCP%20Actors-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
-[![Live Free Tools Portal](https://img.shields.io/badge/Free%20Tools%20%26%20164%20pSEO%20Pages-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
+[![Live Free Tools Portal](https://img.shields.io/badge/Free%20Tools%20%26%201%2C149%20Pages-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
 [![LocalLedger Studio](https://img.shields.io/badge/LocalLedger%20Studio-Offline%20Finance%20Tools-10b981?style=flat-square)](https://www.localledgerstudio.xyz/)
 [![TickTieLocal](https://img.shields.io/badge/TickTieLocal-Offline%20Audit%20Matcher-6366f1?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html)
 
-> **Launch Free Interactive Browser Tools (100% Local, No Signup):**  
-> - **RiskOps 4-in-1 Portal:** https://qq459538565-bot.github.io/riskops-mcp-suite/  
+> **Launch Free Interactive Browser Tools & Empirical Benchmarks (100% Public Data, No Signup):**  
+> - **2026 YC 1,200-Startup Security & DMARC Benchmark (39.3% DMARC Gap + Free 100-Row CSV):** https://qq459538565-bot.github.io/riskops-mcp-suite/reports/yc-2026-security-benchmark.html  
+> - **Searchable Top 1,000 Y Combinator Security & Trust Center Directory:** https://qq459538565-bot.github.io/riskops-mcp-suite/vendors/yc-1000.html  
+> - **RiskOps 4-in-1 Live Portal (Vendor Security, SEC 8-K, Cloud SLA, Quant):** https://qq459538565-bot.github.io/riskops-mcp-suite/  
 > - **LocalLedger Offline Bank PDF -> CSV:** https://qq459538565-bot.github.io/riskops-mcp-suite/bank-converter/index.html  
 > - **TickTieLocal Offline Audit Matcher (DataSnipper Alternative):** https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html  
 > - **2026 State of SaaS & AI Security Report (112 Companies + 24 AI Firms):** https://qq459538565-bot.github.io/riskops-mcp-suite/reports/state-of-saas-security-2026.html
