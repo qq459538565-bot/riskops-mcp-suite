@@ -120,8 +120,20 @@ export function buildSecRadarPages(repoRoot = process.cwd()) {
     <p style="color:var(--muted);font-size:15px;margin:0 0 16px;">Automated public SEC EDGAR scanner tracking <strong>Item 4.02</strong> (Financial Non-Reliance / Restatements), <strong>Item 4.01</strong> (Auditor Resignations), <strong>Item 3.01</strong> (Exchange Delisting Notices), <strong>Item 1.03</strong> (Bankruptcy), and <strong>Item 1.05</strong> (Material Cybersecurity Incidents). Today's highlighted tickers: <code>${esc(cashtags)}</code>.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <a class="cta" data-partner="apify" href="https://apify.com/durative_hairstreak/sec-8k-risk-signals" target="_blank" rel="noopener">Scan 500+ Live Filings / Connect Claude MCP &rarr;</a>
-      <a class="cta-green cta" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Open Free TradeGuard Risk Guardrail &rarr;</a>
+      <a class="cta-green cta" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Get Free Weekly Email Radar &rarr;</a>
+      <a class="cta-sec" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Free TradeGuard Risk Math</a>
       <a class="cta-sec" href="./latest.json" target="_blank">Raw JSON Feed</a>
+    </div>
+  </section>
+
+  <section class="card" style="border-color:rgba(16,185,129,0.45);background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(14,22,40,0.96));">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;">
+      <div style="max-width:660px;">
+        <span class="pill LIVE">FREE WEEKLY EMAIL RADAR</span>
+        <h2 style="margin:10px 0 6px;font-size:20px;">Never Miss a Form 8-K Restatement, Delisting, or Breach Again</h2>
+        <p style="color:var(--muted);font-size:13.5px;margin:0;">Every week we send one zero-fluff digest summarizing the highest-severity US SEC 8-K forensic alerts, direct <code>sec.gov</code> filings, and open empirical benchmarks — free on Substack.</p>
+      </div>
+      <a class="cta cta-green" style="padding:13px 22px;font-size:14.5px;" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Subscribe Free on Substack &rarr;</a>
     </div>
   </section>
 
