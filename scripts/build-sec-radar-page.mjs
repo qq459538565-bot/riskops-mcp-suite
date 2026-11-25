@@ -149,28 +149,38 @@ export function buildSecRadarPages(repoRoot = process.cwd()) {
   </section>
 
   <section class="card" style="border-color:#0284c7;">
-    <h2 style="margin:0 0 6px;font-size:20px;">Automate Your Own Watchlist &amp; Risk Discipline</h2>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+      <h2 style="margin:0;font-size:20px;">Choose Your Path — Built for Both Individual Investors &amp; Developers</h2>
+      <span class="pill LIVE">100% VERIFIABLE SEC.GOV LINKS · ZERO HYPE · 14-DAY REFUND ON PRO TOOLS</span>
+    </div>
+    <p style="color:var(--muted);font-size:13.5px;margin:0 0 14px;">Every filing links straight to official <code>sec.gov</code> EDGAR records so you can verify every signal yourself in 1 click.</p>
     <div class="grid">
-      <div class="box">
+      <div class="box" style="border-color:rgba(16,185,129,0.45);">
         <div>
-          <strong style="font-size:16px;color:#fff;">1. Live SEC 8-K API &amp; Claude MCP</strong>
-          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Audit 500+ tickers or stream real-time Item 4.02 / 1.05 / 3.01 alerts into n8n, Slack, Cursor, or Claude Desktop. Pay-per-event pricing ($0.012/filing, free monthly Apify credits included).</p>
+          <span class="pill LIVE" style="margin-bottom:8px;">FOR INVESTORS · $0 TO START</span>
+          <strong style="display:block;font-size:16px;color:#fff;">1. Free Weekly Email Alert + TradeGuard Risk Math</strong>
+          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Don't write code? Get one clean weekly SEC 8-K red-flag summary by email, and run free browser-local Average Down &amp; Kelly risk math before buying any sharp dip. <strong style="color:#6ee7b7;">Launch Early-Bird: TradeGuard Pro $19 (one-time, zero subscription, 14-day refund).</strong></p>
         </div>
-        <a class="cta" data-partner="apify" href="https://apify.com/durative_hairstreak/sec-8k-risk-signals" target="_blank" rel="noopener">Launch on Apify Store &rarr;</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a class="cta cta-green" href="https://459538565.substack.com/subscribe" target="_blank" rel="noopener">Free Email Alerts &rarr;</a>
+          <a class="cta-sec" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Try TradeGuard Free</a>
+        </div>
+      </div>
+      <div class="box" style="border-color:rgba(56,189,248,0.45);">
+        <div>
+          <span class="pill" style="background:rgba(56,189,248,0.16);color:#7dd3fc;border:1px solid rgba(56,189,248,0.4);margin-bottom:8px;">FOR DEVS &amp; QUANTS · TRY FREE</span>
+          <strong style="display:block;font-size:16px;color:#fff;">2. Live Bulk SEC 8-K API &amp; Claude / n8n MCP</strong>
+          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Audit 500+ tickers or stream real-time Item 4.02 / 1.05 / 1.03 alerts into Claude Desktop, Cursor, or n8n. <strong style="color:#7dd3fc;">Zero-risk trial: Apify's free $5/mo tier covers ~400 SEC filing scans — test with your own watchlist before spending $1.</strong></p>
+        </div>
+        <a class="cta" data-partner="apify" href="https://apify.com/durative_hairstreak/sec-8k-risk-signals" target="_blank" rel="noopener">Test Free (~400 Scans) on Apify &rarr;</a>
       </div>
       <div class="box">
         <div>
-          <strong style="font-size:16px;color:#fff;">2. TradeGuard Pre-Trade Math Guardrail</strong>
-          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">100% browser-local Average Down, Drawdown Recovery, Kelly Criterion &amp; 24h Anti-FOMO Vault so you never blindly catch a falling knife.</p>
+          <span class="pill AMBER" style="margin-bottom:8px;">INSTANT DOWNLOAD · LIVE TODAY</span>
+          <strong style="display:block;font-size:16px;color:#fff;">3. Embeddable QuantCalc JS Financial Widget ($29)</strong>
+          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Zero-dependency DCF, Kelly Criterion &amp; drawdown-recovery JavaScript widget for fintech blogs, Substack portals &amp; trading apps. Commercial license &amp; instant zip download verified on Codester.</p>
         </div>
-        <a class="cta cta-green" href="https://tradeguard.localledgerstudio.xyz/" target="_blank" rel="noopener">Try TradeGuard Free &rarr;</a>
-      </div>
-      <div class="box">
-        <div>
-          <strong style="font-size:16px;color:#fff;">3. Embeddable QuantCalc JS Widget ($29)</strong>
-          <p style="color:var(--muted);font-size:13.5px;margin:8px 0 0;">Zero-dependency financial DCF, Kelly &amp; risk-math JavaScript component for fintech portals, newsletters &amp; trading dashboards (live instant purchase on Codester).</p>
-        </div>
-        <a class="cta-sec" href="https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget" target="_blank" rel="noopener">View on Codester ($29) &rarr;</a>
+        <a class="cta-sec" href="https://www.codester.com/items/76738/quantcalc-js-financial-analysis-widget" target="_blank" rel="noopener">Instant Purchase on Codester ($29) &rarr;</a>
       </div>
     </div>
   </section>
