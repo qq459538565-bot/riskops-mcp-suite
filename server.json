@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
   "name": "io.github.qq459538565-bot/riskops-mcp-suite",
-  "title": "RiskOps KYB Sanctions, B2B Security, SEC 8-K, Cloud SLA, OSS CVE & Quant MCP Suite",
-  "description": "6-in-1 zero-proxy B2B compliance & risk intelligence MCP suite on official public APIs: (1) Global Entity KYB, LEI & Sanctions Gatekeeper (OFAC SDN/Non-SDN + UN + GLEIF + SEC), (2) B2B Vendor Security & Vanta/SafeBase/Drata Trust Center batch auditor, (3) US SEC Form 8-K forensic risk monitor, (4) 22+ Cloud/AI Statuspage SLA calculator, (5) OSV.dev + CISA KEV supply-chain gatekeeper, and (6) deterministic DCF/Kelly/Sharpe quant math engine. Pay-Per-Event via Apify MCP or agi.apify.com prepaid tokens.",
-  "version": "1.2.0",
+  "title": "RiskOps KYB Sanctions, GovCon RFPs, SaaS Pricing Diff, B2B Security, SEC 8-K, Cloud SLA, OSS CVE & Quant MCP Suite",
+  "description": "8-in-1 zero-proxy B2B compliance & risk intelligence MCP suite on official public APIs: (1) Global Entity KYB, LEI & Sanctions Gatekeeper (OFAC + UN + GLEIF + SEC), (2) US/EU/UK Government Contract Awards & RFP Signals, (3) SaaS Pricing & AI Subprocessor Change Diff Monitor, (4) B2B Vendor Security & Vanta/SafeBase/Drata Trust Center batch auditor, (5) US SEC Form 8-K forensic risk monitor, (6) 22+ Cloud/AI Statuspage SLA calculator, (7) OSV.dev + CISA KEV supply-chain gatekeeper, and (8) deterministic DCF/Kelly/Sharpe quant math engine. Free Edge Sandbox or Pay-Per-Event via Apify MCP & agi.apify.com.",
+  "version": "1.3.0",
   "websiteUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/",
   "remotes": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "type": "streamable-http",
-      "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/govcon-contract-award-signals,durative_hairstreak/saas-pricing-subprocessor-diff-monitor,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
       "headers": [
         {
           "name": "Authorization",

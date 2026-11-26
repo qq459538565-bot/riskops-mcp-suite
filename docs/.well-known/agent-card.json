@@ -6,11 +6,11 @@
     "organization": "RiskOps Studio / LocalLedger",
     "url": "https://apify.com/durative_hairstreak"
   },
-  "version": "1.4.0",
+  "version": "1.5.0",
   "documentationUrl": "https://qq459538565-bot.github.io/riskops-mcp-suite/llms-full.txt",
   "edgeRemoteMcpEndpoint": "https://api.localledgerstudio.xyz/mcp",
   "edgeOpenApiUrl": "https://api.localledgerstudio.xyz/openapi-rapidapi.json",
-  "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+  "allInOneMcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/govcon-contract-award-signals,durative_hairstreak/saas-pricing-subprocessor-diff-monitor,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
   "agenticPayments": {
     "provider": "Apify Pay-Per-Event (PPE)",
     "authMethods": ["Bearer APIFY_API_TOKEN", "agi.apify.com prepaid spend-capped token"],
@@ -34,6 +34,26 @@
       "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper",
       "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~global-entity-kyb-sanctions-gatekeeper/run-sync-get-dataset-items",
       "pricing": "$0.005 start + $0.025 per entity screened"
+    },
+    {
+      "id": "govcon-contract-award-signals",
+      "name": "US, EU & UK Government Contract Awards & RFP Signals",
+      "description": "High-value GovCon B2B intelligence querying USASpending, UK Contracts Finder, and EU TED for federal/defense contract awards, RFP opportunities, and prime-contractor subcontracting leads.",
+      "tags": ["govcon", "rfp", "usaspending", "ted", "uk-contracts-finder", "procurement", "b2b-sales", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/govcon-contract-award-signals",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/govcon-contract-award-signals",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~govcon-contract-award-signals/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.030 per contract signal extracted"
+    },
+    {
+      "id": "saas-pricing-subprocessor-diff-monitor",
+      "name": "SaaS Pricing & AI Subprocessor Change Diff Monitor",
+      "description": "Tracks SaaS pricing-tier changes, seat-minimum hikes, and newly added AI/LLM subprocessors for FinOps, procurement, and TPRM renewal defense.",
+      "tags": ["saas-pricing", "subprocessors", "finops", "procurement", "tprm", "ai-governance", "mcp"],
+      "storeUrl": "https://apify.com/durative_hairstreak/saas-pricing-subprocessor-diff-monitor",
+      "mcpEndpoint": "https://mcp.apify.com/?actors=durative_hairstreak/saas-pricing-subprocessor-diff-monitor",
+      "restSyncEndpoint": "https://api.apify.com/v2/acts/durative_hairstreak~saas-pricing-subprocessor-diff-monitor/run-sync-get-dataset-items",
+      "pricing": "$0.005 start + $0.025 per vendor monitored"
     },
     {
       "id": "b2b-vendor-security-auditor",

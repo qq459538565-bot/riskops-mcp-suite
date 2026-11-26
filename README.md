@@ -2,7 +2,7 @@
 
 [![Glama MCP Server](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite/badges/score.svg)](https://glama.ai/mcp/servers/qq459538565-bot/riskops-mcp-suite)
 [![Live Edge MCP & REST API](https://img.shields.io/badge/Live%20Remote%20MCP%20%26%20API-api.localledgerstudio.xyz-f59e0b?style=flat-square)](https://api.localledgerstudio.xyz/health)
-[![Apify Store](https://img.shields.io/badge/Apify%20Store-6%20Hosted%20MCP%20Actors-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
+[![Apify Store](https://img.shields.io/badge/Apify%20Store-8%20Hosted%20MCP%20Actors-00a86b?style=flat-square)](https://apify.com/durative_hairstreak)
 [![Live Free Tools Portal](https://img.shields.io/badge/Free%20Tools%20%26%201%2C149%20Pages-Live%20HTTPS-0ea5e9?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/)
 [![LocalLedger Studio](https://img.shields.io/badge/LocalLedger%20Studio-Offline%20Finance%20Tools-10b981?style=flat-square)](https://www.localledgerstudio.xyz/)
 [![TickTieLocal](https://img.shields.io/badge/TickTieLocal-Offline%20Audit%20Matcher-6366f1?style=flat-square)](https://qq459538565-bot.github.io/riskops-mcp-suite/tick-tie/index.html)
@@ -85,24 +85,26 @@ npm test   # runs 6/6 live MCP stdio E2E checks
 
 ## Option 2: Hosted Apify & Streamable-HTTP MCP Matrix (Pay-Per-Event Batch & Autonomous Agent Workloads)
 
-All **6 hosted Actors** are **PUBLIC & Pay-Per-Event LIVE** on Apify Store with **limited permissions** — compatible with both standard Apify Bearer tokens and autonomous agent spend-capped prepaid tokens via `agi.apify.com`:
+All **8 hosted Actors** are **PUBLIC & Pay-Per-Event LIVE** on Apify Store with **limited permissions** — compatible with both standard Apify Bearer tokens and autonomous agent spend-capped prepaid tokens via `agi.apify.com`:
 
 | Tool | Live Apify Store & MCP Slug | Pay-Per-Event Pricing | Best For |
 | :--- | :--- | :--- | :--- |
 | **1. Global Entity KYB, LEI & Sanctions Gatekeeper** *(Flagship Compliance)* | [Apify Store](https://apify.com/durative_hairstreak/global-entity-kyb-sanctions-gatekeeper) · `durative_hairstreak/global-entity-kyb-sanctions-gatekeeper` | `$0.005` start + `$0.025`/entity | Pre-payment & KYB gatekeeper screening live against US OFAC SDN/Non-SDN, UN Sanctions, GLEIF LEI & SEC EDGAR (`CLEAR`/`REVIEW`/`BLOCK`) |
-| **2. B2B Vendor Security Posture & Trust Signal Auditor** *(Flagship Batch)* | [Apify Store](https://apify.com/durative_hairstreak/b2b-vendor-security-auditor) · `durative_hairstreak/b2b-vendor-security-auditor` | `$0.005` start + `$0.015`/domain | Clay / RevOps / TPRM bulk enrichment (500+ domains: Vanta/SafeBase/Drata fingerprinting, DMARC/SPF/TLS/headers) |
-| **3. SEC 8-K Risk Signals & Corporate Distress Monitor** *(Flagship Monitor)* | [Apify Store](https://apify.com/durative_hairstreak/sec-8k-risk-signals) · `durative_hairstreak/sec-8k-risk-signals` | `$0.005` start + `$0.012`/filing | Quant/AI Agents, Cyber GTM (`Item 1.05`), Forensic Accounting (`4.02`/`4.01`/`5.02`/`1.03`/`3.01` + comment letters) |
-| **4. SaaS & Cloud Status Page SLA Uptime Monitor** | [Apify Store](https://apify.com/durative_hairstreak/saas-status-sla-monitor) · `durative_hairstreak/saas-status-sla-monitor` | `$0.005` start + `$0.008`/vendor | SRE / DevOps monitoring 22+ vendors with merged-interval 30d/90d contractual SLA % math |
-| **5. Open-Source Supply-Chain & CVE Risk Auditor** | [Apify Store](https://apify.com/durative_hairstreak/oss-dependency-risk-auditor) · `durative_hairstreak/oss-dependency-risk-auditor` | `$0.005` start + `$0.008`/package | AI Coding Agents & CI/CD pre-install gating (OSV.dev CVEs, CISA KEV active exploits, SPDX, OpenSSF) |
-| **6. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine** | [Apify Store](https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine) · `durative_hairstreak/quant-portfolio-dcf-math-engine` | `$0.005` start + `$0.005`/calc | Sandbox-free agents & workflows needing Sharpe/Sortino/VaR, Half-Kelly, 5×5 DCF, XIRR & Black-Scholes Greeks |
+| **2. US, EU & UK Government Contract Awards & RFP Signals** *(Flagship GovCon)* | [Apify Store](https://apify.com/durative_hairstreak/govcon-contract-award-signals) · `durative_hairstreak/govcon-contract-award-signals` | `$0.005` start + `$0.030`/signal | GovCon B2B intelligence, defense/federal RFP scouting & prime-contractor subcontracting alerts from USASpending, UK Contracts Finder & EU TED |
+| **3. SaaS Pricing & AI Subprocessor Change Diff Monitor** *(Flagship Intelligence)* | [Apify Store](https://apify.com/durative_hairstreak/saas-pricing-subprocessor-diff-monitor) · `durative_hairstreak/saas-pricing-subprocessor-diff-monitor` | `$0.005` start + `$0.025`/vendor | Procurement, FinOps & TPRM teams detecting SaaS pricing-tier hikes, seat-floor shifts & newly added AI subprocessors before renewal |
+| **4. B2B Vendor Security Posture & Trust Signal Auditor** *(Flagship Batch)* | [Apify Store](https://apify.com/durative_hairstreak/b2b-vendor-security-auditor) · `durative_hairstreak/b2b-vendor-security-auditor` | `$0.005` start + `$0.015`/domain | Clay / RevOps / TPRM bulk enrichment (500+ domains: Vanta/SafeBase/Drata fingerprinting, DMARC/SPF/TLS/headers) |
+| **5. SEC 8-K Risk Signals & Corporate Distress Monitor** *(Flagship Monitor)* | [Apify Store](https://apify.com/durative_hairstreak/sec-8k-risk-signals) · `durative_hairstreak/sec-8k-risk-signals` | `$0.005` start + `$0.012`/filing | Quant/AI Agents, Cyber GTM (`Item 1.05`), Forensic Accounting (`4.02`/`4.01`/`5.02`/`1.03`/`3.01` + comment letters) |
+| **6. SaaS & Cloud Status Page SLA Uptime Monitor** | [Apify Store](https://apify.com/durative_hairstreak/saas-status-sla-monitor) · `durative_hairstreak/saas-status-sla-monitor` | `$0.005` start + `$0.008`/vendor | SRE / DevOps monitoring 22+ vendors with merged-interval 30d/90d contractual SLA % math |
+| **7. Open-Source Supply-Chain & CVE Risk Auditor** | [Apify Store](https://apify.com/durative_hairstreak/oss-dependency-risk-auditor) · `durative_hairstreak/oss-dependency-risk-auditor` | `$0.005` start + `$0.008`/package | AI Coding Agents & CI/CD pre-install gating (OSV.dev CVEs, CISA KEV active exploits, SPDX, OpenSSF) |
+| **8. Quant Finance, Portfolio Risk, Kelly & DCF Math Engine** | [Apify Store](https://apify.com/durative_hairstreak/quant-portfolio-dcf-math-engine) · `durative_hairstreak/quant-portfolio-dcf-math-engine` | `$0.005` start + `$0.005`/calc | Sandbox-free agents & workflows needing Sharpe/Sortino/VaR, Half-Kelly, 5×5 DCF, XIRR & Black-Scholes Greeks |
 
-### Connect All 6 Hosted Tools in One Streamable-HTTP MCP Entry (Claude / Cursor / Windsurf)
+### Connect All 8 Hosted Tools in One Streamable-HTTP MCP Entry (Claude / Cursor / Windsurf)
 
 ```json
 {
   "mcpServers": {
-    "riskops-6-in-1": {
-      "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
+    "riskops-8-in-1": {
+      "url": "https://mcp.apify.com/?actors=durative_hairstreak/global-entity-kyb-sanctions-gatekeeper,durative_hairstreak/govcon-contract-award-signals,durative_hairstreak/saas-pricing-subprocessor-diff-monitor,durative_hairstreak/b2b-vendor-security-auditor,durative_hairstreak/sec-8k-risk-signals,durative_hairstreak/saas-status-sla-monitor,durative_hairstreak/oss-dependency-risk-auditor,durative_hairstreak/quant-portfolio-dcf-math-engine",
       "headers": {
         "Authorization": "Bearer YOUR_APIFY_API_TOKEN"
       }
