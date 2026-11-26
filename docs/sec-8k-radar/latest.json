@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-25",
+  "updatedAt": "2026-11-26",
   "latestFilingDate": "2026-11-25",
-  "cashtags": "$CRMT $LEGO $AREC $SSGC $SDST",
+  "cashtags": "$CRMT $LEGO $AREC $SSGC $AVZO",
   "count": 5,
   "items": [
     {
@@ -46,13 +46,13 @@
     },
     {
       "filingDate": "2026-11-25",
-      "ticker": "SDST",
-      "companyName": "Stardust Power Inc.",
-      "riskScore": 100,
+      "ticker": "AVZO",
+      "companyName": "Avenzo Therapeutics, Inc.",
+      "riskScore": 93,
       "severity": "RED",
-      "secItems": "3.01, 5.02",
-      "redFlags": "Disagreement with Auditor / Reportable Event; Nasdaq / NYSE Deficiency or Delisting Notice",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1831979/000149315226054278/form8-k.htm"
+      "secItems": "4.01, 5.02",
+      "redFlags": "Chapter 11 / Insolvency Filing",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1739410/000119312526478423/d128039d8k.htm"
     }
   ]
 }
