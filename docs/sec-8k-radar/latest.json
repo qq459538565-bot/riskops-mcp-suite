@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "latestFilingDate": "2026-11-25",
-  "cashtags": "$CRMT $LEGO $AREC $SSGC $AVZO",
+  "cashtags": "$CRMT $LEGO $AREC $TRNR $PMI",
   "count": 5,
   "items": [
     {
@@ -35,24 +35,24 @@
       "filingUrl": "https://www.sec.gov/Archives/edgar/data/1590715/000147793226007314/arec_8ka.htm"
     },
     {
-      "filingDate": "2026-11-24",
-      "ticker": "SSGC",
-      "companyName": "SafeSpace Global Corp",
+      "filingDate": "2026-11-27",
+      "ticker": "TRNR",
+      "companyName": "Interactive Strength, Inc.",
       "riskScore": 100,
       "severity": "RED",
-      "secItems": "4.02",
-      "redFlags": "Non-Reliance / Financial Restatement; Material Weakness in Internal Controls",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1584693/000149315226054001/form8-k.htm"
+      "secItems": "3.01, 5.02",
+      "redFlags": "Disagreement with Auditor / Reportable Event; Immediate Effective Departure",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1785056/000119312526480235/trnr-20261125.htm"
     },
     {
-      "filingDate": "2026-11-25",
-      "ticker": "AVZO",
-      "companyName": "Avenzo Therapeutics, Inc.",
-      "riskScore": 93,
+      "filingDate": "2026-11-27",
+      "ticker": "PMI",
+      "companyName": "Picard Medical, Inc.",
+      "riskScore": 99,
       "severity": "RED",
-      "secItems": "4.01, 5.02",
-      "redFlags": "Chapter 11 / Insolvency Filing",
-      "filingUrl": "https://www.sec.gov/Archives/edgar/data/1739410/000119312526478423/d128039d8k.htm"
+      "secItems": "4.01",
+      "redFlags": "Material Weakness in Internal Controls; Substantial Doubt / Going Concern",
+      "filingUrl": "https://www.sec.gov/Archives/edgar/data/2030617/000143774926038355/pmi20260831_8k.htm"
     }
   ]
 }

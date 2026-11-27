@@ -3,7 +3,7 @@
 • $CRMT Item 1.03, 3.01, 5.02 [100/100]
 • $LEGO Item 4.02 [100/100]
 • $AREC Item 4.02 [100/100]
-• $SSGC Item 4.02 [100/100]
-• $AVZO Item 4.01, 5.02 [93/100]
+• $TRNR Item 3.01, 5.02 [100/100]
+• $PMI Item 4.01 [99/100]
 
 Objective EDGAR parser (not investment advice). Free daily feed & API in bio.
